@@ -57,7 +57,7 @@ PPP
 Following a Design Thinking process, I've identified four key personas to empathize with and define their requirements.
 
 <details><summary><b>User Personas</b></summary>
-  <img src="readme-image/user-personas.webp" alt="User Personas; Listener, Commentor, Blogger, Podcaster"/>
+  <img src="readme-images/user-personas.webp" alt="User Personas; Listener, Commenter, Blogger, Podcaster"/>
 </details><br />
 
 
