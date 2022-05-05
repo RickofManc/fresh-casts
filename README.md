@@ -40,14 +40,28 @@ PPP
 ## User Experience Research and Design
 
 
-### Strategy
+### Problem Statement
+
+It's difficult to find a website where you can share and discuss podcasts.
+Listeners may feedback or rate a podcast within a listening app, however these apps generally do not allow listeners to post and discuss liked podcasts.
+Podcast listenership continues to increase with over 2 million shows to choose, and by nature humans are social, we like to converse.
+There's an opportunity to help people share podcasts, making it easier to discuss and find shows that may have slipped under their radar.
+
+### Objective
 
 PPP
 
 
-#### Leading User Stories
+### Design Thinking
 
-PPP
+Following a Design Thinking process, I've identified four key personas to empathize with and define their requirements.
+
+<details><summary><b>User Personas</b></summary>
+  <img src="readme-image/user-personas.webp" alt="User Personas; Listener, Commentor, Blogger, Podcaster"/>
+</details><br />
+
+
+
 
 
 #### Primary strategic aims for the website
