@@ -129,8 +129,8 @@ PPP.
 PPP.
 
 
-<p align="center">
-    <img src="" alt="Fresh Casts Colour Palette"/>
+<p>
+    <img src="readme-images/fresh-casts-colour-palette.webp" alt="Fresh Casts Colour Palette"/>
 </p>
 
 
