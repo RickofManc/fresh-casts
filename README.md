@@ -13,7 +13,8 @@
 
 ## About
 
-PPP 
+Fresh Casts is a website built for people who enjoy listening to podcasts, and would also like to share and discover new shows and series.
+Through clear and intuitive design, Fresh Casts goal is ensure the pleasure of listening, sharing and discussing podcasts is accessible to all possible user groups, no matter of age or background.
 
 
 ***
@@ -44,12 +45,13 @@ PPP
 
 It's difficult to find a website where you can share and discuss podcasts.
 Listeners may feedback or rate a podcast within a listening app, however these apps generally do not allow listeners to post and discuss liked podcasts.
-Podcast listenership continues to increase with over 2 million shows to choose, and by nature humans are social, we like to converse.
+Podcast listenership continues to increase with over 2 million shows to choose from, and by nature humans are social, we like to converse.
 There's an opportunity to help people share podcasts, making it easier to discuss and find shows that may have slipped under their radar.
 
 ### Objective
 
-PPP
+By summer 2022, I will develop and deploy a website that promote the sharing and discussion of podcasts they are enjoying. 
+All users will be able to listen to shared podcasts. Users who create a profile will be able to comment and like shared shows, as well as posting their own favourites.The site will meet WCAG 2.1 AA standards, and will be thoroughly tested to ensure all user groups can access and enjoy content.
 
 
 ### Design Thinking
@@ -57,7 +59,7 @@ PPP
 Following a Design Thinking process, I've identified four key personas to empathize with and define their requirements.
 
 <details><summary><b>User Personas</b></summary>
-  <img src="readme-images/user-personas.webp" alt="User Personas; Listener, Commenter, Blogger, Podcaster"/>
+  <img src="readme-images/user-personas.png" alt="User Personas; Listener, Commenter, Blogger, Podcaster"/>
 </details><br />
 
 
@@ -115,7 +117,7 @@ As part of this phase a wireframe for a browser has been produced using [Balsami
 The website is responsive through differing screen widths to a minimum of 800px wide. It is not yet developed for smartphones - a future sprint should see this delivered. 
 
 <p align="center">
-    <img src="readme-images/vv-pizza-wireframes.png" alt="VV Pizzas Wireframe" />
+    <img src="" alt="" />
 </p>
 
 
@@ -124,22 +126,27 @@ The website is responsive through differing screen widths to a minimum of 800px 
 PPP.
 
 
-#### Colour 
+#### Color Palette
 
 PPP.
 
 
 <p>
-    <img src="readme-images/fresh-casts-colour-palette.webp" alt="Fresh Casts Colour Palette"/>
+    <img src="readme-images/fresh-casts-color-palette.png" alt="Fresh Casts Color Palette"/>
 </p>
 
 
-#### Font
+#### Font Family
 
-PPP.
+**Roboto Flex and Roboto Condensed**
 
-<p align="center">
-    <img src="" alt="Fresh Casts Fonts"/>
+Roboto Flex upgrades Roboto so it becomes a more powerful typeface system. With Flex, you can customize Roboto to express and finesse your text in ways never before possible. Today, people are constantly switching between devices, resizing browsers, and spreading our viewports across multiple screens. So Google commissioned Font Bureau to re-imagine Roboto to “flex” along with us, with a special emphasis on large-screen capabilities. This was achieved by amplifying the original design to an extreme range of weights, grades, widths and optical sizes.
+
+The needs of end-user readers were prioritized and aligned during development. To make Roboto Flex production-ready for all print and digital media, Font Bureau expanded the glyph set with careful planning and development, in partnership with script experts for Cyrillic and Greek. Rigorous testing of each glyph across every axis required new type design tools to be developed, like typetools and videoproof, which can be used to explore the depth of the design.
+
+
+<p>
+    <img src="readme-images/roboto-flex-font.png" alt="Fresh Casts Font"/>
 </p
 
 
