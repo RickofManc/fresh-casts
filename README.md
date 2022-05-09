@@ -385,7 +385,7 @@ Support with how to develop ideas into code also came from various online resour
 
 * [Balsamiq](https://balsamiq.com/) - Used to build wireframes in the Skelton phase.
 * [LucidChart](https://www.lucidchart.com/pages/) - To map out the flow of data.
-* This website was coded primarily using Python3, HTML5, CCS3 with [GitPod](https://gitpod.io/) used for the IDE and [GitHub](https://github.com/) as a hosting repository.
+* PPP - Heroku, Django, Bootstrap, PPP This website was coded primarily using Python3, HTML5, CCS3 with [GitPod](https://gitpod.io/) used for the IDE and [GitHub](https://github.com/) as a hosting repository.
 * [W3schools](https://www.w3schools.com/) - Source of 'How to...' information throughout the build.
 * [Stack Overflow](https://stackoverflow.com/) - Source of 'How to...' information on Python code.
 * [Python Tutor](https://pythontutor.com/) - For testing sections of code.
