@@ -41,6 +41,7 @@ Through clear and intuitive design, Fresh Casts goal is ensure the pleasure of l
 ## User Experience Research and Design
 
 
+
 ### Problem Statement
 
 It's difficult to find a website where you can share and discuss podcasts.
@@ -48,22 +49,26 @@ Listeners may feedback or rate a podcast within a listening app, however these a
 Podcast listenership continues to increase with over 2 million shows to choose from, and by nature humans are social, we like to converse.
 There's an opportunity to help people share podcasts, making it easier to discuss and find shows that may have slipped under their radar.
 
+
+
 ### Objective
 
 By summer 2022, I will develop and deploy a website that promote the sharing and discussion of podcasts they are enjoying. 
-All users will be able to listen to shared podcasts. Users who create a profile will be able to comment and like shared shows, as well as posting their own favourites.The site will meet WCAG 2.1 AA standards, and will be thoroughly tested to ensure all user groups can access and enjoy content.
+All visitors will be able to listen to shared podcasts. Users who create a Fresh Casters profile will be able to comment and like shared shows, as well as posting their own favourites.The site will meet WCAG 2.1 AA standards, and will be thoroughly tested to ensure all user groups can access and enjoy content.
+
 
 
 ### Design Thinking
 
 Following a Design Thinking process, I've identified four key personas to empathize with and define their requirements.
 
+
 <details><summary><b>User Personas</b></summary>
   <img src="readme-images/user-personas.png" alt="User Personas; Listener, Commenter, Blogger, Podcaster"/>
 </details><br />
 
 
-
+This phase led to User Stories being drafted complete with Acceptance Criteria and initial Tasks for the development phase. User Stories have been added to GitHub [here](https://github.com/users/RickofManc/projects/4) and are being tracked through to completion.
 
 
 #### Primary strategic aims for the website
@@ -78,46 +83,86 @@ The roadmap below highlights the high-level strategic opportunities versus the i
 
 ### Scope
 
-An agile approach of keeping the in scope features simple and aligned to the strategy for the MVP will be adopted.
-Below is a list of the leading features for the application.
+An agile approach of keeping the in scope features simple and aligned to the strategy for the MVP will be adopted.Below is a list of the leading features for the the Fresh Casts MVP.
+
 
 #### In Scope Features
-* PPP
+* Create an accessible website that follows convention for sites built to inform.
+* Conventionally the site will have a fixed Header, Navbar and Footer.
+* Main Menu accessible through a hamburger icon.
+* By default, the homepage will show the latest posts in ascending order.
+* A clickable link will enable Fresh Casters to find out more information on the post.
+* Podcasts will be playable directly in the page browser.
+* A user account will provide access to Commenting, Liking, Blogging.
+* Fresh Casters will be supported with a page dedicated to FAQ's.
+* A 'Contact Us' page will enable Fresh Casters to get in touch with Site Admin.
+* An Accessibility Statement will inform of how Fresh Casts cares about accessibility.
+* The site will be responsive across differing devices, from mobile first design through to 5K screens supported.
 
-#### Out of Scope Features (for a future release)
-* PPP
+
+#### Potentially In Scope Features (Time Dependant for MVP)
+* Recent activity - Pulling commenting, liking, posting data from across the site into Fresh Casters profile page.
+* Search and learn - Using keywords, Fresh Casters will be able to search and hone in their choices.
+* Update own content - providing Fresh Casters with an option to edit their own posts and comments.
+* Podcast downloading - enabling Fresh Casters to listen offline.
+* Preferred app - allowing Fresh Casters to listen to a podcast in favourite listening app.
+
+
+
+#### Beyond MVP Release Features
+* Single Sign On (SSO) - Use social apps such as Google, Facebook and Twitter to sign-in.
+* Connecting Fresh Casters - Provide chat service to allow the community to interact directly.
+
+
 
 
 ### Structure
 
 This website will be structured with the following design considerations.
-* PPP
 
-The final structure may differ slightly as development progresses and from user feedback.
+* A Hub and Spoke structure, where the main content will be the homepage hub, and spokes are the pages to find out more information on a post. The spokes will also house the useful pages such as Sign-up, FAQ, Contact Us, About Us etc.
+* Each post will be displayed in a shortened list view for the homepage with just enough information to entice the user, and also a full description which will open in it's own page.
+* All spoke pages will have a text link to allow the user to return back the their original homepage view.
+* Users wishing to add a comment or like will be asked to first create a user account as a Fresh Caster. Once a brief form has been completed and submitted, Site Admin will be notified and requested to approve or deny the application. 
+* Having a user account will allow users to interact with the site, adding comments, likes and being able to post their own podcast review.
+* Users will also be able to contact Site Admin with a range of issues through a contact form available within the Main Menu and Footer. 
+* All pages will be available to users consistently through either the Main Menu or Footer - this should ensure users are never two clicks away from where they would like to be.
+
+
+The final structure for the MVP may differ slightly as development progresses, and from user feedback and testing.
+
 
 
 ### Skeleton
 
-PPP
+Key to the UX attributes is the speed and ease for which users can learn about new podcasts, or what fellow users think about a podcast. 
+
+The 'Hub and Spoke' structure should provide users with content from their initial landing, and allowing their intrigue to click on a post and find out more, or refine the content by choosing one of six categories located conveniently on the Navbar (when in the desktop and tablet view).
+
+Aesthetically pages will be clean to promote the information, and allow users to flow between differing categories and expanding posts to learn more and add a Like. Convention from popular information based sites will be adopted so users feel at home and therefore capture their engagement within the first few seconds.
+
+
 
 #### Flowchart
 
 A flowchart outlining the customer journey has been created using [Lucidchart](https://www.lucidchart.com/pages/).
 The final application may differ slightly as development progresses and from user feedback.
 
+
 <p align="center">
     <img src="" alt="Fresh Casts Flowchart"/>
 </p>
 
 
-#### Wireframe
+#### Wireframes
 
-As part of this phase a wireframe for a browser has been produced using [Balsamiq](https://balsamiq.com/wireframes/) (see image below - the wireframe is located within the project [Repo](https://github.com/RickofManc/vv-pizzas)).
+As part of this phase wireframes for mobile and desktop devices have been produced using [Balsamiq](https://balsamiq.com/wireframes/) (see image below - the wireframes are located within the project [Repo](wireframes)).
 
-The website is responsive through differing screen widths to a minimum of 800px wide. It is not yet developed for smartphones - a future sprint should see this delivered. 
+The website is responsive through differing screen widths being designed for mobile first to a max-width of 767px. Tablets are responsive from 768px through to 1023px, and desktops from 1024px upward. 
+
 
 <p align="center">
-    <img src="" alt="" />
+    <img src="readme-images/fresh-casts-mobile-wireframes.png" alt="Fresh Casts wireframe for mobile devices" />
 </p>
 
 
@@ -126,13 +171,13 @@ The website is responsive through differing screen widths to a minimum of 800px 
 PPP.
 
 
-#### Color Palette
+#### Colour Palette
 
-PPP.
+This palette has been carefully selected to bring high contrasting colours to improve accessibility to visually impaired users. As the primary aim of the site is to inform, Black text on a White background will be adopted throughout. The Teal based accents will be used to highlight buttons, points of reference or navigation and other key pieces of user information.
 
 
-<p>
-    <img src="readme-images/fresh-casts-color-palette.png" alt="Fresh Casts Color Palette"/>
+<p align="center">
+    <img src="readme-images/fresh-casts-colour-palette.png" alt="Fresh Casts Colour Palette"/>
 </p>
 
 
@@ -140,17 +185,18 @@ PPP.
 
 **Roboto Flex and Roboto Condensed**
 
-Roboto Flex upgrades Roboto so it becomes a more powerful typeface system. With Flex, you can customize Roboto to express and finesse your text in ways never before possible. Today, people are constantly switching between devices, resizing browsers, and spreading our viewports across multiple screens. So Google commissioned Font Bureau to re-imagine Roboto to “flex” along with us, with a special emphasis on large-screen capabilities. This was achieved by amplifying the original design to an extreme range of weights, grades, widths and optical sizes.
+Today, people are constantly switching between devices, resizing browsers, and spreading our viewports across multiple screens. So Google commissioned Font Bureau to re-imagine Roboto to “flex”. This was achieved by amplifying the original design to an extreme range of weights, grades, widths and optical sizes.
 
-The needs of end-user readers were prioritized and aligned during development. To make Roboto Flex production-ready for all print and digital media, Font Bureau expanded the glyph set with careful planning and development, in partnership with script experts for Cyrillic and Greek. Rigorous testing of each glyph across every axis required new type design tools to be developed, like typetools and videoproof, which can be used to explore the depth of the design.
+I've selected this popular font family for its clean lines and legibility, being widely used on news and information based websites. It also offers a condensed style which can be used for larger text headers to offer some contrast to body text, without having to use a multiple font families.
 
 
-<p>
-    <img src="readme-images/roboto-flex-font.png" alt="Fresh Casts Font"/>
+<p align="center">
+    <img src="readme-images/fresh-casts-roboto-flex-font.png" alt="Fresh Casts Font"/>
 </p
 
 
 ***
+
 
 ## Features
 
@@ -158,7 +204,7 @@ The needs of end-user readers were prioritized and aligned during development. T
 
 * PPP
 <p align="center">
-    <img src="" alt="Image of welcome screen"/>
+    <img src="" alt=""/>
 </p
 
 
