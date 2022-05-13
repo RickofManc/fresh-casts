@@ -71,13 +71,12 @@ Following a Design Thinking process, I've identified four key personas to empath
 This phase led to User Stories being drafted complete with Acceptance Criteria and initial Tasks for the development phase. User Stories have been added to GitHub [here](https://github.com/users/RickofManc/projects/4) and are being tracked through to completion.
 
 
-#### Primary strategic aims for the website
-PPP
+#### Strategic Opportunities
 
-The roadmap below highlights the high-level strategic opportunities versus the importance and viability/feasibility of development for the MVP (Minimal Viable Product):
+The chart below highlights the features roadmap assessed by importance versus viability/feasibility of development for the MVP (Minimal Viable Product). This analysis will ensure the features that will provide immediate user benefit will be development first.
 
 <p align="center">
-  <img src="" alt="Strategic Opportunities Roadmap"/>
+  <img src="readme-images/fresh-casts-features-roadmap.png" alt="Strategic Opportunities Roadmap"/>
 </p>
 
 
