@@ -64,7 +64,7 @@ Following a Design Thinking process, I've identified four key personas to empath
 
 
 <details><summary><b>User Personas</b></summary>
-  <img src="readme-images/user-personas.png" alt="User Personas; Listener, Commenter, Blogger, Podcaster"/>
+  <img src="readme-images/fresh-casts-user-personas.png" alt="User Personas; Listener, Commenter, Blogger, Podcaster"/>
 </details><br />
 
 
@@ -79,6 +79,8 @@ The roadmap below highlights the high-level strategic opportunities versus the i
 <p align="center">
   <img src="" alt="Strategic Opportunities Roadmap"/>
 </p>
+
+
 
 
 ### Scope
@@ -108,10 +110,10 @@ An agile approach of keeping the in scope features simple and aligned to the str
 * Preferred app - allowing Fresh Casters to listen to a podcast in favourite listening app.
 
 
-
 #### Beyond MVP Release Features
 * Single Sign On (SSO) - Use social apps such as Google, Facebook and Twitter to sign-in.
 * Connecting Fresh Casters - Provide chat service to allow the community to interact directly.
+
 
 
 
@@ -129,7 +131,13 @@ This website will be structured with the following design considerations.
 * All pages will be available to users consistently through either the Main Menu or Footer - this should ensure users are never two clicks away from where they would like to be.
 
 
-The final structure for the MVP may differ slightly as development progresses, and from user feedback and testing.
+[Lucid Spark](https://lucidspark.com/) has been used to illustrate the Hub and Spoke structure for Fresh Casts website. Pages and features will be available from a single click from the Hub. The final structure for the MVP may differ slightly as development progresses, and from user feedback and testing.
+
+<p align="center">
+    <img src="readme-images/fresh-casts-site-structure.png" alt="Fresh Casts Site Structure"/>
+</p>
+
+
 
 
 
@@ -140,18 +148,6 @@ Key to the UX attributes is the speed and ease for which users can learn about n
 The 'Hub and Spoke' structure should provide users with content from their initial landing, and allowing their intrigue to click on a post and find out more, or refine the content by choosing one of six categories located conveniently on the Navbar (when in the desktop and tablet view).
 
 Aesthetically pages will be clean to promote the information, and allow users to flow between differing categories and expanding posts to learn more and add a Like. Convention from popular information based sites will be adopted so users feel at home and therefore capture their engagement within the first few seconds.
-
-
-
-#### Flowchart
-
-A flowchart outlining the customer journey has been created using [Lucidchart](https://www.lucidchart.com/pages/).
-The final application may differ slightly as development progresses and from user feedback.
-
-
-<p align="center">
-    <img src="" alt="Fresh Casts Flowchart"/>
-</p>
 
 
 #### Wireframes
@@ -166,12 +162,14 @@ The website is responsive through differing screen widths being designed for mob
 </p>
 
 
+
+
 ### Surface 
 
-PPP.
+In consideration that accessibility is a key design criteria, the developed visual language offers contrast using a simple colour palette, readable font and clear layout. Throughout the website this language has been applied consistently to promote intuitive behaviour with the most important links and information easily recognised.
 
 
-#### Colour Palette
+#### Colour
 
 This palette has been carefully selected to bring high contrasting colours to improve accessibility to visually impaired users. As the primary aim of the site is to inform, Black text on a White background will be adopted throughout. The Teal based accents will be used to highlight buttons, points of reference or navigation and other key pieces of user information.
 
@@ -181,7 +179,7 @@ This palette has been carefully selected to bring high contrasting colours to im
 </p>
 
 
-#### Font Family
+#### Fonts
 
 **Roboto Flex and Roboto Condensed**
 
@@ -193,6 +191,7 @@ I've selected this popular font family for its clean lines and legibility, being
 <p align="center">
     <img src="readme-images/fresh-casts-roboto-flex-font.png" alt="Fresh Casts Font"/>
 </p
+
 
 
 ***
@@ -224,7 +223,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 ***
 
 
-## Data-Model 
+## Data Model 
 
 PPP
 
@@ -430,7 +429,7 @@ Support with how to develop ideas into code also came from various online resour
 ### Software & Web Applications
 
 * [Balsamiq](https://balsamiq.com/) - Used to build wireframes in the Skelton phase.
-* [LucidChart](https://www.lucidchart.com/pages/) - To map out the flow of data.
+* [Lucid Spark](https://lucidspark.com/) - To map out the site structure.
 * PPP - Heroku, Django, Bootstrap, PPP This website was coded primarily using Python3, HTML5, CCS3 with [GitPod](https://gitpod.io/) used for the IDE and [GitHub](https://github.com/) as a hosting repository.
 * [W3schools](https://www.w3schools.com/) - Source of 'How to...' information throughout the build.
 * [Stack Overflow](https://stackoverflow.com/) - Source of 'How to...' information on Python code.
