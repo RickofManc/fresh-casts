@@ -23,14 +23,14 @@ Through clear and intuitive design, Fresh Casts goal is ensure the pleasure of l
 ## Index - Table of Contents
 
 * [User Experience R&D](#user-experience-research-and-design)
-    * [Strategy](#Strategy)
+    * [Strategy](#strategy)
     * [Scope](#Scope)
-    * [Structure](Structure)
+    * [Structure](#Structure)
     * [Skeleton](#Skeleton)
     * [Surface](#Surface)
+* [Data Model](#Data-Model) 
 * [Features](#Features)
-* [Data Model](#Data-Model)
-* [Manual Testing](#Manual-Testing)
+* [Testing](#Testing)
 * [Deployment](#Deployment)
 * [Credits](#Credit)
 
@@ -195,89 +195,99 @@ I've selected this popular font family for its clean lines and legibility, being
 
 ***
 
+## Data Model
 
-## Features
+As part of the project planning phase a high-level design of the site [structure](#Structure) has been designed to understand the main entities, and the relationship between these entities set within a Hub and Spoke design.
+This led to understanding the next level down through mapping out the tables, columns and attributes required for the database. The initial draft in Excel has been mapped into a data schema below using [draw io](https://www.draw.io/index.html) to help understand how the entities and data will relate across the site.
+In consideration of the a requirement for the data to be searchable, and in time understand patterns and trends in user behaviour, an Object-Relational Database has been selected. I've opted for a PostgreSQL DBMS (Database Management System) as it can support the aforementioned requirements, PostgreSQL can also support multiple programming languages, including Python and JavaScript which will both be used to build the Fresh Casts application. This will also compliment the Model View Controller (MVC) where a combination of HTML, CSS, JavaScript and Flask will model and provide the view, with Django app and Python code providing the controlling of user responses and sending data.
 
-### Current Features
 
-* PPP
 <p align="center">
-    <img src="" alt=""/>
-</p
+    <img src="readme-images/fresh-casts-data-schema-reduced.png" alt="Data schema for Fresh Casts"/>
+</p>
 
 
 
+### Data Security
 
-
-### Future Features
-
-PPP
-
+explaining the security features considered
 
 ### Meta data
 
 Meta data is included within the HTML head element to increase the traffic to the website. Furthermore, the site page is titled appropriately as another method of informing users of their location.
 
 
-***
-
-
-## Data Model 
-
-PPP
 
 ***
 
 
-## Automatic Testing 
-  
-  
-## Manual Testing 
+## Features
 
-PPP
-  
 
-### Code 
+### Current Features
+
+
+<p align="center">
+    <img src="" alt=""/>
+</p
+
+
+### Future Features
+
+
+
+***
+
+
+## Testing 
+
+### Automatic Testing
+
+### Manual Testing 
+
+
+### **Code** 
 
 The code on each file has been assessed using the appropriate validation service; W3C Markup for HTML, W3C for CSS, and PEP8 Online for Python & Django.
 
 Below are the summarised results from these tests:
 
-PPP
 
 
-### Browser
 
-PPP
-
-
-### Device
-
-PPP
+### **Browser**
 
 
-### Accessibility 
-
-PPP
 
 
-### Performance 
-
-PPP
+### **Device**
 
 
-### User Stories
+
+
+### **Accessibility**
+
+
+
+
+### **Performance** 
+
+
+
+
+### **User Stories**
 
 The leading user stories have been tested to ensure the priority aims of the website have been delivered. 
 Below is a summary of the story's validation.
                                                                    
 
 
-### Bugs
-
-PPP
+### **Bugs**
 
 
+
+
+***
 
 ## Deployment
 
