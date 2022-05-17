@@ -198,8 +198,10 @@ I've selected this popular font family for its clean lines and legibility, being
 ## Data Model
 
 As part of the project planning phase a high-level design of the site [structure](#Structure) has been designed to understand the main entities, and the relationship between these entities set within a Hub and Spoke design.
-This led to understanding the next level down through mapping out the tables, columns and attributes required for the database. The initial draft in Excel has been mapped into a data schema below using [draw io](https://www.draw.io/index.html) to help understand how the entities and data will relate across the site.
-In consideration of the a requirement for the data to be searchable, and in time understand patterns and trends in user behaviour, an Object-Relational Database has been selected. I've opted for a PostgreSQL DBMS (Database Management System) as it can support the aforementioned requirements, PostgreSQL can also support multiple programming languages, including Python and JavaScript which will both be used to build the Fresh Casts application. This will also compliment the Model View Controller (MVC) where a combination of HTML, CSS, JavaScript and Flask will model and provide the view, with Django app and Python code providing the controlling of user responses and sending data.
+This led to understanding the next level down through mapping out the tables, columns and attributes required for the database. The initial draft in Excel has been mapped into a data schema below using [draw.io](https://www.draw.io/index.html) to help understand how the entities and data will relate across the site.
+
+
+In consideration of the a requirement for the data to be searchable, and in time understand patterns and trends in user behaviour, an Object-Relational Database has been selected. I've opted for a PostgreSQL DBMS (Database Management System) as it can support the aforementioned requirements, PostgreSQL can also support multiple programming languages and libraries that which will be used to build the Fresh Casts application. This will also compliment the Model View Controller (MVC) where a combination of HTML, CSS, Bootstrap and JavaScript will model and provide an interactive view, with Django (v3.8) and Python providing the controlling of user responses and sending data.
 
 
 <p align="center">
@@ -211,6 +213,8 @@ In consideration of the a requirement for the data to be searchable, and in time
 ### Data Security
 
 explaining the security features considered
+gitignore file
+secret key use for config variables
 
 ### Meta data
 
@@ -427,8 +431,11 @@ Support with how to develop ideas into code also came from various online resour
 * PPP
 
 
-### Python Library Dependencies and Packages
+### Library Dependencies, Frameworks and Modules
 
+* [Django & Gunicorn] Django 3.2 which is the LTS (Long Term Support) version of Django and is therefore preferable to use over the newest beta Django 4.
+* [Cloudinary]
+* Heroku
 * [Google Sheet]PPP
 * [Rich Console](https://rich.readthedocs.io/en/stable/console.html) to style terminal text, and as formatted traceback for development.
 * [Pandas](https://pandas.pydata.org/) to receive data from the external Google Sheet into a DataFrame.
@@ -438,7 +445,8 @@ Support with how to develop ideas into code also came from various online resour
 ### Software & Web Applications
 
 * [Balsamiq](https://balsamiq.com/) - Used to build wireframes in the Skelton phase.
-* [Lucid Spark](https://lucidspark.com/) - To map out the site structure.
+* [Lucid Spark](https://lucidspark.com/) - Used for the high-level site structure.
+* [draw.io](https://www.draw.io/index.html) - Used to build the data schema.
 * PPP - Heroku, Django, Bootstrap, PPP This website was coded primarily using Python3, HTML5, CCS3 with [GitPod](https://gitpod.io/) used for the IDE and [GitHub](https://github.com/) as a hosting repository.
 * [W3schools](https://www.w3schools.com/) - Source of 'How to...' information throughout the build.
 * [Stack Overflow](https://stackoverflow.com/) - Source of 'How to...' information on Python code.
