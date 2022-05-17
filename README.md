@@ -205,7 +205,7 @@ In consideration of the a requirement for the data to be searchable, and in time
 
 
 <p align="center">
-    <img src="readme-images/fresh-casts-data-schema-reduced.png" alt="Data schema for Fresh Casts"/>
+    <img src="readme-images/fresh-casts-data-schema.png" alt="Data schema for Fresh Casts"/>
 </p>
 
 
@@ -216,6 +216,8 @@ explaining the security features considered
 gitignore file
 secret key use for config variables
 
+
+
 ### Meta data
 
 Meta data is included within the HTML head element to increase the traffic to the website. Furthermore, the site page is titled appropriately as another method of informing users of their location.
@@ -223,6 +225,54 @@ Meta data is included within the HTML head element to increase the traffic to th
 
 
 ***
+
+
+
+## Technologies
+
+
+
+### Languages
+
+* HTML5
+* CSS3
+* JavaScript
+* Jquery
+* Python
+
+
+
+### Frameworks & Libraries
+
+* [Django & Gunicorn] Django 3.2 which is the LTS (Long Term Support) version of Django and is therefore preferable to use over the newest beta Django 4.
+* [Cloudinary]
+* Heroku
+* [Google Sheet]PPP
+* [Rich Console](https://rich.readthedocs.io/en/stable/console.html) to style terminal text, and as formatted traceback for development.
+* [Pandas](https://pandas.pydata.org/) to receive data from the external Google Sheet into a DataFrame.
+* [Datetime](https://docs.python.org/3/library/datetime.html) to add the date and time to the order before sending to the kitchen.
+
+
+
+### Software & Web Applications
+
+* [Balsamiq](https://balsamiq.com/) - Used to build wireframes in the Skelton phase.
+* [Lucid Spark](https://lucidspark.com/) - Used for the high-level site structure.
+* [draw.io](https://www.draw.io/index.html) - Used to build the data schema.
+* PPP - Heroku, Django, Bootstrap, PPP This website was coded primarily using Python3, HTML5, CCS3 with [GitPod](https://gitpod.io/) used for the IDE and [GitHub](https://github.com/) as a hosting repository.
+* [W3schools](https://www.w3schools.com/) - Source of 'How to...' information throughout the build.
+* [Stack Overflow](https://stackoverflow.com/) - Source of 'How to...' information on Python code.
+* [Python Tutor](https://pythontutor.com/) - For testing sections of code.
+* [Wave](https://wave.webaim.org/) - Accessibility Testing to ensure content is readable for all users.
+* [HTML Validator](https://validator.w3.org/) - For validating HMTL code.
+* [W3 CSS Validator](https://jigsaw.w3.org/css-validator/validator) - For validating CSS code.
+* [PEP8 Validator](http://pep8online.com/)  - For validating Python code.
+* [Code Beautify](https://codebeautify.org/) - For validating the layout of code.
+* [IE NetREnderer](https://netrenderer.com/index.php) - For browser testing on Microsoft IE versions 7-10.
+* [LambdaTest](https://www.lambdatest.com/) - For cross browser testing including, macOS Safari and Opera.
+
+***
+
 
 
 ## Features
@@ -245,13 +295,14 @@ Meta data is included within the HTML head element to increase the traffic to th
 
 ## Testing 
 
+
 ### Automatic Testing
+
 
 ### Manual Testing 
 
 
 ### **Code** 
-
 The code on each file has been assessed using the appropriate validation service; W3C Markup for HTML, W3C for CSS, and PEP8 Online for Python & Django.
 
 Below are the summarised results from these tests:
@@ -280,7 +331,6 @@ Below are the summarised results from these tests:
 
 
 ### **User Stories**
-
 The leading user stories have been tested to ensure the priority aims of the website have been delivered. 
 Below is a summary of the story's validation.
                                                                    
@@ -292,6 +342,7 @@ Below is a summary of the story's validation.
 
 
 ***
+
 
 ## Deployment
 
@@ -422,39 +473,18 @@ Enable API within IDE
 
 ## Credit
 
-### People
 
-* Mentor Brian Macharia for guiding and advising throughout the projects lifecycle on how to improve UX and my code.
+### Acknowledgements
+
+* Mentor Brian Macharia for continuing to guide and feedback throughout the projects lifecycle, especially on how to improve UX and my code.
+
+
+### Code
 
 Support with how to develop ideas into code also came from various online resources:
 
-* PPP
+* In general the coding and testing has relied on the Code Institutes walkthrough projects "Hello Django" and "I Think Therefore I Blog" as part of their Full Stack Frameworks module.
 
 
-### Library Dependencies, Frameworks and Modules
-
-* [Django & Gunicorn] Django 3.2 which is the LTS (Long Term Support) version of Django and is therefore preferable to use over the newest beta Django 4.
-* [Cloudinary]
-* Heroku
-* [Google Sheet]PPP
-* [Rich Console](https://rich.readthedocs.io/en/stable/console.html) to style terminal text, and as formatted traceback for development.
-* [Pandas](https://pandas.pydata.org/) to receive data from the external Google Sheet into a DataFrame.
-* [Datetime](https://docs.python.org/3/library/datetime.html) to add the date and time to the order before sending to the kitchen.
 
 
-### Software & Web Applications
-
-* [Balsamiq](https://balsamiq.com/) - Used to build wireframes in the Skelton phase.
-* [Lucid Spark](https://lucidspark.com/) - Used for the high-level site structure.
-* [draw.io](https://www.draw.io/index.html) - Used to build the data schema.
-* PPP - Heroku, Django, Bootstrap, PPP This website was coded primarily using Python3, HTML5, CCS3 with [GitPod](https://gitpod.io/) used for the IDE and [GitHub](https://github.com/) as a hosting repository.
-* [W3schools](https://www.w3schools.com/) - Source of 'How to...' information throughout the build.
-* [Stack Overflow](https://stackoverflow.com/) - Source of 'How to...' information on Python code.
-* [Python Tutor](https://pythontutor.com/) - For testing sections of code.
-* [Wave](https://wave.webaim.org/) - Accessibility Testing to ensure content is readable for all users.
-* [HTML Validator](https://validator.w3.org/) - For validating HMTL code.
-* [W3 CSS Validator](https://jigsaw.w3.org/css-validator/validator) - For validating CSS code.
-* [PEP8 Validator](http://pep8online.com/)  - For validating Python code.
-* [Code Beautify](https://codebeautify.org/) - For validating the layout of code.
-* [IE NetREnderer](https://netrenderer.com/index.php) - For browser testing on Microsoft IE versions 7-10.
-* [LambdaTest](https://www.lambdatest.com/) - For cross browser testing including, macOS Safari and Opera.
