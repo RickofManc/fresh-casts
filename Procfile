@@ -1,1 +1,1 @@
-web: gunicorn fresh-casts.wsgi
+web: gunicorn fresh_casts.wsgi
