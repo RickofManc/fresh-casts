@@ -1,1 +1,1 @@
-web: gunircorn fresh-casts.wsgi
+web: gunicorn fresh-casts.wsgi
