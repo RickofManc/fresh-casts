@@ -201,7 +201,7 @@ As part of the project planning phase a high-level design of the site [structure
 This led to understanding the next level down through mapping out the tables, columns and attributes required for the database. The initial draft in Excel has been mapped into a data schema below using [draw.io](https://www.draw.io/index.html) to help understand how the entities and data will relate across the site.
 
 
-In consideration of the a requirement for the data to be searchable, and in time understand patterns and trends in user behaviour, an Object-Relational Database has been selected. I've opted for a PostgreSQL DBMS (Database Management System) as it can support the aforementioned requirements, PostgreSQL can also support multiple programming languages and libraries that which will be used to build the Fresh Casts application. This will also compliment the Model View Controller (MVC) where a combination of HTML, CSS, Bootstrap and JavaScript will model and provide an interactive view, with Django (v3.8) and Python providing the controlling of user responses and sending data.
+In consideration of the a requirement for the data to be searchable, and in time understand patterns and trends in user behaviour, an Object-Relational Database using MVT architecture has been selected. I've opted for a PostgreSQL DBMS (Database Management System) as it can support the aforementioned requirements, PostgreSQL can also support multiple programming languages and libraries that which will be used to build the Fresh Casts application. 
 
 
 <p align="center">
@@ -484,6 +484,7 @@ Enable API within IDE
 Support with how to develop ideas into code also came from various online resources:
 
 * In general the coding and testing has relied on the Code Institutes walkthrough projects "Hello Django" and "I Think Therefore I Blog" as part of their Full Stack Frameworks module.
+* https://www.geeksforgeeks.org/urlfield-django-models/ - using URL Field
 
 
 
