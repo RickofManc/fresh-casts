@@ -16,7 +16,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
-    excerpt = models.TextField(blank=True)
+    excerpt = models.TextField(max_length=180)
     podcast_url = models.URLField(max_length=200, help_text="Please add the podcasts web address")
     featured_image = CloudinaryField('image', default='placeholder')
     status = models.IntegerField(choices=STATUS, default=0)
@@ -33,7 +33,7 @@ class Post(models.Model):
 
     
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='blog_comments')
     username = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.TextField(help_text="Add your comment here")
     created_on = models.DateTimeField(auto_now_add=True)
