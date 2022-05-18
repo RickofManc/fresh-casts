@@ -184,7 +184,7 @@ This palette has been carefully selected to bring high contrasting colours to im
 
 Today, people are constantly switching between devices, resizing browsers, and spreading our viewports across multiple screens. So Google commissioned Font Bureau to re-imagine Roboto to “flex”. This was achieved by amplifying the original design to an extreme range of weights, grades, widths and optical sizes.
 
-I've selected this popular font family for its clean lines and legibility, being widely used on news and information based websites. It also offers a condensed style which can be used for larger text headers to offer some contrast to body text, without having to use a multiple font families.
+I've selected this popular [font family](https://fonts.google.com/share?selection.family=Roboto%20Condensed:ital,wght@0,400;0,700;1,400;1,700%7CRoboto%20Flex:opsz,wght@8..144,100;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700) for its clean lines and legibility, being widely used on news and information based websites. It also offers a condensed style which can be used for larger text headers to offer some contrast to body text, without having to use a multiple font families.
 
 
 <p align="center">
