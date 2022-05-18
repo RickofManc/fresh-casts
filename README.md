@@ -247,6 +247,8 @@ Meta data is included within the HTML head element to increase the traffic to th
 * [Django & Gunicorn] Django 3.2 which is the LTS (Long Term Support) version of Django and is therefore preferable to use over the newest beta Django 4.
 * [Cloudinary]
 * Heroku
+* Summernote
+* Check Requirements.txt file
 * [Google Sheet]PPP
 * [Rich Console](https://rich.readthedocs.io/en/stable/console.html) to style terminal text, and as formatted traceback for development.
 * [Pandas](https://pandas.pydata.org/) to receive data from the external Google Sheet into a DataFrame.

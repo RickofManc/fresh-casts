@@ -5,7 +5,7 @@ from cloudinary.models import CloudinaryField
 
 # Global Variables
 STATUS = ((0, "Draft"), (1, "Published"))
-PODCAST_CATEGORY = ((0, "Latest"), (1, "News"), (2, "Life"), (3, "Music"), (4, "Music"), (5, "Sport"), (6, "Technology"))
+PODCAST_CATEGORY = ((0, "Latest"), (1, "News"), (2, "Life"), (3, "Music"), (4, "Sport"), (5, "Technology"))
 
 
 class Post(models.Model):
@@ -34,7 +34,7 @@ class Post(models.Model):
     
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
-    username = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_comments")
+    username = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.TextField(help_text="Add your comment here")
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
