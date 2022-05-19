@@ -1,5 +1,8 @@
-from . import views
+"""
+URL mapping file
+"""
 from django.urls import path
+from . import views
 
 
 urlpatterns = [
