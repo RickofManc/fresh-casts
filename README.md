@@ -178,6 +178,15 @@ This palette has been carefully selected to bring high contrasting colours to im
 </p>
 
 
+
+#### Logo
+
+Add image
+
+*[Photopea](https://www.photopea.com/)
+*[Adobe Stock](https://stock.adobe.com/uk/contributor/208909039/2arm?load_type=author&prev_url=detail&asset_id=430392467) Used under paid licence with Adobe Stock, Illustration Vector graphic of microphone logo, fit for broadcast, podcast, radio etc. By **2arm**
+
+
 #### Fonts
 
 **Roboto Flex and Roboto Condensed**
