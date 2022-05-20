@@ -6,8 +6,10 @@ body, html {
     padding: 0;
     width: 100%;
     font-family: 'Roboto Flex','Roboto Condensed', sans-serif;
+    color: #100303;
 }
 
+/* Standard properties across all media queries  */
 div {
     box-sizing: border-box;
     margin: 0;
@@ -22,6 +24,11 @@ footer {
 
 
 
+
+
+
+
+
 /* Bootstrap standard media queries ranges and breakpoints */
 
 /* Small devices (smartphones, up to 767px) */
@@ -30,6 +37,8 @@ footer {
     header {
         background-color: #100303;
         color: #fff;
+        position: sticky;
+        top: 0;
     }
     nav {
         visibility: hidden;
@@ -50,20 +59,18 @@ footer {
 @media (min-width: 992px) {
 
     header {
+        min-height: 40px;
         background-color: #fff;
         color: #100303;
     }
 
-    nav {
+    .desktop-navbar {
         background-color: #100303;
-    }
-
-    .navbar {
-        height: 40px;
+        min-height: 40px;
         padding: 1.5rem 1rem;
     }
 
-    .navbar-nav {
+    .desktop-navbar-menu {
         width: 782px;
         align-items: center;
         display: flex;
@@ -73,7 +80,7 @@ footer {
         transform: translateX(-50%);
     }
 
-    a.nav-item {
+    .desktop-navbar-menu-item {
         color: #fff;
         font-family: 'Roboto Condensed';
         font-weight: 700;
