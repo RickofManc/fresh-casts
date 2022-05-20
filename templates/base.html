@@ -37,24 +37,37 @@
 
     <body>
         <header>
-            <div class="menu-button"></div>
-            <div class="main-header"></div>
-            <div class="login-button"></div>
-            <div class="join-in-button"></div>
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <div class="dropdown">
+                        <button class="navbar-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle main menu">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        </div>
+                        <div class="dropdown-menu">
+                            <h6 class="dropdown-header">Dropdown Header</h6>
+                            <a href="#" class="dropdown-item">Menu item</a>
+                        </div>
+                    </div>
+                    <div class="col-6">Logo</div>
+                    <div class="col">
+                        <div class="col-sm">Login</div>
+                        <div class="col-sm">Join In</div>
+                    </div>                    
+                </div>
+            </div>
         </header>
-
-        <div class="navbar">
-            <nav aria-label="Homepage Content Navigation">
-                <ul>
-                    <li>Latest</li>
-                    <li>News</li>
-                    <li>Life</li>
-                    <li>Music</li>
-                    <li>Sport</li>
-                    <li>Technology</li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Filter content navigation by category">
+            <div class="navbar-nav nav-fill justify-content-center align-items-center">
+                <a href="" class="nav-item nav-link active" href="#">Latest <span class="sr-only">(current)</span></a>
+                <a href="" class="nav-item nav-link" href="#">Life</a>
+                <a href="" class="nav-item nav-link" href="#">News</a>
+                <a href="" class="nav-item nav-link" href="#">Music</a>
+                <a href="" class="nav-item nav-link" href="#">Sport</a>
+                <a href="" class="nav-item nav-link" href="#">Tech</a>
+            </div>
+        </nav>
 
         <main>
             {% block content %}
