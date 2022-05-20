@@ -1,22 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,100;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700&display=swap');
 
-body {
+body, html {
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    width: 100%;
     font-family: 'Roboto Flex','Roboto Condensed', sans-serif;
 }
 
+div {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-/* Bootstrap standard media queries ranges and breakpoints
-Extra small devices (portrait phones, less than 576px)
-No media query for `xs` since this is the default in Bootstrap */
+footer {
+    background-color: #100303;
+    color: #fff;
+}
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {}
+
+
+
+/* Bootstrap standard media queries ranges and breakpoints */
+
+/* Small devices (smartphones, up to 767px) */
+@media (max-width: 767px) {
+
+    header {
+        background-color: #100303;
+        color: #fff;
+    }
+    nav {
+        visibility: hidden;
+    }
+}
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+
+    header {
+        background-color: #100303;
+        color: #fff; 
+    }
+ 
+}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+
+    header {
+        background-color: #fff;
+        color: #100303;
+    }
+
+    nav {
+        background-color: #100303;
+    }
+
+    .navbar {
+        height: 40px;
+        padding: 1.5rem 1rem;
+    }
+
+    .navbar-nav {
+        width: 782px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    a.nav-item {
+        color: #fff;
+        font-family: 'Roboto Condensed';
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: .80px;
+    }
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+
+}
