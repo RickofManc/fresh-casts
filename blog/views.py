@@ -69,7 +69,7 @@ class PostDetail(View):
         )
 
 
-class PostLike(view):
+class PostLike(View):
 
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
@@ -80,4 +80,4 @@ class PostLike(view):
             post.likes.add(request.user)
         
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-        
+

@@ -6,12 +6,13 @@ body, html {
     padding: 0;
     width: 100%;
     font-family: 'Roboto Flex','Roboto Condensed', sans-serif;
+    font: 1rem;
+    font-weight: 400;
     color: #100303;
 }
 
 /* Standard properties across all media queries  */
 div {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -22,72 +23,24 @@ footer {
 }
 
 
-
-
-
-
-
-
-
 /* Bootstrap standard media queries ranges and breakpoints */
 
 /* Small devices (smartphones, up to 767px) */
 @media (max-width: 767px) {
 
-    header {
-        background-color: #100303;
-        color: #fff;
-        position: sticky;
-        top: 0;
-    }
-    nav {
-        visibility: hidden;
-    }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 
-    header {
-        background-color: #100303;
-        color: #fff; 
-    }
- 
+    
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
-    header {
-        min-height: 40px;
-        background-color: #fff;
-        color: #100303;
-    }
 
-    .desktop-navbar {
-        background-color: #100303;
-        min-height: 40px;
-        padding: 1.5rem 1rem;
-    }
 
-    .desktop-navbar-menu {
-        width: 782px;
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .desktop-navbar-menu-item {
-        color: #fff;
-        font-family: 'Roboto Condensed';
-        font-weight: 700;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: .80px;
-    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */

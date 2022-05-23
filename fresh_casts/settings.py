@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
-
 import dj_database_url
+from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
     import env
 
@@ -31,6 +31,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Cross-Origin Resource Sharing to support third party resources to load
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+# Permitting the site to be hosted from Heroku
 ALLOWED_HOSTS = ['fresh-casts.herokuapp.com', 'localhost']
 
 
@@ -55,12 +59,23 @@ INSTALLED_APPS = [
     'blog',
 ]
 
+# Setting the default site for the project
 SITE_ID = 1
 
+# Redirect users after login/logout to the homepage
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+# Standard Bootstraps message tags to change colour accordingly
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
 
+# Crispy used to format post comments
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
