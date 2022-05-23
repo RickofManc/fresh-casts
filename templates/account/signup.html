@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans 'Signup %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <h3>{% trans 'Sign Up' %}</h3>
+            <p>{% blocktrans %}Welcome back to Fresh Casts. Do you already have an account? Then please <a
+                    href="{{ login_url }}" class="link">Sign In</a> instead.{% endblocktrans %}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <form action="{% url 'account_signup' %}" method="post" class="signup">
+                {% csrf_token %}
+                {{ form.as_p }}
+                {% if redirect_field)value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_name }}" />
+                {% endif %}
+                <button class="btn btn-signup right" type="submit">{% trans 'Sign Up' %}</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
