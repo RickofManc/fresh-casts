@@ -2,7 +2,7 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans 'Signup %}{% endblock %}
+{% block head_title %}{% trans 'Signup' %}{% endblock %}
 
 {% block content %}
 
@@ -19,7 +19,7 @@
             <form action="{% url 'account_signup' %}" method="post" class="signup">
                 {% csrf_token %}
                 {{ form.as_p }}
-                {% if redirect_field)value %}
+                {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_name }}" />
                 {% endif %}
                 <button class="btn btn-signup right" type="submit">{% trans 'Sign Up' %}</button>

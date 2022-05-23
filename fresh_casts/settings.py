@@ -103,6 +103,10 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
+# email verification turned off to remove errors for optional email sign-up
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
