@@ -17,6 +17,14 @@ div {
     padding: 0;
 }
 
+.post-link {
+    color: #100303;
+}
+
+.card.text {
+    color: #100303;
+}
+
 footer {
     background-color: #100303;
     color: #fff;
@@ -37,9 +45,10 @@ footer {
     padding-left: 0;
 }
 
-.footer-link {
+a.footer-link {
     text-transform: uppercase;
     text-decoration: none;
+    color: #fff;
 }
 
 .footer-copyright {
@@ -58,6 +67,18 @@ footer {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    
+    .footer-col-1 {
+        padding-left: 18rem;
+    }
+
+    .footer-col-2 {
+        padding-left: 7rem;
+    }
+
+    .footer-col-3 {
+        padding-right: 15rem;
+    }
 
     
 }

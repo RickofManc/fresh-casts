@@ -91,36 +91,43 @@
     <footer class="w-100">
         <div class="container footer-div">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-4 footer-col-1">
                     <h5 class="footer-header">explore</h5>
                     <ul class="footer-list">
-                        <li class="footer-item">
-                            <a href="{% url 'home' %}" class="footer-link" aria-current="page">latest</a></li>
-                        <li class="footer-link">life</li>
-                        <li class="footer-link">music</li>
-                        <li class="footer-link">news</li>
-                        <li class="footer-link">sport</li>
-                        <li class="footer-link">tech</li>
+                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link" aria-current="page">latest</a></li>
+                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">life</a></li>
+                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">music</a></li>
+                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">news</a></li>
+                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">sport</a></li>
+                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">technology</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 footer-col-2">
                     <h5 class="footer-header">useful links</h5>
                     <ul class="footer-list">
-                        <li class="footer-link">about us</li>
-                        <li class="footer-link">contact us</li>
-                        <li class="footer-link">faq</li>
-                        <li class="footer-link">accessibility statement</li>
-                        <li class="footer-link">user agreement</li>
+                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">contact us</a></li>
+                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">about us</a></li>
+                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">accessibility statement</a>
+                        </li>
                     </ul>
                 </div>
-                <div class="col-sm-4">
-                    <h5 class="footer-header">join us</h5>
+                <div class="col-sm-4 footer-col-3">
+                    <h5 class="footer-header">join in</h5>
                     <ul class="footer-list">
-                        <li class="footer-link">register</li>
-                        <li class="footer-link">view profile</li>
-                        <li class="footer-link">sign in</li>
-                        <li class="footer-link">sign out</li>
-                        <li class="footer-link">user agreement</li>
+                        {% if user.is_authenticated %}
+                        <li class="footer-item">
+                            <a href="{% url 'account_logout' %}" class="footer-link">sign out</a>
+                        </li>
+                        {% else %}
+                        <li class="footer-item">
+                            <a href="{% url 'account_signup' %}" class="footer-link">register</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="{% url 'account_login' %}" class="footer-link">sign in</a>
+                        </li>
+                        {% endif %}
+                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">view profile</a></li>
+                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">user agreement</a></li>
                     </ul>
                 </div>
             </div>
