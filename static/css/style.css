@@ -22,6 +22,32 @@ footer {
     color: #fff;
 }
 
+.footer-div {
+    padding: 2rem 1rem;
+}
+
+.footer-header {
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #00ffc6;
+}
+
+.footer-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-link {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.footer-copyright {
+    display: contents;
+    text-align: center;
+    color: #f7f7f77f;
+}
+
 
 /* Bootstrap standard media queries ranges and breakpoints */
 
