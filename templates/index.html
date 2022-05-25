@@ -2,36 +2,35 @@
 
 {% block content %}
 
+<!-- Container for homepage blog posts -->
 <div class="container fluid">
     <div class="row">
-        
-        <!-- Column for blog posts  -->
-        <div class="col-12 mt-3 left">
+        <div class="card w-100 left">
             <div class="row">
                 {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <!-- Featured image URL -->
-                            <div class="image-container">
-                                {% if "placeholder" in featured_image.url %}
-                                <img class="card-img-top" src="static/images/fresh-casts-b-and-g-logo_thumbnail.png" alt="Fresh Casts logo as a placeholder image for podcast image">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Image of the podcast show">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card.text">{{ post.excerpt }}</p>
-                            </a>
-                            <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-heart"></i>
-                            {{ post.number_of_likes }}</p>
+                <div class="card-body border-bottom">
+                    <div class="row">
+                        <!-- Featured image URL -->
+                        <div class="col-4 col-sm-2 blog-img-div">
+                            {% if "placeholder" in featured_image.url %}
+                            <img class="img-fluid" src="static/images/fresh-casts-b-and-g-logo_thumbnail.png"
+                                alt="Fresh Casts logo as a placeholder image for podcast image">
+                            {% else %}
+                            <img class="img-fluid" src=" {{ post.featured_image.url }}" alt="Image of the podcast show">
+                            {% endif %}
                         </div>
-                    </div>   
+                        <div class="col-8 col-sm-10">
+                            <div class="card-block px-2">
+                                <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                                    <h5 class="card-title">{{ post.title }}</h5>
+                                    <p class="card-text">{{ post.excerpt }}</p>
+                                    <p class="author">Shared By {{ post.author }}</p>
+                                    <p class="card-text text-muted text-left">{{ post.created_on }}
+                                        <i class="far fa-heart"></i>{{ post.number_of_likes }}</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
             </div>

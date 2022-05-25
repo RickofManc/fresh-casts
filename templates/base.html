@@ -37,10 +37,11 @@
 
 <body>
     <!-- Site Navigation -->
-    <nav class="navbar sticky-top navbar-expand-lg">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <img src="static/images/fresh-casts-b-and-g-logo_thumbnail.png" width="45" height="45" alt="Fresh Casts logo">Fresh
+                <img class="navbar-brand-image" src="static/images/fresh-casts-b-and-g-logo_thumbnail.png" width="45"
+                    height="45" alt="Fresh Casts logo">Fresh
                 Casts
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleMenu"
@@ -57,7 +58,7 @@
                         <a href="{% url 'account_logout' %}" class="nav-link">Sign Out</a>
                     </li>
                     {% else %}
-                    <li class="nav-tem">
+                    <li class="nav-item">
                         <a href="{% url 'account_signup' %}" class="nav-link">Join In</a>
                     </li>
                     <li class="nav-item">
@@ -65,6 +66,25 @@
                     </li>
                     {% endif %}
                 </ul>
+                <div class="nav-menu-additions d-lg-none d-xl-block d-xl-none">
+                    <h5 class="nav-menu-additions-header">explore</h5>
+                    <ul class="nav-menu-additions-list d-lg-none d-xl-block d-xl-none">
+                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link" aria-current="page">latest</a>
+                        </li>
+                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">life</a></li>
+                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">music</a></li>
+                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">news</a></li>
+                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">sport</a></li>
+                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">technology</a></li>
+                    </ul>
+                    <h5 class="nav-menu-additions-header">useful links</h5>
+                    <ul class="nav-menu-additions-list d-lg-none d-xl-block d-xl-none">
+                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">contact us</a></li>
+                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">about us</a></li>
+                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">accessibility statement</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -82,7 +102,7 @@
         </div>
     </div>
     <!-- Main content where independent html templates will act as the different page views -->
-    <main class="flex-shrink-0">
+    <main class="main-content">
         {% block content %}
         <!-- Content goes here -->
         {% endblock content %}
@@ -94,7 +114,8 @@
                 <div class="col-sm-4 footer-col-1">
                     <h5 class="footer-header">explore</h5>
                     <ul class="footer-list">
-                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link" aria-current="page">latest</a></li>
+                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link"
+                                aria-current="page">latest</a></li>
                         <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">life</a></li>
                         <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">music</a></li>
                         <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">news</a></li>
@@ -107,7 +128,8 @@
                     <ul class="footer-list">
                         <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">contact us</a></li>
                         <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">about us</a></li>
-                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">accessibility statement</a>
+                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">accessibility
+                                statement</a>
                         </li>
                     </ul>
                 </div>
