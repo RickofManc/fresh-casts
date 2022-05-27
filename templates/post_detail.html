@@ -4,24 +4,27 @@
 
 <div class="masthead">
     <div class="container">
-        <div class="row g-0">
-            <!-- Post title -->
-            <h1 class="post-title">{{ post.title }}</h1>
-            <!-- Post author | Post created on date -->
-            <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
-        </div>
-        <div class="d-none d-md-block col-md-6 masthead-image">
-            <!-- Featured image URL -->
-            {% if "placeholder" in post.featured_image.url %}
-            <img src="static/images/fresh-casts-b-and-g-logo.png" width="100%"
-                alt="Fresh Casts logo as a placeholder image for podcast image">
-            {% else %}
-            <img src="{{ post.featured_image.url }}" width="100%" alt="Image of the podcast show">
-            {% endif %}
+        <div class="row">
+            <div class="col post-img-div">
+                <!-- Featured image URL -->
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="static/images/fresh-casts-b-and-g-logo.png" class="img-fluid"
+                    alt="Fresh Casts logo as a placeholder image for podcast image">
+                {% else %}
+                <img src="{{ post.featured_image.url }}" class="img-fluid" alt="Image of the podcast show">
+                {% endif %}
+            </div>
+            <div class="col card-body">
+                <!-- Post title -->
+                <h1 class="card-title">{{ post.title }}</h1>
+                <!-- Post author -->
+                <p class="author">Shared By {{ post.author }}</p>
+                <!-- Post created on date -->
+                <p class="card-text">{{ post.created_on }}</p>
+            </div>
         </div>
     </div>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col card mb-4 mt-3 left top">
@@ -31,7 +34,7 @@
                     {{ post.content | safe }}
                 </p>
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col">
                         <strong>
                             {% if user.is_authenticated %}
                             <form action="{% url 'post_like' post.slug %}" method="POST" class="d-inline">
@@ -46,18 +49,21 @@
                                 </button>
                                 {% endif %}
                             </form>
+                            <br>
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
                             <span class="text-secondary"><i class="far fa-heart"></i>{{ post.number_of_likes }}</span>
                         </strong>
                     </div>
-                    <strong class="col-1">
-                        {% with comment.count as total_comments %}
-                        <div class="strong text-secondary"><i class="far fa-comments"></i>
+                    <div class="col">
+                        <strong class="text-secondary">
+                            {% with comment.count as total_comments %}
+                            <i class="far fa-comments"></i>
                             {{ total_comments }}
-                    </strong>
-                    {% endwith %}
+                        </strong>
+                        {% endwith %}
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,19 +74,19 @@
         <hr>
     </div>
 </div>
-<div class="row">
+<div class="row comments-row-div">
     <div class="col-md-8 card mb-4 mt-3">
-        <h3>Comments:</h3>
         <div class="card-body">
+            <h4 class="card-title">Comments:</h4>
             {% for comment in comments %}
-            <div class="comments" style="padding: 10px;">
+            <div class="comments-div">
                 <p class="font-weight-bold">
-                    {{ comment.name }}
-                    <span class="text-muted font-weight-normal">
-                        {{ comment.created_on }}
-                    </span> wrote:
+                    {{ comment.username }} wrote:
                 </p>
-                {{ comment.body | linebreaks }}
+                {{ comment.message | linebreaks }}
+                <span class="text-muted font-weight-normal">
+                    {{ comment.created_on }}
+                </span>
             </div>
             {% endfor %}
         </div>
@@ -93,8 +99,8 @@
             </div>
             {% else %}
             {% if user.is_authenticated %}
-            <h3>Leave a comment:</h3>
-            <p>Posting as: {{ user.username }}</p>
+            <h4 class="card-title">Leave a comment:</h4>
+            <p>Commenting as: <span class="font-weight-bold">{{ user.username }}</span></p>
             <form method="post" style="margin-top: 1.3em;">
                 {{ comment_form | crispy }}
                 {% csrf_token %}
@@ -104,7 +110,6 @@
             {% endif %}
         </div>
     </div>
-</div>
 </div>
 
 {% endblock content %}

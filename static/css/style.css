@@ -19,6 +19,14 @@ div {
     padding: 0;
 }
 
+p {
+    margin-bottom: 0.5rem;
+}
+
+form {
+    margin-top: 0rem!important;
+}
+
 /* || NAVBAR STYLES */
 
 nav {
@@ -47,19 +55,22 @@ a.nav-link:active {
     text-decoration-color: #00ffc6;
 }
 
-button {
-    color: #fff;
-}
+
+
+/* || HOMEPAGE MAIN CONTENT STYLES  */
 
 .main-content {
     margin-top: 6rem;
     margin-bottom: 6rem;
 }
 
-/* || BLOG POST STYLES  */
-
 .card {
     border: none;
+}
+
+.post-link:hover {
+    color: #79ffe2;
+    text-decoration: underline;
 }
 
 .card-title {
@@ -138,12 +149,42 @@ a.footer-link {
     color: #f7f7f77f;
 }
 
-/* || MEDIA QUERIES  */
+/* || POST DETAIL STYLES  */
+
+.post-img-div {
+    max-width: 35rem;
+}
+
+button.btn-like {
+    color: #00ffc6;
+    border: none;
+    background: transparent;
+}
+
+button.btn-like:hover,
+button.btn-like:active {
+    color: #00ffc6;
+    border: none;
+    background: transparent;
+}
+
+.comments-row-div {
+    margin: 0rem 10rem;
+}
+
+.comments-div {
+    margin: 0.5rem 0rem 1rem 0rem;
+    padding: 0rem 1rem 0rem 1rem;
+}
+
+
+
+/* |||| MEDIA QUERIES  */
 
 /* Small devices (smartphones, up to 767px) */
 @media (max-width: 767px) {
     
-    /* || BLOG POST STYLES  */
+    /* || HOMEPAGE MAIN CONTENT STYLES  */
     .main-content {
         margin-top: 2rem;
         margin-bottom: 2rem;
@@ -177,24 +218,26 @@ a.footer-link {
     .blog-img-div {
         padding-right: 5px;
     }
+
+    /* || POST DETAIL STYLES  */
+
+    .comments-row-div {
+        width: 100%;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .comments-div {
+        margin: 0.5rem 0rem 1rem 0rem;
+        padding: 0rem 1rem 0rem 1rem;
+    }
+
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    
-    /* || FOOTER STYLES  */
-    .footer-col-1 {
-        padding-left: 14rem;
-    }
-
-    .footer-col-2 {
-        padding-left: 5rem;
-    }
-
-    .footer-col-3 {
-        padding-right: 9rem;
-    }
-}
+@media (min-width: 768px) {}
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {}
