@@ -41,20 +41,37 @@ nav {
     font-size: 1.75rem;
 }
 
+.navbar-brand-image {
+    margin-right: 0.625rem;
+}
+
+.navbar-toggler {
+    display: inline-flex;
+}
+
+.nav-menu-header {
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #00ffc6;
+}
+
+.nav-menu-list {
+    padding-inline-start: 0;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;   
+}
+
 .nav-link {
     color: #fff;
     text-transform: uppercase;
-}
-
-.navbar-brand-image {
-    margin-right: 0.625rem;
 }
 
 a.nav-link:active {
     text-decoration: underline;
     text-decoration-color: #00ffc6;
 }
-
 
 
 /* || HOMEPAGE MAIN CONTENT STYLES  */
@@ -168,10 +185,6 @@ button.btn-like:active {
     background: transparent;
 }
 
-.comments-row-div {
-    margin: 0rem 10rem;
-}
-
 .comments-div {
     margin: 0.5rem 0rem 1rem 0rem;
     padding: 0rem 1rem 0rem 1rem;
@@ -215,9 +228,6 @@ input#id_login {
     background-color: #a8fbe9!important;
 }
 
-input:.internal-autofill-selected {
-    background-color: #a8fbe9!important;
-}
 
 /* |||| MEDIA QUERIES  */
 
@@ -280,13 +290,17 @@ input:.internal-autofill-selected {
 @media (min-width: 768px) {}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    
+    /* || NAVBAR STYLES */
+    
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
     /* || NAVBAR STYLES */
-    .nav-menu-additions {
-        visibility: collapse;
-    }
+    
+    
+    
 }
