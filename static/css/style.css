@@ -73,6 +73,23 @@ a.nav-link:active {
     text-decoration-color: #00ffc6;
 }
 
+.navbar-user-icon {
+    font-size: 1.75rem;
+    color: rgba(255,255,255,.5);
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;
+    border: none;
+}
+
+#navbarUserMenu .navbar-nav {
+    text-align: right;
+}
+
 
 /* || HOMEPAGE MAIN CONTENT STYLES  */
 
@@ -233,6 +250,12 @@ input#id_login {
 
 /* Small devices (smartphones, up to 767px) */
 @media (max-width: 767px) {
+
+    /* || NAVBAR STYLES  */
+    .navbar>.container-fluid {
+        padding-right: 0;
+        padding-left: 0;
+    }
     
     /* || HOMEPAGE MAIN CONTENT STYLES  */
     .main-content {
@@ -287,12 +310,25 @@ input#id_login {
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+
+    /* || NAVBAR STYLES */
+    .navbar .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+
+    }
+
+    a.navbar-brand {
+        margin-right: 0!important;
+    }
+
+}
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     
-    /* || NAVBAR STYLES */
+    
     
 }
 
