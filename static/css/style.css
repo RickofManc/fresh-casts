@@ -189,6 +189,10 @@ a.footer-link {
     max-width: 35rem;
 }
 
+.col-sm-2 {
+    width: auto;
+}
+
 button.btn-like {
     color: #00ffc6;
     border: none;
@@ -200,6 +204,11 @@ button.btn-like:active {
     color: #00ffc6;
     border: none;
     background: transparent;
+}
+
+.fa-solid, .fas,
+.fa-regular, .far {
+    margin-right: 0.5rem;
 }
 
 .comments-div {

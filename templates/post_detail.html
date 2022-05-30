@@ -17,8 +17,6 @@
             <div class="col card-body">
                 <!-- Post title -->
                 <h1 class="card-title">{{ post.title }}</h1>
-                <!-- Post title -->
-                <h3 class="card-subtitle">{{ post.category }}</h3>
                 <!-- Post author -->
                 <p class="author">Shared By {{ post.author }}</p>
                 <!-- Post created on date -->
@@ -35,32 +33,33 @@
                 <p class="card-text">
                     {{ post.content | safe }}
                 </p>
-                <div class="row">
-                    <div class="col">
-                        <strong>
+                <br>
+                <div class="row justify-content-start">
+                    
+                    <div class="col-sm-2 col-lg-1 xs-col-width">
+                        
                             {% if user.is_authenticated %}
                             <form action="{% url 'post_like' post.slug %}" method="POST" class="d-inline">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+                                <strong><button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
                                     <i class="fas fa-heart"></i>
-                                </button>
+                                </button></strong>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+                                <strong><button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
                                     <i class="far fa-heart"></i>
-                                </button>
+                                </button></strong>
                                 {% endif %}
                             </form>
-                            <br>
                             {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            <strong><span class="text-secondary"><i class="far fa-heart"></i></span></strong>
                             {% endif %}
-                            <span class="text-secondary"><i class="far fa-heart"></i>{{ post.number_of_likes }}</span>
-                        </strong>
+                            <strong><span class="text-secondary">{{ post.number_of_likes }}</span></strong>
+                        
                     </div>
-                    <div class="col">
+                    <div class="col-sm-2 col-lg-1 xs-col-width">
                         <strong class="text-secondary">
-                            {% with comment.count as total_comments %}
+                            {% with comments.count as total_comments %}
                             <i class="far fa-comments"></i>
                             {{ total_comments }}
                         </strong>

@@ -9,9 +9,18 @@ from cloudinary.models import CloudinaryField
 
 
 # Global Variables
-STATUS = ((0, "Draft"), (1, "Published"))
-PODCAST_CATEGORY = ((0, "Latest"), (1, "News"), (2, "Life"),
-                    (3, "Music"), (4, "Sport"), (5, "Technology"))
+STATUS = (
+    (0, 'Draft'),
+    (1, 'Published')
+    )
+PODCAST_CATEGORY = (
+        (0, 'Latest'),
+        (1, 'Life'),
+        (2, 'Music'),
+        (3, 'News'),
+        (4, 'Sport'),
+        (5, 'Technology')
+        )
 
 
 class Post(models.Model):
@@ -19,7 +28,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name="blog_posts")
-    category = models.IntegerField(choices=PODCAST_CATEGORY, default=0)
+    category = models.IntegerField(choices=PODCAST_CATEGORY, default=0,)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
