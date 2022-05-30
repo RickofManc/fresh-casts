@@ -35,27 +35,24 @@
                 </p>
                 <br>
                 <div class="row justify-content-start">
-                    
                     <div class="col-sm-2 col-lg-1 xs-col-width">
-                        
-                            {% if user.is_authenticated %}
-                            <form action="{% url 'post_like' post.slug %}" method="POST" class="d-inline">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <strong><button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+                        {% if user.is_authenticated %}
+                        <form action="{% url 'post_like' post.slug %}" method="POST" class="d-inline">
+                            {% csrf_token %}
+                            {% if liked %}
+                            <strong><button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
                                     <i class="fas fa-heart"></i>
                                 </button></strong>
-                                {% else %}
-                                <strong><button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+                            {% else %}
+                            <strong><button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
                                     <i class="far fa-heart"></i>
                                 </button></strong>
-                                {% endif %}
-                            </form>
-                            {% else %}
-                            <strong><span class="text-secondary"><i class="far fa-heart"></i></span></strong>
                             {% endif %}
-                            <strong><span class="text-secondary">{{ post.number_of_likes }}</span></strong>
-                        
+                        </form>
+                        {% else %}
+                        <strong><span class="text-secondary"><i class="far fa-heart"></i></span></strong>
+                        {% endif %}
+                        <strong><span class="text-secondary">{{ post.number_of_likes }}</span></strong>
                     </div>
                     <div class="col-sm-2 col-lg-1 xs-col-width">
                         <strong class="text-secondary">
@@ -76,43 +73,43 @@
     </div>
 </div>
 <div class="container">
-<div class="row comments-row-div">
-    <div class="col-md-8 card mb-4 mt-3">
-        <div class="card-body">
-            <h4 class="card-title">Comments:</h4>
-            {% for comment in comments %}
-            <div class="comments-div">
-                <p class="font-weight-bold">
-                    {{ comment.username }} wrote:
-                </p>
-                {{ comment.message | linebreaks }}
-                <span class="text-muted font-weight-normal">
-                    {{ comment.created_on }}
-                </span>
+    <div class="row comments-row-div">
+        <div class="col-md-8 card mb-4 mt-3">
+            <div class="card-body">
+                <h4 class="card-title">Comments:</h4>
+                {% for comment in comments %}
+                <div class="comments-div">
+                    <p class="font-weight-bold">
+                        {{ comment.username }} wrote:
+                    </p>
+                    {{ comment.message | linebreaks }}
+                    <span class="text-muted font-weight-normal">
+                        {{ comment.created_on }}
+                    </span>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
+        </div>
+        <div class="col-md-4 card mb-4 mt-3">
+            <div class="card-body">
+                {% if commented %}
+                <div class="alert alert-success" role="alert">
+                    Your comment is awaiting approval
+                </div>
+                {% else %}
+                {% if user.is_authenticated %}
+                <h4 class="card-title">Leave a comment:</h4>
+                <p>Commenting as: <span class="font-weight-bold">{{ user.username }}</span></p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% endif %}
+                {% endif %}
+            </div>
         </div>
     </div>
-    <div class="col-md-4 card mb-4 mt-3">
-        <div class="card-body">
-            {% if commented %}
-            <div class="alert alert-success" role="alert">
-                Your comment is awaiting approval
-            </div>
-            {% else %}
-            {% if user.is_authenticated %}
-            <h4 class="card-title">Leave a comment:</h4>
-            <p>Commenting as: <span class="font-weight-bold">{{ user.username }}</span></p>
-            <form method="post" style="margin-top: 1.3em;">
-                {{ comment_form | crispy }}
-                {% csrf_token %}
-                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-            </form>
-            {% endif %}
-            {% endif %}
-        </div>
-    </div>
-</div>
 </div>
 
 {% endblock content %}

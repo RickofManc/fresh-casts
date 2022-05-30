@@ -102,9 +102,17 @@ a.nav-link:active {
     border: none;
 }
 
+a.post-link {
+    color: #312e2e;
+}
+
 .post-link:hover {
     color: #79ffe2;
     text-decoration: underline;
+}
+
+.fa-heart:before {
+    color: #00ffc6;
 }
 
 .card-title {
@@ -252,6 +260,13 @@ a.link:hover {
 
 input#id_login {
     background-color: #a8fbe9!important;
+}
+
+ul.errorlist.nonfield {
+    text-align: center;
+    background-color: #00ffc6;
+    list-style-type: none;
+    padding-inline-start: 0;
 }
 
 
