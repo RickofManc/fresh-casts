@@ -20,7 +20,7 @@
             </div>
             <div class="col card-body">
                 <!-- Post title -->
-                <h1 class="card-title">{{ post.title }}</h1>
+                <h2 class="card-title">{{ post.title }}</h2>
                 <!-- Post author -->
                 <p class="author">Shared By {{ post.author }}</p>
                 <!-- Post created on date -->
@@ -80,7 +80,7 @@
     <div class="row comments-row-div">
         <div class="col-md-8 card mb-4 mt-3">
             <div class="card-body">
-                <h4 class="card-title">Comments:</h4>
+                <h3 class="card-title">Comments:</h3>
                 {% for comment in comments %}
                 <div class="comments-div">
                     <p class="font-weight-bold">
@@ -102,7 +102,7 @@
                 </div>
                 {% else %}
                 {% if user.is_authenticated %}
-                <h4 class="card-title">Leave a comment:</h4>
+                <h3 class="card-title">Leave a comment:</h3>
                 <p>Commenting as: <span class="font-weight-bold">{{ user.username }}</span></p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}

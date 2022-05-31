@@ -79,14 +79,19 @@ nav {
     color: #fff;   
 }
 
+.navbar-dark .navbar-nav .nav-link :hover {
+    color: #00ffc6!important;
+}
+
 .nav-link {
     color: #fff;
     text-transform: uppercase;
 }
 
-a.nav-link:active {
-    text-decoration: underline;
-    text-decoration-color: #00ffc6;
+a.nav-link:hover,
+.nav-link:hover,
+a:hover {
+    color: #00ffc6;
 }
 
 .navbar-user-icon {
@@ -217,9 +222,8 @@ a.footer-link {
     color: #fff;
 }
 
-.footer-link:active {
-    text-decoration: underline;
-    text-decoration-color: #00ffc6;
+.footer-link:hover {
+    color: #00ffc6;
 }
 
 .footer-copyright {
