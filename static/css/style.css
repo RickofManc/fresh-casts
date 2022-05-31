@@ -152,6 +152,27 @@ a.post-link {
     border-top: none;
 }
 
+.page-navigation {
+    background-color: #fff;
+    min-height: 3rem;
+    margin-top: 2rem;
+}
+
+ul.pagination {
+    margin-bottom: 0;
+}
+
+.page-link {
+    color: #100303;
+    border-radius: 0.25rem;
+}
+
+.page-link:hover {
+    color: #100303;
+    background-color: #00ffc6;
+    transition: 3ms ease-in-out;
+}
+
 /* || FOOTER STYLES  */
 
 footer {
@@ -222,6 +243,10 @@ button.btn-like:active {
 .comments-div {
     margin: 0.5rem 0rem 1rem 0rem;
     padding: 0rem 1rem 0rem 1rem;
+}
+
+textarea.form-control {
+    border: 1px solid #ced4da!important;
 }
 
 

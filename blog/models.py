@@ -5,6 +5,7 @@ Cloudinary as cloud based image repository
 """
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 from cloudinary.models import CloudinaryField
 
 
@@ -76,3 +77,11 @@ class Comment(models.Model):
         Returns number of comment likes
         """
         return self.likes.count()
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    subject = models.CharField(max_length=200)
+    message = models.TextField(max_length=2000, help_text="Add your message here")
+    date_submitted = models.DateTimeField(default=timezone.now)
