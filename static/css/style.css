@@ -27,6 +27,22 @@ form {
     margin-top: 0rem!important;
 }
 
+.btn {
+    margin-top: 1.5rem;
+}
+
+.btn-style {
+    background-color: #00ffc6;
+    color: #100303;
+}
+
+.btn-style:hover,
+.btn-style:active {
+    background-color: #fff;
+    color: #100303;
+    border: 1px solid #00ffc6;
+}
+
 /* || NAVBAR STYLES */
 
 nav {
@@ -267,22 +283,6 @@ a.link:hover {
     background-color: #00ffc6;
 }
 
-.btn {
-    margin-top: 1.5rem;
-}
-
-.btn-signup {
-    background-color: #00ffc6;
-    color: #100303;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #100303;
-    border: 1px solid #00ffc6;
-}
-
 input#id_login {
     background-color: #a8fbe9!important;
 }
@@ -354,6 +354,12 @@ ul.errorlist.nonfield {
     .comments-div {
         margin: 0.5rem 0rem 1rem 0rem;
         padding: 0rem 1rem 0rem 1rem;
+    }
+
+    /* || CONTACT US  */
+    
+    textarea#id_message {
+        max-width: 100%
     }
 
 }

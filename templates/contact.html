@@ -2,45 +2,51 @@
 
 {% load i18n %}
 
-{% block title %} Contact Us {% endblock %}
+{% block title %}{% trans 'Contact Us' %}{% endblock %}
 
 {% block content %}
 
-<div class = "row">
-    <div class = "col-sm-12">
-        <span class="heading-meta">Contact</span>
-        <h2 class="heading">Get in touch</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <div class="card-body">
+                <h3 class="card-title">{% trans 'Contact Us' %}</h3>
+                <p class="card-text">{% blocktrans %}
+                    Do you have a question, a concern, or a new idea for Fresh Casts?
+                    <br>You can fill out the contact form below and we will aim to respond within 24
+                    hours.{% endblocktrans %}
+                </p>
+            </div>
+        </div>
     </div>
-</div>
-<div class = "container-fluid">
-    <div class = "row contact-row">
-        <div class = "col-xl-7 contact-form-animate">
-            <p class = "card-text">
-                Hi, do you have a question, a complaint, or a new idea for Fresh Casts? 
-                You can fill out the contact form below and we will aim to respond within 24 hours.
-            </p>
-                <form method="post" class = "control-form">
-
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <div class="card-body">
+                <form method="post" class="control-form">
                     {% csrf_token %}
-                    <div class="row">                                                           
-                        <div class="col-xl-6">
-                            {{ form.name }}
-                        </div>                    
-                        <div class="col-xl-6">
-                            {{ form.email }}
-                        </div>
-                        <div class="col-xl-12">
-                            {{ form.subject }}
-                        </div>
-                        <div class="col-xl-12">
-                            {{ form.message }}
-                        </div>
-                        <div class="col-xl-12">
-                            <button type="submit" class="btn btn-block btn-primary">Send Now</button>
-                        </div>                        
+                    <div class="form-group">
+                        <label for="name">Name: </label>
+                        {{ form.name }}
                     </div>
-                    
+                    <div class="form-group">
+                        <label for="email">Email: </label>
+                        {{ form.email }}
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject: </label>
+                        {{ form.subject }}
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message: </label>
+                        <div>{{ form.message }}</div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-style right">Send Now</button>
+                    </div>
                 </form>
+            </div>
         </div>
     </div>
 </div>
