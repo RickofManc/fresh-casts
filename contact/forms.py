@@ -7,6 +7,7 @@ class ContactForm(forms.ModelForm):
     email = forms.EmailField(label='', widget=forms.TextInput(attrs={'placeholder': 'Email'}))
     subject = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Subject'}))
     message = forms.CharField(label='', widget=forms.Textarea(attrs={'placeholder': 'Message'}))
+    contact_status = forms.CharField(label='', widget=forms.CheckboxInput())
 
     class Meta:
         model = Contact

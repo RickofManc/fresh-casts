@@ -66,6 +66,9 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
+                        <a href="{% url 'add_post' %}" class="nav-link">Add Post</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{% url 'account_logout' %}" class="nav-link">Sign Out</a>
                     </li>
                     {% else %}
@@ -104,6 +107,9 @@
                         <a href="{% url 'home' %}" class="nav-link" aria-current="page">Home</a>
                     </li>
                     {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="{% url 'add_post' %}" class="nav-link">Add Post</a>
+                    </li>
                     <li class="nav-item">
                         <a href="{% url 'account_logout' %}" class="nav-link">Sign Out</a>
                     </li>

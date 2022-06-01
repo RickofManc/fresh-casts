@@ -40,7 +40,6 @@ ALLOWED_HOSTS = ['fresh-casts.herokuapp.com', 'localhost']
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -92,6 +91,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 ROOT_URLCONF = 'fresh_casts.urls'
 
 
@@ -111,6 +111,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'fresh_casts.wsgi.application'
 
 
@@ -124,14 +125,23 @@ WSGI_APPLICATION = 'fresh_casts.wsgi.application'
 #     }
 # }
 
+# Database
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
-# email verification turned off to remove errors for optional email sign-up
+# SendGrid
+DEFAULT_FROM_EMAIL = 'freshcastsapp@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'freshcastsapp@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ.get('FRESHCAST_GMAIL')
 
+
+# Email verification turned off to remove errors for optional email sign-up
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -159,7 +169,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -173,7 +182,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = \
                      'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
@@ -186,5 +194,4 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

@@ -5,6 +5,7 @@ Cloudinary as cloud based image repository
 """
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from cloudinary.models import CloudinaryField
 
 
@@ -52,6 +53,9 @@ class Post(models.Model):
         Returns number of blog post likes
         """
         return self.likes.count()
+
+    def get_absolute_url(self):
+        return reverse('home')
 
 
 class Comment(models.Model):
