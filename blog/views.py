@@ -92,6 +92,9 @@ class AddPostView(CreateView):
 def get_accessibility_statement(request):
     return render(request, 'accessibility_statement.html')
 
+def get_copyright_statement(request):
+    return render(request, 'copyright_statement.html')
+
 
 def category_list(request):
     f = PostFilter(request.GET, queryset=Post.objects.all())
