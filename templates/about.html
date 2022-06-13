@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'About Us' %}{% endblock %}
+
+{% block content %}
+
+<!-- Container for homepage blog posts -->
+<div class="container fluid">
+    <div class="row justify-content-center">
+        <div class="col-auto card-body">
+            <h2 class="card-title">{% trans 'About Us' %}</h2>
+            <br>
+            <p class="card-subtitle">Why this site exists.</p>
+            <br>
+            <p class="card-text">I love podcast. I assume you love podcasts. The problem I found is discoverability of
+                new podcasts.
+                The chances are you unearth new podcasts from a friend or a chart via your smartphone
+                or search engine provider.
+                These sites use a ranking system that is ensures the top shows get the most plays, and this keep them at
+                the top, and it all becomes a bit stale.
+            </p>
+            <br>
+            <p class="card-text"><strong>Let's share the freshest podcasts together.</strong>
+            </p>
+            <br>
+            <p class="card-text">Here you can explore what's fresh through six key categories, and with a user account you
+                can become a contributor.<br>Show your appreciation of a post with a like, or comment to join in and provide
+                your view. You can also contribute to the content by creating your own post and sharing what's fresh to you.
+            </p>
+            <br>
+            {% if user.is_authenticated %}
+            <p class="card-text">Use the button below start contributing.</p>
+            </p>
+            <a href="{% url 'add_post' %}" class="anchor-btn">Add Post</a></button>
+            {% else %}
+            <p class="card-text">Use the button below to join in.</p>
+            </p>
+            <a href="{% url 'account_signup' %}" class="anchor-btn">Sign Up</a></button>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

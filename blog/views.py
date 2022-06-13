@@ -89,8 +89,13 @@ class AddPostView(CreateView):
     fields = ('title', 'category', 'content', 'podcast_url', 'featured_image')
 
 
+def get_about(request):
+    return render(request, 'about.html')
+
+
 def get_accessibility_statement(request):
     return render(request, 'accessibility_statement.html')
+
 
 def get_copyright_statement(request):
     return render(request, 'copyright_statement.html')

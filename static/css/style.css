@@ -299,6 +299,28 @@ ul.errorlist.nonfield {
 }
 
 
+/* || ABOUT US  */
+
+.anchor-btn {
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    text-transform: none;
+    text-decoration: none;
+    background-color: #00ffc6;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    color: #100303;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    margin-top: 1.5rem;
+    line-height: 1.5;
+}
+
+
 /* |||| MEDIA QUERIES  */
 
 /* Small devices (smartphones, up to 767px) */
