@@ -6,7 +6,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic import CreateView
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, PostFilter
 from .forms import CommentForm
 
 
@@ -87,3 +87,12 @@ class AddPostView(CreateView):
     model = Post
     template_name = 'add_post.html'
     fields = ('title', 'category', 'content', 'podcast_url', 'featured_image')
+
+
+def get_accessibility_statement(request):
+    return render(request, 'accessibility_statement.html')
+
+
+def category_list(request):
+    f = PostFilter(request.GET, queryset=Post.objects.all())
+    return render(request, 'templates/category.html', {'filter': f})

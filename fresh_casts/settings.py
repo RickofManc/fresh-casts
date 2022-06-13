@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
+    'django_filters',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

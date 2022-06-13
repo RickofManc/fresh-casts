@@ -4,6 +4,7 @@ Standard Django Authentication model
 Cloudinary as cloud based image repository
 """
 from django.db import models
+import django_filters
 from django.contrib.auth.models import User
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
@@ -80,3 +81,12 @@ class Comment(models.Model):
         Returns number of comment likes
         """
         return self.likes.count()
+
+
+
+class PostFilter(django_filters.FilterSet):
+    category = django_filters.CharFilter(lookup_expr='iexact')
+
+    class Meta:
+        model = Post
+        fields = ['category']
