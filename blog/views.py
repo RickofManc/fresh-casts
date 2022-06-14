@@ -86,7 +86,12 @@ class PostLike(View):
 class AddPostView(CreateView):
     model = Post
     template_name = 'add_post.html'
-    fields = ('title', 'category', 'content', 'podcast_url', 'featured_image')
+    fields = ('title', 'category', 'author', 'content', 'podcast_url', 'featured_image')
+
+
+def get_category_view(request, cats):
+    category_posts = Post.objects.filter(category__name__contains=cats)
+    return render(request, 'categories.html', {'cats': cats, 'category_posts': category_posts})
 
 
 def get_about(request):

@@ -2,25 +2,17 @@
 
 {% load i18n %}
 
+{% block title %}{% trans '{{ cats }} Category' %}{% endblock %}
+
 {% block content %}
-
-<div>
-<form method="get">
-    {{ filter.form.as_p }}
-    <input type="submit" />
-</form>
-{% for obj in filter.qs %}
-    {{ obj.category }}<br />
-{% endfor %}
-</div>
-
 
 <!-- Container for homepage blog posts -->
 <div class="container fluid">
     <div class="row">
         <div class="card w-100 left">
+            <h2 class="card-title">{% trans '{{ cats }} Category' %}</h2>
             <div class="row">
-                {% for post in post_list %}
+                {% for post in category_post %}
                 <div class="card-body border-bottom">
                     <div class="row">
                         <!-- Featured image URL -->
@@ -36,10 +28,11 @@
                             <div class="card-block px-2">
                                 <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                     <h2 class="card-title">{{ post.title }}</h2>
+                                    <h3 class="card-subtitle">{{ post.category }}</h3>
                                     <p class="card-text">{{ post.excerpt }}</p>
                                     <p class="author">Shared By {{ post.author }}</p>
                                     <p class="card-text text-left">{{ post.created_on }}</p>
-                                        <i class="far fa-heart"></i>{{ post.number_of_likes }}</p>
+                                    <p class="card-text"><i class="far fa-heart"></i>{{ post.number_of_likes }}</p>
                                 </a>
                             </div>
                         </div>

@@ -14,14 +14,6 @@ STATUS = (
     (0, 'Draft'),
     (1, 'Published')
     )
-PODCAST_CATEGORY = (
-        (0, 'Latest'),
-        (1, 'Life'),
-        (2, 'Music'),
-        (3, 'News'),
-        (4, 'Sport'),
-        (5, 'Technology')
-        )
 
 
 class Category(models.Model):

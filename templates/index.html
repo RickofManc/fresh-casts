@@ -14,23 +14,25 @@
                     <div class="row">
                         <!-- Featured image URL -->
                         <div class="col-4 col-sm-2 blog-img-div">
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
                             {% if "placeholder" in featured_image.url %}
                             <img class="img-fluid" src="static/images/fresh-casts-b-and-g-logo_thumbnail.png"
                                 alt="Fresh Casts logo as a placeholder image for podcast image">
                             {% else %}
                             <img class="img-fluid" src=" {{ post.featured_image.url }}" alt="Image of the podcast show">
                             {% endif %}
+                        </a>
                         </div>
                         <div class="col-8 col-sm-10">
                             <div class="card-block px-2">
                                 <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                    <h2 class="card-title">{{ post.title }}</h2>
-                                    <h3 class="card-subtitle">{{ post.category }}</h3>
+                                    <h2 class="card-title">{{ post.title }}</h2></a>
+                                    <a href="{% url 'category' post.category %}" class="post-link"><h3 class="card-subtitle">{{ post.category }}</h3></a>
                                     <p class="card-text">{{ post.excerpt }}</p>
                                     <p class="author">Shared By {{ post.author }}</p>
                                     <p class="card-text text-left">{{ post.created_on }}</p>
                                     <p class="card-text"><i class="far fa-heart"></i>{{ post.number_of_likes }}</p>
-                                </a>
+                                
                             </div>
                         </div>
                     </div>
