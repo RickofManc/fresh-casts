@@ -95,6 +95,7 @@
                     <ul class="nav-menu-list">
                         <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">contact us</a></li>
                         <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">about us</a></li>
+                        <li class="nav-item"><a href="{% url 'user_agreement' %}" class="nav-link">user agreement</a></li>
                         <li class="nav-item"><a href="{% url 'accessibility_statement' %}" class="nav-link">accessibility statement</a>
                         </li>
                         <li class="nav-item"><a href="{% url 'copyright_statement' %}" class="nav-link">copyright statement</a></li>
@@ -184,7 +185,7 @@
                         </li>
                         {% endif %}
                         <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">view profile</a></li>
-                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">user agreement</a></li>
+                        <li class="footer-item"><a href="{% url 'user_agreement' %}" class="footer-link">user agreement</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
@@ -198,7 +199,7 @@
                 </div>
             </div>
             <div class="row footer-copyright">
-                <p><a href="{% url 'copyright_statement' %}" class="footer-link">Casts © 2022.<br>All rights reserved</a></p>
+                <p><a href="{% url 'copyright_statement' %}" class="footer-link">Fresh Casts © 2022.<br>All rights reserved</a></p>
             </div>
         </div>
     </footer>

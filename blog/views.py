@@ -101,6 +101,10 @@ def get_copyright_statement(request):
     return render(request, 'copyright_statement.html')
 
 
+def get_user_agreement(request):
+    return render(request, 'user_agreement.html')
+
+
 def category_list(request):
     f = PostFilter(request.GET, queryset=Post.objects.all())
     return render(request, 'templates/category.html', {'filter': f})
