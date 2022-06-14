@@ -24,17 +24,27 @@ PODCAST_CATEGORY = (
         )
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('home')
+
+
 class Post(models.Model):
-    title = models.CharField(max_length=200, unique=True, primary_key=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    title = models.CharField(max_length=255, unique=True, primary_key=True)
+    slug = models.SlugField(max_length=255, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name="blog_posts")
-    category = models.IntegerField(choices=PODCAST_CATEGORY, default=0,)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=False)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     excerpt = models.TextField(max_length=180, blank=True)
-    podcast_url = models.URLField(max_length=200, help_text="Please add the \
+    podcast_url = models.URLField(max_length=255, help_text="Please add the \
                                   podcasts web address")
     featured_image = CloudinaryField('image', default='placeholder')
     status = models.IntegerField(choices=STATUS, default=0)
