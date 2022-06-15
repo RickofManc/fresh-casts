@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Edit Blog Post' %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <div class="card-body">
+                <h2 class="card-title">{% trans 'Edit Blog Post' %}</h2>
+
+                <p class="card-text">
+                    Edit the post below
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <div class="card-body">
+                <form method="POST">
+                    <div class="form-group">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class="btn btn-style right" type="submit">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+{% endblock content %}

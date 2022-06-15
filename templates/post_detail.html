@@ -38,6 +38,8 @@
                     {{ post.content | safe }}
                 </p>
                 <a href="{{ post.podcast_url }}" target="_blank" class="anchor-btn btn-style">Listen</a>
+                <a href="{% url 'update_post' post.slug %}" class="anchor-btn btn-style">Edit</a>
+                <a href="{% url 'delete_post' post.slug %}" class="anchor-btn btn-style">Delete</a>
                 <br>
                 <div class="row justify-content-start">
                     <div class="col-sm-2 col-lg-1 xs-col-width">

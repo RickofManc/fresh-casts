@@ -169,6 +169,12 @@ a.post-link {
     color: #100303;
 }
 
+.card-subtitle {
+    font-family: 'Roboto Condensed';
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
 .author {
     color: #312e2e;
     text-transform: uppercase;

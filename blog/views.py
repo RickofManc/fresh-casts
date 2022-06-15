@@ -4,8 +4,9 @@ Import Post model
 """
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
 from .models import Post, Category
 from .forms import CommentForm
 
@@ -24,7 +25,7 @@ class PostList(generic.ListView):
         
 
 class PostDetail(View):
-    
+
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -64,7 +65,6 @@ class PostDetail(View):
             comment.save()
         else:
             comment_form = CommentForm()
-
         return render(
             request,
             "post_detail.html",
@@ -106,6 +106,33 @@ class AddPostView(CreateView):
         context = super(AddPostView, self).get_context_data(*args, **kwargs)
         context["cat_menu"] = cat_menu
         return context
+
+
+class UpdatePostView(UpdateView):
+    model = Post
+    template_name = 'update_post.html'
+    fields = ('title', 'category', 'content', 'podcast_url', 'featured_image')
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(UpdatePostView, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
+
+class DeletePostView(DeleteView):
+    model = Post
+    template_name = 'delete_post.html'
+    fields = ('title')
+    success_url = reverse_lazy('home')
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(DeletePostView, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
+
 
 
 class CategoryView(View):

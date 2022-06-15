@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Delete Blog Post' %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <div class="card-body">
+                <h2 class="card-title">{% trans 'Delete Blog Post' %}</h2>
+                <br>
+                <h3 class="card-subtitle">Delete: {{ post.title }}</h3>
+                <br>
+                <p class="card-text">
+                    Are you sure you would like to delete this post?</p>
+                <p class="card-text">
+                    If yes, please click the 'Delete' button below.</p>
+                <p class="card-text">
+                    Note, this post cannot be reinstated once deleted.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <div class="card-body">
+                <form method="POST">
+                    <div class="form-group">
+                        {% csrf_token %}
+                        <button class="btn btn-style right" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+{% endblock content %}
