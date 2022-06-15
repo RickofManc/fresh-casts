@@ -6,7 +6,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic import CreateView
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, Category
 from .forms import CommentForm
 
 
@@ -16,8 +16,15 @@ class PostList(generic.ListView):
     template_name = "index.html"
     paginate_by = 6
 
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(PostList, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+        
 
 class PostDetail(View):
+    
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -38,6 +45,7 @@ class PostDetail(View):
             },
         )
 
+    
     def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -69,6 +77,12 @@ class PostDetail(View):
             },
         )
 
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(PostDetail, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
 
 class PostLike(View):
 
@@ -79,7 +93,6 @@ class PostLike(View):
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
-        
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
@@ -88,24 +101,76 @@ class AddPostView(CreateView):
     template_name = 'add_post.html'
     fields = ('title', 'category', 'author', 'content', 'podcast_url', 'featured_image')
 
-
-def get_category_view(request, cats):
-    category_posts = Post.objects.filter(category__name__contains=cats)
-    return render(request, 'categories.html', {'cats': cats, 'category_posts': category_posts})
-
-
-def get_about(request):
-    return render(request, 'about.html')
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(AddPostView, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
 
 
-def get_accessibility_statement(request):
-    return render(request, 'accessibility_statement.html')
+class CategoryView(View):
+    model = Post
+    template_name = 'categories.html'
+    
+    def get(self, request, cats, *args, **kwargs):
+        category_posts = Post.objects.filter(category__name__contains=cats.replace('-', ' '))
+        return render(request, self.template_name, {'cats': cats.title().replace('-', ' '), 'category_posts': category_posts})
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(CategoryView, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
 
 
-def get_copyright_statement(request):
-    return render(request, 'copyright_statement.html')
+class About(View):
+    template_name = 'about.html'
+    
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {})
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(About, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
 
 
-def get_user_agreement(request):
-    return render(request, 'user_agreement.html')
+class AccessibilityStatement(View):
+    template_name = 'accessibility_statement.html'
+    
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {})
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(AccessibilityStatement, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
+
+class CopyrightStatement(View):
+    template_name = 'copyright_statement.html'
+    
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {})
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(CopyrightStatement, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
+
+class UserAgreement(View):
+    template_name = 'user_agreement.html'
+    
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {})
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(UserAgreement, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
 

@@ -27,7 +27,7 @@
                             <div class="card-block px-2">
                                 <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                     <h2 class="card-title">{{ post.title }}</h2></a>
-                                    <a href="{% url 'category' post.category %}" class="post-link"><h3 class="card-subtitle">{{ post.category }}</h3></a>
+                                    <a href="{% url 'category' post.category|slugify %}" class="post-link"><h3 class="card-subtitle">{{ post.category }}</h3></a>
                                     <p class="card-text">{{ post.excerpt }}</p>
                                     <p class="author">Shared By {{ post.author }}</p>
                                     <p class="card-text text-left">{{ post.created_on }}</p>

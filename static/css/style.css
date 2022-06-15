@@ -63,6 +63,12 @@ form {
     line-height: 1.5;
 }
 
+.btn-style:hover {
+    background-color: #fff;
+    color: #100303;
+    border: 1px solid #00ffc6;
+}
+
 /* || NAVBAR STYLES */
 
 nav {
@@ -173,7 +179,7 @@ a.post-link {
 }
 
 .card-body {
-    padding: 2.25rem 1.25rem;
+    padding: 1.25rem 1.25rem;
 }
 
 .border-bottom {

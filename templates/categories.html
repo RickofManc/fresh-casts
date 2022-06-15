@@ -6,6 +6,8 @@
 
 {% block content %}
 
+{% if category_posts %}
+
 <!-- Container for homepage blog posts -->
 <div class="container fluid">
     <div class="row">
@@ -60,5 +62,19 @@
     </nav>
     {% endif %}
 </div>
+
+{% else %}
+
+<div class="container fluid">
+    <div class="row justify-content-center">
+        <div class="card-block">
+            <p class="card-text">Sorry this category does not exist, use the button below to return to our homepage, or explore the categories within the main menu.</p>
+            <a href="{% url 'home' %}" class="anchor-btn btn-style">Home</a>
+        </div>
+    </div>  
+</div>            
+
+
+{% endif %}
 
 {% endblock content %}
