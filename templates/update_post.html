@@ -6,32 +6,43 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <div class="card-body">
-                <h2 class="card-title">{% trans 'Edit Blog Post' %}</h2>
+{% if user.is_authenticated %} 
+    {%  if user.id == post.author.id %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mt-3 offset-md-2">
+                    <div class="card-body">
+                        <h2 class="card-title">{% trans 'Edit Blog Post' %}</h2>
 
-                <p class="card-text">
-                    Edit the post below
-                </p>
+                        <p class="card-text">
+                            Update the fields below, once complete submit the changes using the button below.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 mt-3 offset-md-2">
+                    <div class="card-body">
+                        <form method="POST">
+                            <div class="form-group">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <button class="btn btn-style right" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <div class="card-body">
-                <form method="POST">
-                    <div class="form-group">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button class="btn btn-style right" type="submit">Update</button>
-                </form>
+    {% endif %}
+{% else %}
+    <div class="container fluid">
+        <div class="row justify-content-center">
+            <div class="card-block">
+                <p class="card-text">Sorry you must be signed in to access this page, use the button below to return to our homepage</p>
+                <a href="{% url 'home' %}" class="anchor-btn btn-style">Home</a>
             </div>
-        </div>
-    </div>
-</div>
-
-</div>
+        </div>  
+    </div>            
+{% endif %}
 
 {% endblock content %}

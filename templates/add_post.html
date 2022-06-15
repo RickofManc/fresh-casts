@@ -6,6 +6,8 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
@@ -32,6 +34,17 @@
     </div>
 </div>
 
-</div>
+{% else %}
+
+<div class="container fluid">
+    <div class="row justify-content-center">
+        <div class="card-block">
+            <p class="card-text">Sorry you must be signed in to access this page, use the button below to return to our homepage</p>
+            <a href="{% url 'home' %}" class="anchor-btn btn-style">Home</a>
+        </div>
+    </div>  
+</div>            
+
+{% endif %}
 
 {% endblock content %}
