@@ -62,21 +62,24 @@
             <div class="navbar-collapse collapse" id="navbarToggleMenu">
                 <ul class="navbar-nav me-auto mb-2 mt-lg-0">
                     <li class="nav-item">
-                        <a href="{% url 'home' %}" class="nav-link" aria-current="page">Home</a>
+                        <a href="{% url 'home' %}" class="nav-link" aria-current="page">home</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a href="{% url 'add_post' %}" class="nav-link">Add Post</a>
+                        <a href="{% url 'add_post' %}" class="nav-link">add post</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="{% url 'edit_profile' %}" class="nav-link">edit profile</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'account_logout' %}" class="nav-link">Sign Out</a>
+                        <a href="{% url 'account_logout' %}" class="nav-link">sign out</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a href="{% url 'account_signup' %}" class="nav-link">Join In</a>
+                        <a href="{% url 'account_signup' %}" class="nav-link">register</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'account_login' %}" class="nav-link">Sign In</a>
+                        <a href="{% url 'account_login' %}" class="nav-link">sign in</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -107,22 +110,22 @@
             <!-- Navbar user menu aligned to nav-right-user -->
             <div class="navbar-collapse collapse" id="navbarUserMenu">
                 <ul class="navbar-nav me-auto mb-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a href="{% url 'home' %}" class="nav-link" aria-current="page">Home</a>
-                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a href="{% url 'add_post' %}" class="nav-link">Add Post</a>
+                        <a href="{% url 'add_post' %}" class="nav-link">add post</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="{% url 'edit_profile' %}" class="nav-link">edit profile</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'account_logout' %}" class="nav-link">Sign Out</a>
+                        <a href="{% url 'account_logout' %}" class="nav-link">sign out</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a href="{% url 'account_signup' %}" class="nav-link">Join In</a>
+                        <a href="{% url 'account_signup' %}" class="nav-link">register</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'account_login' %}" class="nav-link">Sign In</a>
+                        <a href="{% url 'account_login' %}" class="nav-link">sign in</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -176,6 +179,12 @@
                     <h2 class="footer-header">join in</h2>
                     <ul class="footer-list">
                         {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a href="{% url 'add_post' %}" class="footer-link">add post</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="{% url 'edit_profile' %}" class="footer-link">edit profile</a>
+                        </li>
                         <li class="footer-item">
                             <a href="{% url 'account_logout' %}" class="footer-link">sign out</a>
                         </li>
@@ -187,7 +196,6 @@
                             <a href="{% url 'account_login' %}" class="footer-link">sign in</a>
                         </li>
                         {% endif %}
-                        <li class="footer-item"><a href="{% url 'home' %}" class="footer-link">view profile</a></li>
                         <li class="footer-item"><a href="{% url 'user_agreement' %}" class="footer-link">user agreement</a></li>
                     </ul>
                 </div>

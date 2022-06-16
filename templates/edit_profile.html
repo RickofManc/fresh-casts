@@ -1,21 +1,18 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
-{% block title %}{% trans 'Add Blog Post' %}{% endblock %}
+{% block head_title %}{% trans 'Edit Profile' %}{% endblock %}
 
 {% block content %}
-
-{% if user.is_authenticated %}
 
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
             <div class="card-body">
-                <h2 class="card-title">{% trans 'Add Blog Post' %}</h2>
-
-                <p class="card-text">
-                    Add a post below
+                <h2 class="card-title">{% trans 'Edit Profile' %}</h2>
+                <p class="card-text">Use this page to view and update any of your profile details.<br>
+                    When ready, use the button below to submit your changes.
                 </p>
             </div>
         </div>
@@ -23,34 +20,25 @@
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
             <div class="card-body">
-                <form method="POST">
+                <form class="signup" id="signup_form" action="{% url 'account_signup' %}" method="POST">
                     <div class="form-group">
                         {% csrf_token %}
                         {{ form.as_p }}
+                        {% if redirect_field_value %}
+                        <input class="form-control" type="hidden" name="{{ redirect_field_name }}"
+                            value="{{ redirect_field_name }}" />
+                        {% endif %}
                         <div class="input-group">
-                            <button class="btn btn-style right" type="submit">Submit</button>
+                            <button class="btn btn-style right" type="submit">{% trans 'Submit' %}</button>
                             <input type="button" name="cancel" value="Cancel"
                                 class="anchor-btn btn-style btn-left-margin btn-cancel"
                                 onClick="window.location.href='{% url 'home' %}';" />
                         </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-{% else %}
-
-<div class="container fluid">
-    <div class="row justify-content-center">
-        <div class="card-block">
-            <p class="card-text">Sorry you must be signed in to access this page, use the button below to return to our
-                homepage</p>
-            <a href="{% url 'home' %}" type="button" class="anchor-btn btn-style">Home</a>
-        </div>
-    </div>
-</div>
-
-{% endif %}
 
 {% endblock content %}

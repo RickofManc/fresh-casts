@@ -27,7 +27,12 @@
                             <div class="form-group">
                                 {% csrf_token %}
                                 {{ form.as_p }}
+                                <div class="input-group">
                                 <button class="btn btn-style right" type="submit">Submit</button>
+                                <input type="button" name="cancel" value="Cancel"
+                                class="anchor-btn btn-style btn-left-margin btn-cancel"
+                                onClick="window.location.href='{% url 'home' %}';" />
+                            </div>
                         </form>
                     </div>
                 </div>

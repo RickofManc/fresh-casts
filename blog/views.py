@@ -1,14 +1,15 @@
 """
-Standard Django imports
-Import Post model
+Django imports to support Views
 """
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
+from django.contrib.auth.views import PasswordChangeView
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from .models import Post, Category
-from .forms import CommentForm
+from .forms import CommentForm, EditProfileForm, PasswordChangingForm
 
 
 class PostList(generic.ListView):
@@ -133,8 +134,6 @@ class DeletePostView(DeleteView):
         return context
 
 
-
-
 class CategoryView(View):
     model = Post
     template_name = 'categories.html'
@@ -146,6 +145,34 @@ class CategoryView(View):
     def get_context_data(self, *args, **kwargs):
         cat_menu = Category.objects.all()
         context = super(CategoryView, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
+
+class UserEditView(UpdateView):
+    form_class = EditProfileForm
+    template_name = 'edit_profile.html'
+    success_url = reverse_lazy('home')
+
+    def get_object(self):
+       return self.request.user
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(UserEditView, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
+
+class PasswordsChangeView(PasswordChangeView):
+    form_class = PasswordChangingForm
+    # form_class = PasswordChangeForm
+    template_name = 'change-password.html'
+    success_url = reverse_lazy('home')
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Category.objects.all()
+        context = super(PasswordsChangeView, self).get_context_data(*args, **kwargs)
         context["cat_menu"] = cat_menu
         return context
 

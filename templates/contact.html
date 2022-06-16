@@ -43,7 +43,12 @@
                         <div>{{ form.message }}</div>
                     </div>
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-style right">Send Now</button>
+                        <div class="input-group">
+                            <button type="submit" class="btn btn-style right">Submit</button>
+                            <input type="button" name="cancel" value="Cancel"
+                                class="anchor-btn btn-style btn-left-margin btn-cancel"
+                                onClick="window.location.href='{% url 'home' %}';" />
+                        </div>
                     </div>
                 </form>
             </div>

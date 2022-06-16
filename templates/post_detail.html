@@ -40,8 +40,8 @@
                 <a href="{{ post.podcast_url }}" target="_blank" class="anchor-btn btn-style">Listen</a>
                 {% if user.is_authenticated %}
                     {%  if user.id == post.author.id %}
-                        <a href="{% url 'update_post' post.slug %}" class="anchor-btn btn-style">Edit</a>
-                        <a href="{% url 'delete_post' post.slug %}" class="anchor-btn btn-style">Delete</a>
+                        <a href="{% url 'update_post' post.slug %}" class="anchor-btn btn-style btn-left-margin">Edit</a>
+                        <a href="{% url 'delete_post' post.slug %}" class="anchor-btn btn-style btn-left-margin">Delete</a>
                     {% endif %}
                 {% endif %}
                 <br>

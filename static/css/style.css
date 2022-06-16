@@ -29,6 +29,7 @@ form {
 
 .btn {
     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .btn-style {
@@ -63,10 +64,17 @@ form {
     line-height: 1.5;
 }
 
-.btn-style:hover {
+.btn-left-margin {
+    margin-left: 1.5rem;
+}
+
+.btn-cancel {
     background-color: #fff;
-    color: #100303;
-    border: 1px solid #00ffc6;
+    border: 1px solid #00ffc6
+}
+
+.btn-cancel:hover {
+    background-color: #ced4da;
 }
 
 /* || NAVBAR STYLES */
@@ -303,10 +311,6 @@ textarea.form-control {
 
 
 /* || SIGN UP & SIGN IN STYLES  */
-
-.form-control {
-    border: none;
-}
 
 a.link {
     font-weight: 600;
