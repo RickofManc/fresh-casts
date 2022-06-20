@@ -13,12 +13,13 @@
 
 ## About
 
+<br />
+
 Fresh Casts is a website built for people who enjoy listening to podcasts, and would also like to share and discover new shows and series.
 Through clear and intuitive design, Fresh Casts goal is ensure the pleasure of listening, sharing and discussing podcasts is accessible to all possible user groups, no matter of age or background.
 
-
 ***
-
+<br />
 
 ## Index - Table of Contents
 
@@ -34,29 +35,30 @@ Through clear and intuitive design, Fresh Casts goal is ensure the pleasure of l
 * [Deployment](#Deployment)
 * [Credits](#Credit)
 
+<br />
 
 ***
-
+<br />
 
 ## User Experience Research and Design
 
-
+<br />
 
 ### Problem Statement
 
-It's difficult to find a website where you can share and discuss podcasts.
+It's difficult to find a website or app where you can share and discuss podcasts.
 Listeners may feedback or rate a podcast within a listening app, however these apps generally do not allow listeners to post and discuss liked podcasts.
 Podcast listenership continues to increase with over 2 million shows to choose from, and by nature humans are social, we like to converse.
 There's an opportunity to help people share podcasts, making it easier to discuss and find shows that may have slipped under their radar.
 
-
+<br />
 
 ### Objective
 
-By summer 2022, I will develop and deploy a website that promote the sharing and discussion of podcasts they are enjoying. 
-All visitors will be able to listen to shared podcasts. Users who create a Fresh Casters profile will be able to comment and like shared shows, as well as posting their own favourites.The site will meet WCAG 2.1 AA standards, and will be thoroughly tested to ensure all user groups can access and enjoy content.
+By summer 2022, I will develop and deploy a website that promotes the sharing and discussion of podcasts they are enjoying. 
+All visitors will be able to listen to shared podcasts. Users who create a Fresh Casters profile will be able to comment and like shared shows, as well as posting their own favourites. The site will meet WCAG 2.1 AA standards, and will be thoroughly tested to ensure all user groups can access and enjoy content.
 
-
+<br />
 
 ### Design Thinking
 
@@ -79,12 +81,11 @@ The chart below highlights the features roadmap assessed by importance versus vi
   <img src="readme-images/fresh-casts-features-roadmap.png" alt="Strategic Opportunities Roadmap"/>
 </p>
 
-
-
+<br />
 
 ### Scope
 
-An agile approach of keeping the in scope features simple and aligned to the strategy for the MVP will be adopted.Below is a list of the leading features for the the Fresh Casts MVP.
+An agile approach of keeping the in scope features simple and aligned to the strategy for the MVP will be adopted. Below is a list of the leading features for the the Fresh Casts MVP.
 
 
 #### In Scope Features
@@ -94,57 +95,52 @@ An agile approach of keeping the in scope features simple and aligned to the str
 * By default, the homepage will show the latest posts in ascending order.
 * A clickable link will enable Fresh Casters to find out more information on the post.
 * Podcasts will be playable directly in the page browser.
-* A user account will provide access to Commenting, Liking, Blogging.
-* Fresh Casters will be supported with a page dedicated to FAQ's.
+* A user account will provide access to Commenting, Liking, Posting.
+* Update own content - providing Fresh Casters with an option to edit their own posts.
 * A 'Contact Us' page will enable Fresh Casters to get in touch with Site Admin.
 * An Accessibility Statement will inform of how Fresh Casts cares about accessibility.
 * The site will be responsive across differing devices, from mobile first design through to 5K screens supported.
 
 
-#### Potentially In Scope Features (Time Dependant for MVP)
-* Recent activity - Pulling commenting, liking, posting data from across the site into Fresh Casters profile page.
+#### Out of Scope Features - for future release
 * Search and learn - Using keywords, Fresh Casters will be able to search and hone in their choices.
-* Update own content - providing Fresh Casters with an option to edit their own posts and comments.
+* Recent activity - Pulling commenting, liking, posting data from across the site into Fresh Casters profile page.
 * Podcast downloading - enabling Fresh Casters to listen offline.
 * Preferred app - allowing Fresh Casters to listen to a podcast in favourite listening app.
-
-
-#### Beyond MVP Release Features
+* Fresh Casters will be supported with a page dedicated to FAQ's.
 * Single Sign On (SSO) - Use social apps such as Google, Facebook and Twitter to sign-in.
 * Connecting Fresh Casters - Provide chat service to allow the community to interact directly.
 
-
-
-
+<br />
 
 ### Structure
 
 This website will be structured with the following design considerations.
 
 * A Hub and Spoke structure, where the main content will be the homepage hub, and spokes are the pages to find out more information on a post. The spokes will also house the useful pages such as Sign-up, FAQ, Contact Us, About Us etc.
-* Each post will be displayed in a shortened list view for the homepage with just enough information to entice the user, and also a full description which will open in it's own page.
-* All spoke pages will have a text link to allow the user to return back the their original homepage view.
-* Users wishing to add a comment or like will be asked to first create a user account as a Fresh Caster. Once a brief form has been completed and submitted, Site Admin will be notified and requested to approve or deny the application. 
+* Each post will be displayed in a shortened list view for the homepage with just enough information to entice the user. The post image and title will be clickable to open in a new page with full post details.
+* Users wishing to add a comment or like will be asked to first create a user account as a Fresh Caster. Once a brief form has been completed and submitted, users will have immediate access to all features. 
 * Having a user account will allow users to interact with the site, adding comments, likes and being able to post their own podcast review.
-* Users will also be able to contact Site Admin with a range of issues through a contact form available within the Main Menu and Footer. 
+* All site visitors will be able to contact Fresh Casts through a contact form available from the Main Menu or Footer. 
 * All pages will be available to users consistently through either the Main Menu or Footer - this should ensure users are never two clicks away from where they would like to be.
 
 
 [Lucid Spark](https://lucidspark.com/) has been used to illustrate the Hub and Spoke structure for Fresh Casts website. Pages and features will be available from a single click from the Hub. The final structure for the MVP may differ slightly as development progresses, and from user feedback and testing.
 
-<p align="center">
-    <img src="readme-images/fresh-casts-site-structure.png" alt="Fresh Casts Site Structure"/>
-</p>
 
-
-
+<details>
+    <summary><b>Site Structure</b></summary>
+    <p align="center">
+        <img src="readme-images/fresh-casts-site-structure.png" alt="Fresh Casts Site Structure"/>
+    </p>
+</details><br />
 
 
 ### Skeleton
 
 Key to the UX attributes is the speed and ease for which users can learn about new podcasts, or what fellow users think about a podcast. 
 
-The 'Hub and Spoke' structure should provide users with content from their initial landing, and allowing their intrigue to click on a post and find out more, or refine the content by choosing one of six categories located conveniently on the Navbar (when in the desktop and tablet view).
+The 'Hub and Spoke' structure should provide users with content from their initial landing, and allowing their intrigue to click on a post and find out more, or refine the content by choosing one of five categories located conveniently in the NavBar Menu, Footer or by clicking a category within the posts listed on the homepage.
 
 Aesthetically pages will be clean to promote the information, and allow users to flow between differing categories and expanding posts to learn more and add a Like. Convention from popular information based sites will be adopted so users feel at home and therefore capture their engagement within the first few seconds.
 
@@ -155,12 +151,12 @@ As part of this phase wireframes for mobile and desktop devices have been produc
 
 The website is responsive through differing screen widths being designed for mobile first to a max-width of 767px. Tablets are responsive from 768px through to 1023px, and desktops from 1024px upward. 
 
-
-<p align="center">
-    <img src="readme-images/fresh-casts-mobile-wireframes.png" alt="Fresh Casts wireframe for mobile devices" />
-</p>
-
-
+<details>
+    <summary><b>Wireframes</b></summary>
+    <p align="center">
+        <img src="readme-images/fresh-casts-mobile-wireframes.png" alt="Fresh Casts wireframe for mobile devices" />
+    </p>
+</details><br />
 
 
 ### Surface 
@@ -172,37 +168,41 @@ In consideration that accessibility is a key design criteria, the developed visu
 
 This palette has been carefully selected to bring high contrasting colours to improve accessibility to visually impaired users. As the primary aim of the site is to inform, Black text on a White background will be adopted throughout. The Teal based accents will be used to highlight buttons, points of reference or navigation and other key pieces of user information.
 
-
-<p align="center">
-    <img src="readme-images/fresh-casts-colour-palette.png" alt="Fresh Casts Colour Palette"/>
-</p>
-
+<details>
+    <summary><b>Colour Palette</b></summary>
+    <p align="center">
+        <img src="readme-images/fresh-casts-colour-palette.png" alt="Fresh Casts Colour Palette"/>
+    </p>
+</details>
+<br />
 
 
 #### Logo
 
-Add image
+The logo has been selected from [Adobe Stock](https://stock.adobe.com/uk/contributor/208909039/2arm?load_type=author&prev_url=detail&asset_id=430392467). The design by **2arm** is being used under a  paid license with Adobe Stock. The design appealed as for it's clean design that identifies key components of podcasting; a microphone, projecting sound and listeners typically through headphones. I have applied Fresh Casts colour theme to the Vector using the free app [Photopea](https://www.photopea.com/).
 
-*[Photopea](https://www.photopea.com/)
-*[Adobe Stock](https://stock.adobe.com/uk/contributor/208909039/2arm?load_type=author&prev_url=detail&asset_id=430392467) Used under paid licence with Adobe Stock, Illustration Vector graphic of microphone logo, fit for broadcast, podcast, radio etc. By **2arm**
-
+<p align="center">
+    <img src="readme-images/fresh-casts-b-and-g-logo_380px.png" alt="Fresh Casts Logo"/>
+</p>
+<br />
 
 #### Fonts
 
 **Roboto Flex and Roboto Condensed**
 
-Today, people are constantly switching between devices, resizing browsers, and spreading our viewports across multiple screens. So Google commissioned Font Bureau to re-imagine Roboto to “flex”. This was achieved by amplifying the original design to an extreme range of weights, grades, widths and optical sizes.
+Today, as people constantly switch between devices, resizing browsers, and spreading our viewports across multiple screens. Google commissioned Font Bureau to re-imagine Roboto to “flex”. This was achieved by amplifying the original design to an extreme range of weights, grades, widths and optical sizes.
 
 I've selected this popular [font family](https://fonts.google.com/share?selection.family=Roboto%20Condensed:ital,wght@0,400;0,700;1,400;1,700%7CRoboto%20Flex:opsz,wght@8..144,100;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700) for its clean lines and legibility, being widely used on news and information based websites. It also offers a condensed style which can be used for larger text headers to offer some contrast to body text, without having to use a multiple font families.
 
 
 <p align="center">
     <img src="readme-images/fresh-casts-roboto-flex-font.png" alt="Fresh Casts Font"/>
-</p
-
-
+</p>
+<br />
 
 ***
+
+<br />
 
 ## Data Model
 
@@ -216,6 +216,7 @@ In consideration of the a requirement for the data to be searchable, and in time
 <p align="center">
     <img src="readme-images/fresh-casts-data-schema.png" alt="Data schema for Fresh Casts"/>
 </p>
+<br />
 
 
 
@@ -229,13 +230,12 @@ secret key use for config variables
 
 ### Meta data
 
-Meta data is included within the HTML head element to increase the traffic to the website. Furthermore, the site page is titled appropriately as another method of informing users of their location.
-
+Meta data is included within the HTML head element to increase the traffic to the website. Additionally, site pages are titled appropriately as another method of informing users of their location.
 
 
 ***
 
-
+<br />
 
 ## Technologies
 
@@ -245,24 +245,22 @@ Meta data is included within the HTML head element to increase the traffic to th
 
 * HTML5
 * CSS3
-* JavaScript
-* Jquery
 * Python
-
-
+* Jquery
+* Javascript
 
 ### Frameworks & Libraries
 
-* [Django & Gunicorn] Django 3.2 which is the LTS (Long Term Support) version of Django and is therefore preferable to use over the newest beta Django 4.
-* [Cloudinary]
-* Heroku
-* Summernote
-* Check Requirements.txt file
-* [Google Sheet]PPP
-* [Rich Console](https://rich.readthedocs.io/en/stable/console.html) to style terminal text, and as formatted traceback for development.
-* [Pandas](https://pandas.pydata.org/) to receive data from the external Google Sheet into a DataFrame.
-* [Datetime](https://docs.python.org/3/library/datetime.html) to add the date and time to the order before sending to the kitchen.
-
+* [Django 3.2] LTS (Long Term Support) version of Django used as more preferable over the newest beta Django 4.
+Gunicorn was used as the Web Server to run Django on Heroku
+* [Cloudinary] was used to store the images used by the application
+Django was used as the framework to support rapid and secure development of the application
+Bootstrap5 was used to build responsive web pages
+* Summernote provides WYSIWYG editing to adding and updating the blog post form.
+* dj_database_url library used to allow database urls to connect to the postgres db
+* psycopg2 database adapter used to support the connection to the postgres db
+Django allauth used for account registration and authentication
+Django crispy forms used to simplify form rendering
 
 
 ### Software & Web Applications
@@ -271,20 +269,21 @@ Meta data is included within the HTML head element to increase the traffic to th
 * [Lucid Spark](https://lucidspark.com/) - Used for the high-level site structure.
 * [draw.io](https://www.draw.io/index.html) - Used to build the data schema.
 * PPP - Heroku, Django, Bootstrap, PPP This website was coded primarily using Python3, HTML5, CCS3 with [GitPod](https://gitpod.io/) used for the IDE and [GitHub](https://github.com/) as a hosting repository.
-* [W3schools](https://www.w3schools.com/) - Source of 'How to...' information throughout the build.
-* [Stack Overflow](https://stackoverflow.com/) - Source of 'How to...' information on Python code.
-* [Python Tutor](https://pythontutor.com/) - For testing sections of code.
+Git: was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+GitHub: is used as the respository for the project code after being pushed from Git. In addition, for this project GitHub was used for the agile development aspect through the use of User Stories (GitHub Issues) and tracking them on a Kanban board.
+
 * [Wave](https://wave.webaim.org/) - Accessibility Testing to ensure content is readable for all users.
 * [HTML Validator](https://validator.w3.org/) - For validating HMTL code.
 * [W3 CSS Validator](https://jigsaw.w3.org/css-validator/validator) - For validating CSS code.
-* [PEP8 Validator](http://pep8online.com/)  - For validating Python code.
+* [PEP8 Validator](http://pep8online.com/)  - For validating Python / Django code.
 * [Code Beautify](https://codebeautify.org/) - For validating the layout of code.
 * [IE NetREnderer](https://netrenderer.com/index.php) - For browser testing on Microsoft IE versions 7-10.
 * [LambdaTest](https://www.lambdatest.com/) - For cross browser testing including, macOS Safari and Opera.
 
+
 ***
 
-
+<br />
 
 ## Features
 
@@ -303,6 +302,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 
 ***
 
+<br />
 
 ## Testing 
 
@@ -314,7 +314,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 
 
 ### **Code** 
-The code on each file has been assessed using the appropriate validation service; W3C Markup for HTML, W3C for CSS, and PEP8 Online for Python & Django.
+The code on each file has been assessed using the appropriate validation service; W3C Markup for HTML, W3C for CSS, and PEP8 Online for Python / Django.
 
 Below are the summarised results from these tests:
 
@@ -338,13 +338,7 @@ Below are the summarised results from these tests:
 
 ### **Performance** 
 
-
-
-
-### **User Stories**
-The leading user stories have been tested to ensure the priority aims of the website have been delivered. 
-Below is a summary of the story's validation.
-                                                                   
+                   
 
 
 ### **Bugs**
@@ -354,6 +348,7 @@ Below is a summary of the story's validation.
 
 ***
 
+<br />
 
 ## Deployment
 
@@ -381,106 +376,65 @@ To deploy from GitHub, follow these steps:
 1. Within the Source section, click the "Branch" button and change from 'None' to 'Main'
 1. The page should automatically refresh with a url displayed
 1. Test the link by clicking on the url
-
-The url for this website can be found here https://freshcasts.herokuapp.com/
-
 </details>
-
-### Create data model and integrate using an API
-
-<details>
-    <summary></summary>
-
-Create a Spreadsheet (Data Model)
-PPPP
-
-
-Setup API
-1. Navigate to [Google Cloud Platform](https://cloud.google.com/gcp?utm_source=google&utm_medium=cpc&utm_campaign=emea-gb-all-en-bkws-all-all-trial-e-gcp-1011340&utm_content=text-ad-none-any-DEV_c-CRE_500227884420-ADGP_Hybrid%20%7C%20BKWS%20-%20EXA%20%7C%20Txt%20~%20GCP%20~%20General%23v1-KWID_43700060384861702-kwd-26415313501-userloc_9041106&utm_term=KW_google%20cloud%20platform-NET_g-PLAC_&gclid=CjwKCAiAvaGRBhBlEiwAiY-yMH6ZzZToth-9fTjp0B_qAE91ulGwN7jIb0KBGW5TbmN8Z5w9JE1noRoCSmIQAvD_BwE&gclsrc=aw.ds)
-1. If you do not already have a profile then follow the basic steps for creating an Account, via clicking on the 'Get Started for Free' button in the upper right corner.
-1. Once the previous step is complete, create a new project with a unique title
-1. You should now arrive at the project dashboard and be ready to setup the required credentials:
-    * Access the navigation menu from clicking on the hamburger button
-    * Select APIs and Services, followed by 'Library'
-    * Search for and select Google Drive API -> Enable
-    * Search for and select Google Sheets API -> Enable
-    * Click Enable to navigate to 'API and Services Overview' 
-    * Click Create Credentials in the upper left of the screen
-    * For Credential Type, select 'Google Drive' from the dropdown
-    * For 'What data will you be accessing' select Application Data
-    * For 'Are you planning to use this API with Compute Engine...?' choose 'No, I'm not...'
-    * Click Next
-    * Within the Create Service Account page, enter a Service Account Name
-    * Click Create and Continue
-    * Next within 'Grant this service account access to project', choose Basic -> Editor from the 'Select a Role' dropdown
-    * Click Continue
-    * Next within 'Grant users access to this service account', choose 'Done'
-    * On the following, click on the 'Service Account Name' you created to navigate to the config page
-    * Navigate to the Keys section
-    * Select 'Add Key' dropdown -> Create New Key.
-    * Select 'JSON' -> Create - the file will download to your machine
-    * From your local downloads folder, add file directly to your Gitpod workspace, and rename the file to creds.json
-    * Within the file, copy the value for 'client email'. Paste this email address into the 'Share' area of your Google Sheet, assigning the role of Editor
-
-Enable API within IDE
-1. From within your GitPod IDE terminal, enter 'pip3 install gspread google-auth'
-1. At the top of your Python file add the following lines:
-
-    ```
-    import gspread
-    from google.oauth2.service_account import Credentials
-    ```
-    
-1. Below this add the following code:
-
-    ```
-        SCOPE = [
-            "https://www.googleapis.com/auth/spreadsheets",
-            "https://www.googleapis.com/auth/drive.file",
-            "https://www.googleapis.com/auth/drive"
-            ]
-
-        CREDS = Credentials.from_service_account_file('creds.json')
-        SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-        GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-        SHEET = GSPREAD_CLIENT.open('vv_pizzas')
-        console = Console()
-        install(show_locals=True)
-    ```
-</details>
-
 
 ### Deploy with Heroku
+
 <details>
     <summary></summary>
 
-* The requirements.txt file in the IDE must be updated to package all dependencies. To do this:
-    1. Enter the following into the terminal: 'pip3 freeze > requirements.txt'
-    1. Commit the changes and push to GitHub
+1. Log in to Heroku at https://heroku.com - create an account if needed.
+1. From the Heroku dashboard, click the Create new app button. For a new account an icon will be visible on screen to allow you to Create an app, otherwise a link to this function is located under the New dropdown menu at the top right of the screen.
+1. On the Create New App page, enter a unique name for the application and select region. Then click Create app.
+1. On the Application Configuration page for the new app, click on the Resources tab.
+1. In the Add-ons search bar enter "Postgres" and select "Heroku Postgres" from the list - click the "Submit Order Form" button on the pop-up dialog.
+1. Next, click on Settings on the Application Configuration page and click on the "Reveal Config Vars" button - check the DATABASE_URL has been automatically set up.
+1. Add a new Config Var called DISABLE_COLLECTSTATIC and assign it a value of 1.
+1. Add a new Config Var called SECRET_KEY and assign it a value - any random string of letters, digits and symbols.
+1. The settings.py file should be updated to use the DATABASE_URL and SECRET_KEY environment variable values as follows :
 
-* Next, follow the steps below:
-    1. Login to [Heroku](https://heroku.com/), create an account if necessary
-    1. Once at your Dashboard, click 'Create New App'
-    1. Enter a name for your application, this must be unique, and select a region
-    1. Click 'Create App'
-    1. At the Application Configuration page, apply the following to the Settings and Deploy sections:
-        * Within 'Settings', scroll down to the Config Vars section to apply the credentials being used by the application. In the Reveal Config Vars enter 'CREDS' for the Key field and paste the all the contents from the creds.json file into the Value field
-        * Click 'Add'
-        * Add another Config Var with the Key of 'PORT' and the Value of '8000'
-        * Within Settings, scroll down to the Buildpacks sections, click to Add a Buildpack
-        * Select Python from the pop-up window and Save
-        * Add the Node.js Buildpack using the same method
-        * Navigate to the Deploy section, select Github as the deployment method, and connect to GitHub when prompted
-        * Use your GitHub repository name created for this project
-        * Finally, scroll down to and select to deploy 'Automatically' as this will ensure each time you push code in GitHub, the pages through Heroku are updated
-    1. Your application can be run from the Application Configuration section, click 'Open App'
+        DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
+        SECRET_KEY = os.environ.get('SECRET_KEY')
+
+1. In Gitpod, in the project terminal window, to initialize the data model in the postgres database, run the command : python3 manage.py migrate
+1. Update the requirements.txt file with all necessary supporting files by entering the command : pip freeze > requirements.txt
+1. Commit and push any local changes to GitHub.
+1. In order to be able to run the application on localhost, add SECRECT_KEY and DATABASE_URL and their values to env.py
+
+Connect GitHub Repo to Heroku App
+
+1. Navigate to Application Configuration page for the application on Heroku and click on the Deploy tab.
+1. Select GitHub as the Deployment Method and if prompted, confirm that you want to connect to GitHub. Enter and search for the required repository, then click on Connect to link them up..
+1. Scroll down the page and choose to either Automatically Deploy each time changes are pushed to GitHub, or Manually deploy - I chose the latter for the initial deployment to watch the build and then opted for Automatic Deployment.
+1. The application can be run from the Application Configuration page by clicking on the Open App button.
+1. Each time you push code from your GitHub Repo it will be automatically reflected in your Heroku App.
+
+The url for this website can be found here https://freshcasts.herokuapp.com/
 </details>
 
+
+### Pre Production Deployment
+
+<details>
+    <summary></summary>
+
+When you are ready to move to production, the following steps must be taken to ensure your site works correctly and is secure.
+
+In GitPod:
+1. Set DEBUG flag to False in settings.py
+1. Check the following line exists in settings.py to enable Summernote to work on the deployed environment (CORS security feature): X_FRAME_OPTIONS = 'SAMEORIGIN'
+1. Update the requirements.txt file with all necessary supporting files by entering the command : pip freeze > requirements.txt
+1. Commit and push code to GitHub
+In the Heroku App:
+1. Settings > Config Vars : Delete environment variable : DISABLE_COLLECTSTATIC
+1. Deploy : Click on deploy branch
+</details>
     
 
 ***
 
+<br />
 
 ## Credit
 
@@ -495,7 +449,10 @@ Enable API within IDE
 Support with how to develop ideas into code also came from various online resources:
 
 * In general the coding and testing has relied on the Code Institutes walkthrough projects "Hello Django" and "I Think Therefore I Blog" as part of their Full Stack Frameworks module.
-* https://www.geeksforgeeks.org/urlfield-django-models/ - using URL Field
+* [W3schools](https://www.w3schools.com/) - Source of 'How to...' information throughout the build primarily on Django.
+* [Stack Overflow](https://stackoverflow.com/) - Source of 'How to...' information on Python and Django code.
+* [GeekforGeeks](https://www.geeksforgeeks.org/urlfield-django-models) - for using dynamic URL fields in html tags.
+
 
 
 
