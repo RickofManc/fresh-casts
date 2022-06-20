@@ -15,6 +15,12 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Category(models.Model):
+    """
+    Models the fields for Post Categories.
+    This enables separate views of posts
+    by category value.
+    Choice of 5 categories assigned when adding a post.
+    """
     name = models.CharField(max_length=255)
 
     def __str__(self):
@@ -25,6 +31,9 @@ class Category(models.Model):
 
 
 class Post(models.Model):
+    """
+    Models the fields for a blog Post.
+    """
     title = models.CharField(max_length=255, unique=True, primary_key=True)
     slug = models.SlugField(max_length=255, unique=True)
     author = models.ForeignKey(
@@ -66,6 +75,9 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Models the fields for adding Post Comments.
+    """
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name='comments'
     )
