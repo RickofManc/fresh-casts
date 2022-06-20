@@ -1,56 +1,66 @@
 {% extends 'base.html' %}
-
 {% load i18n %}
-
-{% block title %}{% trans 'Add Blog Post' %}{% endblock %}
-
+{% block title %}{% trans 'Add BlogPost' %}{% endblock %}
 {% block content %}
-
+<!-- Crispy Forms used to improve rendering -->
+{% load crispy_forms_tags %}
+<!-- User will be logged in to access this page -->
 {% if user.is_authenticated %}
-
+<!-- Main container for page content : Adding a Blog Post -->
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <div class="card-body">
-                <h2 class="card-title">{% trans 'Add Blog Post' %}</h2>
-
-                <p class="card-text">
-                    Add a post below
-                </p>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <div class="card-body">
+        <!-- Page title -->
+        <h2 class="card-title">{% trans 'Add Blog Post' %}
+        </h2>
+        <p class="card-text">Add a post below
+        </p>
+      </div>
     </div>
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <div class="card-body">
-                <form method="POST">
-                    <div class="form-group">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <div class="input-group">
-                            <button class="btn btn-style right" type="submit">Submit</button>
-                            <input type="button" name="cancel" value="Cancel"
-                                class="anchor-btn btn-style btn-left-margin btn-cancel"
-                                onClick="window.location.href='{% url 'home' %}';" />
-                        </div>
-                </form>
+  </div>
+  <!-- Container for adding a post form -->
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <div class="card-body">
+        <!-- Form to allow users to add a blog post if logged in -->
+        <form method="POST">
+          <div class="form-group">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="input-group">
+              <!-- Button to submit the form adding a post. Form must be approved by Site Admin before going live -->
+              <button class="btn btn-style right" type="submit">Submit
+              </button>
+              <!-- Option to cancel if navigated to in error -->
+              <input
+                     type="button"
+                     name="cancel"
+                     value="Cancel"
+                     class="anchor-btn btn-style btn-left-margin btn-cancel"
+                     onClick="window.location.href='{% url 'home' %}';"
+                     />
             </div>
-        </div>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
-
 {% else %}
-
+<!-- Information to user if navigated to in error without being signed in -->
 <div class="container fluid">
-    <div class="row justify-content-center">
-        <div class="card-block">
-            <p class="card-text">Sorry you must be signed in to access this page, use the button below to return to our
-                homepage</p>
-            <a href="{% url 'home' %}" type="button" class="anchor-btn btn-style">Home</a>
-        </div>
+  <div class="row justify-content-center">
+    <div class="card-block">
+      <p class="card-text">
+        Sorry you must be signed in to access this page, use the button below to
+        return to our homepage
+      </p>
+      <a href="{% url 'home' %}" type="button" class="anchor-btn btn-style"
+         >Home
+      </a
+        >
     </div>
+  </div>
 </div>
-
-{% endif %}
-
-{% endblock content %}
+{% endif %} {% endblock content %}

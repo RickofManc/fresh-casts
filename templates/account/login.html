@@ -1,40 +1,54 @@
 {% extends "base.html" %}
-
 {% load i18n %}
-
 {% block head_title %}{% trans 'Sign In' %}{% endblock %}
-
 {% block content %}
-
+<!-- Main container for page content : User Login / Sign In -->
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <div class="card-body">
-                <h2 class="card-title">{% trans 'Sign In' %}</h2>
-                <p class="card-text">{% blocktrans %}Welcome back to Fresh Casts.<br>To leave a comment or like a post,
-                    please Sign In<br>
-                    If you haven't created an account please <a href="{{ signup_url }}" class="link">Sign Up</a>
-                    first.{% endblocktrans %}
-                </p>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <div class="card-body">
+        <!-- Page title -->
+        <h2 class="card-title">{% trans 'Sign In' %}
+        </h2>
+        <p class="card-text">
+          {% blocktrans %}
+          Welcome back to Fresh Casts.
+          <br />To leave a comment
+          or like a post, please Sign In
+          <br />
+          If you haven't created an account please
+          <a href="{{ signup_url }}" class="link">Sign Up
+          </a>
+          first.
+          {% endblocktrans %}
+        </p>
+      </div>
     </div>
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <div class="card-body">
-                <form action="{% url 'account_login' %}" class="login" method="POST">
-                    <div class="form-group">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        {% if redirect_field_value %}
-                        <input class="form-control" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                        {% endif %}
-                        <button class="btn btn-style right" type="submit">{% trans 'Sign In' %} &raquo;</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+  </div>
+  <!-- Container for login form -->
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <div class="card-body">
+        <!-- Form to input login credentials and optional checkbox to save details -->
+        <form action="{% url 'account_login' %}" class="login" method="POST">
+          <div class="form-group">
+            {% csrf_token %} {{ form.as_p }}
+            {% if redirect_field_value %}
+            <input
+                   class="form-control"
+                   type="hidden"
+                   name="{{ redirect_field_name }}"
+                   value="{{ redirect_field_value }}"
+                   />
+            {% endif %}
+            <!-- Button to submit login credentials -->
+            <button class="btn btn-style right" type="submit">
+              {% trans 'Sign In' %}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
-
 {% endblock %}

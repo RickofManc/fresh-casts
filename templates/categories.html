@@ -1,80 +1,99 @@
 {% extends "base.html" %}
-
 {% load i18n %}
-
 {% block title %}{% trans '{{ cats }} Category' %}{% endblock %}
-
 {% block content %}
-
 {% if category_posts %}
-
-<!-- Container for homepage blog posts -->
+<!-- Main container for page content : Podcast Category (displaying 1 of 5) -->
 <div class="container fluid">
-    <div class="row">
-        <div class="card w-100 left">
-            <h2 class="card-title">{% trans '{{ cats }} Category' %}</h2>
-            <div class="row">
-                {% for post in category_post %}
-                <div class="card-body border-bottom">
-                    <div class="row">
-                        <!-- Featured image URL -->
-                        <div class="col-4 col-sm-2 blog-img-div">
-                            {% if "placeholder" in featured_image.url %}
-                            <img class="img-fluid" src="static/images/fresh-casts-b-and-g-logo_thumbnail.png"
-                                alt="Fresh Casts logo as a placeholder image for podcast image">
-                            {% else %}
-                            <img class="img-fluid" src=" {{ post.featured_image.url }}" alt="Image of the podcast show">
-                            {% endif %}
-                        </div>
-                        <div class="col-8 col-sm-10">
-                            <div class="card-block px-2">
-                                <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                    <h2 class="card-title">{{ post.title }}</h2>
-                                    <h3 class="card-subtitle">{{ post.category }}</h3>
-                                    <p class="card-text">{{ post.excerpt }}</p>
-                                    <p class="author">Shared By {{ post.author }}</p>
-                                    <p class="card-text text-left">{{ post.created_on }}</p>
-                                    <p class="card-text"><i class="far fa-heart"></i>{{ post.number_of_likes }}</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
+  <div class="row">
+    <div class="card w-100 left">
+      <!-- Page title -->
+      <h2 class="card-title">{% trans '{{ cats }} Category' %}
+      </h2>
+      <!-- Reusing code from index.html to list all the podcasts with the same category value -->
+      <div class="row">
+        {% for post in category_post %}
+        <div class="card-body border-bottom">
+          <div class="row">
+            <!-- Display either podcast post image or standard Fresh Cast logo -->
+            <div class="col-4 col-sm-2 blog-img-div">
+              {% if "placeholder" in featured_image.url %}
+              <img
+                   class="img-fluid"
+                   src="static/images/fresh-casts-b-and-g-logo_thumbnail.png"
+                   alt="Fresh Casts logo as a placeholder image for podcast image"
+                   />
+              {% else %}
+              <img
+                   class="img-fluid"
+                   src=" {{ post.featured_image.url }}"
+                   alt="Image of the podcast show"
+                   />
+              {% endif %}
             </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
+            <!-- Container for reduced post details for list view purposes -->
+            <div class="col-8 col-sm-10">
+              <div class="card-block px-2">
+                <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                  <h2 class="card-title">{{ post.title }}
+                  </h2>
+                  <h3 class="card-subtitle">{{ post.category }}
+                  </h3>
+                  <p class="card-text">{{ post.excerpt }}
+                  </p>
+                  <p class="author">Shared By {{ post.author }}
+                  </p>
+                  <p class="card-text text-left">{{ post.created_on }}
+                  </p>
+                  <p class="card-text">
+                    <i class="far fa-heart">
+                    </i>{{ post.number_of_likes }}
+                  </p>
+                </a>
+              </div>
             </div>
+          </div>
         </div>
+        {% if forloop.counter|divisibleby:3 %}
+      </div>
+      <div class="row">{% endif %} {% endfor %}
+      </div>
     </div>
-    <!-- Django boilerplate ListView code to support user navigation  -->
-    {% if is_paginated %}
-    <nav aria-label="Page Navigation" class="page-navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+  </div>
+  <!-- Django boilerplate ListView code to support user navigation  -->
+  {% if is_paginated %}
+  <nav aria-label="Page Navigation" class="page-navigation">
+    <ul class="pagination justify-content-center">
+      {% if page_obj.has_previous %}
+      <li>
+        <a href="?page={{ page_obj.previous_page_number }}" class="page-link"
+           >&laquo; PREV
+        </a>
+      </li>
+      {% endif %} {% if page_obj.has_next %}
+      <li>
+        <a href="?page={{ page_obj.next_page_number }}" class="page-link">
+          NEXT &raquo;
+        </a
+          >
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
 </div>
-
 {% else %}
-
+<!-- Container to inform the user if a category does not exist  -->
 <div class="container fluid">
-    <div class="row justify-content-center">
-        <div class="card-block">
-            <p class="card-text">Sorry this category does not exist, use the button below to return to our homepage, or explore the categories within the main menu.</p>
-            <a href="{% url 'home' %}" class="anchor-btn btn-style">Home</a>
-        </div>
-    </div>  
-</div>            
-
-
-{% endif %}
-
-{% endblock content %}
+  <div class="row justify-content-center">
+    <div class="card-block">
+      <p class="card-text">
+        Sorry this category does not exist, use the button below to return to
+        our homepage, or explore the categories within the main menu.
+      </p>
+      <a href="{% url 'home' %}" class="anchor-btn btn-style">Home
+      </a>
+    </div>
+  </div>
+</div>
+{% endif %} {% endblock content %}

@@ -1,61 +1,72 @@
 {% extends 'base.html' %}
-
-{% load i18n %}
-
-{% block title %}{% trans 'Delete Blog Post' %}{% endblock %}
-
+{% load i18n %}{% block title %}{% trans 'Delete Blog Post' %}{% endblock %}
 {% block content %}
-
+<!-- User must be authenticated and accessing own blog posts to view page -->
 {% if user.is_authenticated %}
-{%  if user.id == post.author.id %}
+{% if user.id == post.author.id %}
+<!-- Main container for page content : User Delete Own Post -->
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <div class="card-body">
-                <h2 class="card-title">{% trans 'Delete Blog Post' %}</h2>
-                <br>
-                <h3 class="card-subtitle">Delete: {{ post.title }}</h3>
-                <br>
-                <p class="card-text">
-                    Are you sure you would like to delete this post?</p>
-                <p class="card-text">
-                    If yes, please click the 'Delete' button below.</p>
-                <p class="card-text">
-                    Note, this post cannot be reinstated once deleted.
-                </p>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <div class="card-body">
+        <!-- Page title -->
+        <h2 class="card-title">{% trans 'Delete Blog Post' %}
+        </h2>
+        <br />
+        <!-- Informing user of the post identified for deletion -->
+        <h3 class="card-subtitle">Delete: {{ post.title }}
+        </h3>
+        <br />
+        <p class="card-text">
+          Are you sure you would like to delete this post?
+        </p>
+        <p class="card-text">If yes, please click the 'Delete' button below.
+        </p>
+        <p class="card-text">
+          Note, this post cannot be reinstated once deleted.
+        </p>
+      </div>
     </div>
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <div class="card-body">
-                <form method="POST">
-                    <div class="form-group">
-                        <div class="input-group">
-                            {% csrf_token %}
-                            <button class="btn btn-style right" type="submit">Delete</button>
-                            <input type="button" name="cancel" value="Cancel"
-                                class="anchor-btn btn-style btn-left-margin btn-cancel"
-                                onClick="window.location.href='{% url 'home' %}';" />
-                        </div>
-                </form>
+  </div>
+  <!-- Container for delete form -->
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <div class="card-body">
+        <!-- Form used to perform the action with the database -->
+        <form method="POST">
+          <div class="form-group">
+            <div class="input-group">
+              {% csrf_token %}
+              <!-- Button to delete the post from the database -->
+              <button class="btn btn-style right" type="submit">Delete
+              </button>
+              <!-- Option to cancel if navigated to in error -->
+              <input
+                     type="button"
+                     name="cancel"
+                     value="Cancel"
+                     class="anchor-btn btn-style btn-left-margin btn-cancel"
+                     onClick="window.location.href='{% url 'home' %}';"
+                     />
             </div>
-        </div>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
-{% endif %}
-{% else %}
-
+{% endif %} {% else %}
+<!-- Information to user if navigated to in error without being signed in -->
 <div class="container fluid">
-    <div class="row justify-content-center">
-        <div class="card-block">
-            <p class="card-text">Sorry you must be signed in to access this page, use the button below to return to our
-                homepage</p>
-            <a href="{% url 'home' %}" class="anchor-btn btn-style">Home</a>
-        </div>
+  <div class="row justify-content-center">
+    <div class="card-block">
+      <p class="card-text">
+        Sorry you must be signed in to access this page, use the button below to
+        return to our homepage
+      </p>
+      <a href="{% url 'home' %}" class="anchor-btn btn-style">Home
+      </a>
     </div>
+  </div>
 </div>
-
-{% endif %}
-
-{% endblock content %}
+{% endif %} {% endblock content %}

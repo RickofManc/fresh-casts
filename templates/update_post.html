@@ -1,53 +1,65 @@
 {% extends 'base.html' %}
-
 {% load i18n %}
-
 {% block title %}{% trans 'Edit Blog Post' %}{% endblock %}
-
 {% block content %}
-
-{% if user.is_authenticated %} 
-    {%  if user.id == post.author.id %}
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mt-3 offset-md-2">
-                    <div class="card-body">
-                        <h2 class="card-title">{% trans 'Edit Blog Post' %}</h2>
-
-                        <p class="card-text">
-                            Update the fields below, once complete submit the changes using the button below.
-                        </p>
-                    </div>
-                </div>
+<!-- User must be authenticated and accessing own blog posts to view page -->
+{% if user.is_authenticated %}
+{% if user.id == post.author.id %}
+<!-- Main container for page content : Update Own Post -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <div class="card-body">
+        <!-- Page title -->
+        <h2 class="card-title">{% trans 'Edit Blog Post' %}
+        </h2>
+        <p class="card-text">
+          Update the fields below, once complete submit the changes using the
+          button below.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <div class="card-body">
+        <!-- Form outlining the fields the user can update -->
+        <form method="POST">
+          <div class="form-group">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="input-group">
+              <!-- Button to submit post updates -->
+              <button class="btn btn-style right" type="submit">Submit
+              </button>
+              <!-- Option to cancel if navigated to in error -->
+              <input
+                     type="button"
+                     name="cancel"
+                     value="Cancel"
+                     class="anchor-btn btn-style btn-left-margin btn-cancel"
+                     onClick="window.location.href='{% url 'home' %}';"
+                     />
             </div>
-            <div class="row">
-                <div class="col-md-8 mt-3 offset-md-2">
-                    <div class="card-body">
-                        <form method="POST">
-                            <div class="form-group">
-                                {% csrf_token %}
-                                {{ form.as_p }}
-                                <div class="input-group">
-                                <button class="btn btn-style right" type="submit">Submit</button>
-                                <input type="button" name="cancel" value="Cancel"
-                                class="anchor-btn btn-style btn-left-margin btn-cancel"
-                                onClick="window.location.href='{% url 'home' %}';" />
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    {% endif %}
-{% else %}
-    <div class="container fluid">
-        <div class="row justify-content-center">
-            <div class="card-block">
-                <p class="card-text">Sorry you must be signed in to access this page, use the button below to return to our homepage</p>
-                <a href="{% url 'home' %}" class="anchor-btn btn-style">Home</a>
-            </div>
-        </div>  
-    </div>            
-{% endif %}
-
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endif %} {% else %}
+<!-- Information to user if navigated to in error without being signed in -->
+  <div class="container fluid">
+    <div class="row justify-content-center">
+      <div class="card-block">
+        <p class="card-text">
+          Sorry you must be signed in to access this page, use the button below
+          to return to our homepage
+        </p>
+        <a href="{% url 'home' %}" class="anchor-btn btn-style">Home
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %} 
 {% endblock content %}

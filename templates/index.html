@@ -1,63 +1,90 @@
 {% extends "base.html" %}
-
 {% load i18n %}
-
 {% block content %}
-
-<!-- Container for homepage blog posts -->
+<!-- Main container for page content : List of blog posts ordered by latest first-->
 <div class="container fluid">
-    <div class="row">
-        <div class="card w-100 left">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="card-body border-bottom">
-                    <div class="row">
-                        <!-- Featured image URL -->
-                        <div class="col-4 col-sm-2 blog-img-div">
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                            {% if "placeholder" in featured_image.url %}
-                            <img class="img-fluid" src="static/images/fresh-casts-b-and-g-logo_thumbnail.png"
-                                alt="Fresh Casts logo as a placeholder image for podcast image">
-                            {% else %}
-                            <img class="img-fluid" src=" {{ post.featured_image.url }}" alt="Image of the podcast show">
-                            {% endif %}
-                        </a>
-                        </div>
-                        <div class="col-8 col-sm-10">
-                            <div class="card-block px-2">
-                                <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                    <h2 class="card-title">{{ post.title }}</h2></a>
-                                    <a href="{% url 'category' post.category|slugify %}" class="post-link"><h3 class="card-subtitle">Category : {{ post.category }}</h3></a>
-                                    <p class="card-text">{{ post.excerpt }}</p>
-                                    <p class="author">Shared By {{ post.author }}</p>
-                                    <p class="card-text text-left">{{ post.created_on }}</p>
-                                    <p class="card-text"><i class="far fa-heart"></i>{{ post.number_of_likes }}</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
+  <div class="row">
+    <div class="card w-100 left">
+      <div class="row">
+        <!-- Blog app View with reduced post details for list view purposes -->
+        {% for post in post_list %}
+        <div class="card-body border-bottom">
+          <div class="row">
+            <!-- Display either podcast post image or standard Fresh Cast logo -->
+            <div class="col-4 col-sm-2 blog-img-div">
+              <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                {% if "placeholder" in featured_image.url %}
+                <img
+                     class="img-fluid"
+                     src="static/images/fresh-casts-b-and-g-logo_thumbnail.png"
+                     alt="Fresh Casts logo as a placeholder image for podcast image"
+                     />
+                {% else %}
+                <img
+                     class="img-fluid"
+                     src=" {{ post.featured_image.url }}"
+                     alt="Image of the podcast show"
+                     />
                 {% endif %}
-                {% endfor %}
+              </a>
             </div>
+            <!-- Container for post details -->
+            <div class="col-8 col-sm-10">
+              <div class="card-block px-2">
+                <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                  <h2 class="card-title">{{ post.title }}
+                  </h2>
+                </a
+                  >
+                <a
+                   href="{% url 'category' post.category|slugify %}"
+                   class="post-link"
+                   >
+                  <h3 class="card-subtitle">
+                    Category : {{ post.category }}
+                  </h3>
+                </a
+                  >
+                <p class="card-text">{{ post.excerpt }}
+                </p>
+                <p class="author">Shared By {{ post.author }}
+                </p>
+                <p class="card-text text-left">{{ post.created_on }}
+                </p>
+                <p class="card-text">
+                  <i class="far fa-heart">
+                  </i>{{ post.number_of_likes }}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+        {% if forloop.counter|divisibleby:3 %}
+      </div>
+      <div class="row">{% endif %} {% endfor %}
+      </div>
     </div>
-    <!-- Django boilerplate ListView code to support user navigation  -->
-    {% if is_paginated %}
-    <nav aria-label="Page Navigation" class="page-navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+  </div>
+  <!-- Django boilerplate ListView code to support user navigation  -->
+  {% if is_paginated %}
+  <nav aria-label="Page Navigation" class="page-navigation">
+    <ul class="pagination justify-content-center">
+      {% if page_obj.has_previous %}
+      <li>
+        <a href="?page={{ page_obj.previous_page_number }}" class="page-link"
+           >&laquo; PREV
+        </a>
+      </li>
+      {% endif %} {% if page_obj.has_next %}
+      <li>
+        <a href="?page={{ page_obj.next_page_number }}" class="page-link">
+          NEXT &raquo;
+        </a
+          >
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
 </div>
-
 {% endblock content %}

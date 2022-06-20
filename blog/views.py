@@ -4,6 +4,7 @@ Django imports to support Views
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
+from django.contrib import messages
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth.views import PasswordChangeView
 from django.http import HttpResponseRedirect
@@ -23,10 +24,9 @@ class PostList(generic.ListView):
         context = super(PostList, self).get_context_data(*args, **kwargs)
         context["cat_menu"] = cat_menu
         return context
-        
+
 
 class PostDetail(View):
-
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -43,40 +43,42 @@ class PostDetail(View):
                 "comments": comments,
                 "commented": False,
                 "liked": liked,
-                "comment_form": CommentForm()
+                "comment_form": CommentForm(),
             },
         )
 
-    
     def post(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
-        liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
-            liked = True
+        if request.user.is_authenticated:
+            queryset = Post.objects.filter(status=1)
+            post = get_object_or_404(queryset, slug=slug)
+            comment_form = CommentForm(data=request.POST)
+            # comments = post.comments.filter(approved=True).order_by("-created_on")
+            # liked = False
+            # if post.likes.filter(id=self.request.user.id).exists():
+                # liked = True        
 
-        comment_form = CommentForm(data=request.POST)
-
-        if comment_form.is_valid():
-            comment_form.instance.email = request.user.email
-            comment_form.instance.name = request.user.username
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.save()
-        else:
-            comment_form = CommentForm()
-        return render(
-            request,
-            "post_detail.html",
-            {
-                "post": post,
-                "comments": comments,
-                "commented": True,
-                "liked": liked,
-                "comment_form": CommentForm()
-            },
-        )
+            if comment_form.is_valid():
+                comment_form.instance.username = request.user
+                comment = comment_form.save(commit=False)
+                comment.post = post
+                comment.save()
+                messages.success(request, 'Thank you for your comment !')
+            # else:
+            #     comment_form = CommentForm()
+            # return render(
+            #     request,
+            #     "post_detail.html",
+            #     {
+            #         "post": post,
+            #         "comments": comments,
+            #         "commented": True,
+            #         "liked": liked,
+            #         "comment_form": CommentForm(),
+            #     },
+            # )
+        # User HttpResponseRedirect here instead of render to ensure comment
+        # is not re-submitted on page re-load
+        return HttpResponseRedirect(reverse('hike_detail', args=[slug]))
 
     def get_context_data(self, *args, **kwargs):
         cat_menu = Category.objects.all()
@@ -86,7 +88,6 @@ class PostDetail(View):
 
 
 class PostLike(View):
-
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
@@ -94,13 +95,13 @@ class PostLike(View):
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+        return HttpResponseRedirect(reverse("post_detail", args=[slug]))
 
 
 class AddPostView(CreateView):
     model = Post
-    template_name = 'add_post.html'
-    fields = ('title', 'category', 'author', 'content', 'podcast_url', 'featured_image')
+    template_name = "add_post.html"
+    fields = ("title", "category", "author", "content", "podcast_url", "featured_image")
 
     def get_context_data(self, *args, **kwargs):
         cat_menu = Category.objects.all()
@@ -111,8 +112,8 @@ class AddPostView(CreateView):
 
 class UpdatePostView(UpdateView):
     model = Post
-    template_name = 'update_post.html'
-    fields = ('title', 'category', 'content', 'podcast_url', 'featured_image')
+    template_name = "update_post.html"
+    fields = ("title", "category", "content", "podcast_url", "featured_image")
 
     def get_context_data(self, *args, **kwargs):
         cat_menu = Category.objects.all()
@@ -123,9 +124,9 @@ class UpdatePostView(UpdateView):
 
 class DeletePostView(DeleteView):
     model = Post
-    template_name = 'delete_post.html'
-    fields = ('title')
-    success_url = reverse_lazy('home')
+    template_name = "delete_post.html"
+    fields = "title"
+    success_url = reverse_lazy("home")
 
     def get_context_data(self, *args, **kwargs):
         cat_menu = Category.objects.all()
@@ -136,11 +137,17 @@ class DeletePostView(DeleteView):
 
 class CategoryView(View):
     model = Post
-    template_name = 'categories.html'
-    
+    template_name = "categories.html"
+
     def get(self, request, cats, *args, **kwargs):
-        category_posts = Post.objects.filter(category__name__contains=cats.replace('-', ' '))
-        return render(request, self.template_name, {'cats': cats.title().replace('-', ' '), 'category_posts': category_posts})
+        category_posts = Post.objects.filter(
+            category__name__contains=cats.replace("-", " ")
+        )
+        return render(
+            request,
+            self.template_name,
+            {"cats": cats.title().replace("-", " "), "category_posts": category_posts},
+        )
 
     def get_context_data(self, *args, **kwargs):
         cat_menu = Category.objects.all()
@@ -151,11 +158,11 @@ class CategoryView(View):
 
 class UserEditView(UpdateView):
     form_class = EditProfileForm
-    template_name = 'edit_profile.html'
-    success_url = reverse_lazy('home')
+    template_name = "edit_profile.html"
+    success_url = reverse_lazy("home")
 
     def get_object(self):
-       return self.request.user
+        return self.request.user
 
     def get_context_data(self, *args, **kwargs):
         cat_menu = Category.objects.all()
@@ -166,9 +173,8 @@ class UserEditView(UpdateView):
 
 class PasswordsChangeView(PasswordChangeView):
     form_class = PasswordChangingForm
-    # form_class = PasswordChangeForm
-    template_name = 'change-password.html'
-    success_url = reverse_lazy('home')
+    template_name = "change-password.html"
+    success_url = reverse_lazy("home")
 
     def get_context_data(self, *args, **kwargs):
         cat_menu = Category.objects.all()
@@ -178,8 +184,8 @@ class PasswordsChangeView(PasswordChangeView):
 
 
 class About(View):
-    template_name = 'about.html'
-    
+    template_name = "about.html"
+
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {})
 
@@ -191,8 +197,8 @@ class About(View):
 
 
 class AccessibilityStatement(View):
-    template_name = 'accessibility_statement.html'
-    
+    template_name = "accessibility_statement.html"
+
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {})
 
@@ -204,8 +210,8 @@ class AccessibilityStatement(View):
 
 
 class CopyrightStatement(View):
-    template_name = 'copyright_statement.html'
-    
+    template_name = "copyright_statement.html"
+
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {})
 
@@ -217,8 +223,8 @@ class CopyrightStatement(View):
 
 
 class UserAgreement(View):
-    template_name = 'user_agreement.html'
-    
+    template_name = "user_agreement.html"
+
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {})
 
@@ -227,4 +233,3 @@ class UserAgreement(View):
         context = super(UserAgreement, self).get_context_data(*args, **kwargs)
         context["cat_menu"] = cat_menu
         return context
-
