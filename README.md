@@ -235,14 +235,12 @@ The diagram highlights the following relationships:
 
 ### Data Security
 
-explaining the security features considered
-gitignore file
-secret key use for config variables
-Securing data using CSRF toekn
-
-The CSRF middleware and template tag provides easy-to-use protection against Cross Site Request Forgeries. This type of attack occurs when a malicious website contains a link, a form button or some JavaScript that is intended to perform some action on your website, using the credentials of a logged-in user who visits the malicious site in their browser. A related type of attack, ‘login CSRF’, where an attacking site tricks a user’s browser into logging into a site with someone else’s credentials, is also covered.
-
-The first defense against CSRF attacks is to ensure that GET requests (and other ‘safe’ methods, as defined by RFC 7231#section-4.2.1) are side effect free. Requests via ‘unsafe’ methods, such as POST, PUT, and DELETE, can then be protected by following the steps below.
+Specific steps have been taken to ensure the security of users data and the websites integrity. These are as follows;
+* The use of an env.py file to store key variables for accessing secure environments i.e. Postgres Database.
+* A gitignore file has been incorporated to ensure the env.py file is never committed to production. Therefore retaining the security of these key variables.
+* Additionally, these variables are stored within the Config Variables in Heroku to ensure GitPod and Heroku can synchronise securely.
+* Cross Site Request Forgery (CSRF) tokens have been applied to all HTML Forms. Their application provides protection from malicious attacks where users maybe performing certain actions or sending data when logged-in.
+* Django's inbuilt User Authentication has been applied to several key areas to ensure only approved Users can Add, Comment, Like blog posts. A further layer of security has been applied to ensure the ability to Edit or Delete a blog post can only be performed by the User who has authored the blog post.
 
 
 ### Meta data
@@ -263,39 +261,34 @@ Meta data is included within the HTML head element to increase the traffic to th
 * CSS3
 * Python
 * Jquery
-* Javascript
 
 ### Frameworks & Libraries
 
-* [Django 3.2] LTS (Long Term Support) version of Django used as more preferable over the newest beta Django 4.
-Gunicorn was used as the Web Server to run Django on Heroku
-* [Cloudinary] was used to store the images used by the application
-Django was used as the framework to support rapid and secure development of the application
-Bootstrap5 was used to build responsive web pages
-* Summernote provides WYSIWYG editing to adding and updating the blog post form.
-
-* dj_database_url library used to allow database urls to connect to the postgres db
-* psycopg2 database adapter used to support the connection to the postgres db
-Django allauth used for account registration and authentication
-Django crispy forms used to simplify form rendering
+* [Django 3.2](https://docs.djangoproject.com/en/4.0/releases/3.2/) has been adopted as more preferable over the newest beta Django 4 to rapidly and securely develop this application.
+* [dj_database_url](https://pypi.org/project/dj-database-url/) library used to allow Database urls to connect to the Postgres database.
+* [Psycopg2](https://pypi.org/project/psycopg2/) supports the connection to the Postgres database.
+* [Gunicorn](https://gunicorn.org/) was used as the Web Server to run Django on Heroku.
+* [Django-allauth](https://django-allauth.readthedocs.io/en/latest/) used for addressing user authentication, registration and account management.
+* [Bootstrap5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) was used to build responsive web pages.
+* [Summernote](https://summernote.org/) provides WYSIWYG editing of blog post descriptions.
+* [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) is simplifying rendering on the Comments form.
+* [Cloudinary](https://cloudinary.com/products/programmable_media) has been used to store the images uploaded by user for blog posts.
 
 
 ### Software & Web Applications
 
-* [Balsamiq](https://balsamiq.com/) - Used to build wireframes in the Skelton phase.
-* [Lucid Spark](https://lucidspark.com/) - Used for the high-level site structure.
-* [draw.io](https://www.draw.io/index.html) - Used to build the data schema.
-* PPP - Heroku, Django, Bootstrap, PPP This website was coded primarily using Python3, HTML5, CCS3 with [GitPod](https://gitpod.io/) used for the IDE and [GitHub](https://github.com/) as a hosting repository.
-Git: was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
-GitHub: is used as the respository for the project code after being pushed from Git. In addition, for this project GitHub was used for the agile development aspect through the use of User Stories (GitHub Issues) and tracking them on a Kanban board.
-
+* [Balsamiq](https://balsamiq.com/) to build wireframes in the Skelton phase.
+* [Lucid Spark](https://lucidspark.com/) for the high-level site structure.
+* [draw.io](https://www.draw.io/index.html) to diagram data schema/model.
+* [GitPod](https://gitpod.io/) used for the IDE and [GitHub](https://github.com/) as a hosting repository. In addition, for this project GitHub was used for the agile development aspect through the use of User Stories (GitHub Issues) and tracking them on a Kanban board.
+* [Heroku](https://dashboard.heroku.com/) to host the Fresh Casts website, including database.
 * [Wave](https://wave.webaim.org/) - Accessibility Testing to ensure content is readable for all users.
-* [HTML Validator](https://validator.w3.org/) - For validating HMTL code.
-* [W3 CSS Validator](https://jigsaw.w3.org/css-validator/validator) - For validating CSS code.
-* [PEP8 Validator](http://pep8online.com/)  - For validating Python / Django code.
-* [Code Beautify](https://codebeautify.org/) - For validating the layout of code.
-* [IE NetREnderer](https://netrenderer.com/index.php) - For browser testing on Microsoft IE versions 7-10.
-* [LambdaTest](https://www.lambdatest.com/) - For cross browser testing including, macOS Safari and Opera.
+* [HTML Validator](https://validator.w3.org/) validates HMTL code.
+* [W3 CSS Validator](https://jigsaw.w3.org/css-validator/validator) validates CSS code.
+* [PEP8 Validator](http://pep8online.com/)  validates Python / Django code.
+* [Code Beautify](https://codebeautify.org/) validates the code formatting for browser reading.
+* [IE NetREnderer](https://netrenderer.com/index.php) for cross browser testing, specifically Microsoft IE versions 7-10.
+* [LambdaTest](https://www.lambdatest.com/) for cross browser testing, specifically macOS Safari and Opera.
 
 
 ***
@@ -307,13 +300,115 @@ GitHub: is used as the respository for the project code after being pushed from 
 
 ### Current Features
 
+- __Homepage__
+    
+    All site visitors land with content visible. Blog posts are sorted in latest added date first and paginate with six per page.
 
 <p align="center">
-    <img src="" alt=""/>
-</p
+    <img src="readme-images/F05F08_Homepage.png" alt="Homepage features"/>
+</p>
+<br />
+
+
+- __NavBar with Collapsing Menu__
+
+    Utilising Bootstraps NavBar, users have three distinct sections to reach features.
+    The left hand side uses the conventional hamburger menu icon to reveal a menu that offers access to user features, blog post categories and other useful pieces of information.
+    Centrally the Fresh Casts name and logo takes a leading role to convey the brand as well as acting as a link back to the homepage.
+    Whilst on the right hand side the resource profile icon provides a short menu with access to user features.
+    The menu collapses either with a user choosing a menu item, by clicking the menu button or after a short time period.
+    Features available to users within the menus depend on their login status e.g. if a user is logged in they will see options to Add Post and Edit Profile.
+
+<p align="center">
+    <img src="readme-images/F01F02F03_Header_NavMenu.png" alt="NavBar features"/>
+</p>
+<br />
+
+
+- __Fixed Footer__
+
+    Utilising Bootstraps NavBar, users have three distinct sections to reach features.
+    The left hand side uses the conventional hamburger menu icon to reveal a menu that offers access to user features, blog post categories and other useful pieces of information.
+    Centrally the Fresh Casts name and logo takes a leading role to convey the brand as well as acting as a link back to the homepage.
+    Whilst on the right hand side the resource profile icon provides a short menu with access to user features.
+    The menu collapses either with a user choosing a menu item, by clicking the menu button or after a short time period.
+
+<p align="center">
+    <img src="readme-images/F04_Footer.png" alt="Footer features"/>
+</p>
+<br />
+
+
+- __Create a Blog Post__
+
+    Registered users have the ability to add to Fresh Casts content through creating a blog post. A simple form asks for basic show information, including a link to the hosting URL. On form submission, users are informed the post will be reviewed by Site Admin and hopefully published if deemed appropriate within 24 hours.
+    Users can also upload an image to support the post, if an image is not uploaded at the time, the Fresh Casts logo will be displayed. Users can update the post with an image once live. This feature currently works best on a desktop application, with a future feature using a podcast API to retrieve the URL and featured image automatically to the Form using search functionality.
+
+<p align="center">
+    <img src="readme-images/F41_Create_Posts.png" alt="Create Blog Post Feature"/>
+</p>
+<br />
+
+
+- __Read a Blog Post__
+
+    When a user chooses a blog post from the main homepage list view or category page, they are taken through to a single page that displays all posted details and further features.
+    All site visitors will be able to read about the shared podcast, and use the 'Listen' button to here the show from the host site. Development work is going on to enable users to listen to the show within the site page.
+    If users are registered and logged in they will be able to add a like or comment in the conventional manner, a counter provides an indication on how favoured a post is. If users have posted the item further options to Edit or Delete their post will be visible.
+
+<p align="center">
+    <img src="readme-images/F09F17F14_Post_Details.png" alt="Blog Post Features"/>
+</p>
+<br />
+
+
+- __Commenting__
+
+    A key feature for Fresh Casts is enable the community to share their views with one another. All site visitors will be able to read a blog posts comments just below the main content. Registered users will be able to add comments to kick start or join in a conversation about a particular podcast.
+    Commenting counters are displayed on the Homepage list view as a method of enticing users to understand more about a post and get involved.
+
+<p align="center">
+    <img src="readme-images/F14_Comments.png" alt="Blog Post Commenting Feature"/>
+</p>
+<br />
+
+
+- __Update a Blog Post__
+
+    Those users who have contributed by creating a blog post will have control over the content should they wish to make changes. This feature will only be visible to them on the Post in Detail page as an 'Edit' button. A simple form awaits with a Submit or Cancel button (should they have navigated there in error).
+
+<p align="center">
+    <img src="readme-images/F21_Update_Post.png" alt="Update Blog Post Feature"/>
+</p>
+<br />
+
+
+- __Delete a Blog Post__
+
+    Those users who have contributed by creating a blog post will have control over whether to keep the post active or not. This feature will only be visible to them on the Post in Detail page as a 'Delete' button. The user will be asked on a new page to confirm they wish to remove the post in knowledge that it cannot be retrieved. There is a Cancel button (should they have navigated there in error).
+
+<p align="center">
+    <img src="readme-images/F23_Delete_Post.png" alt="Delete Blog Post Feature"/>
+</p>
+<br />
+
+
+- __Update Profile__
+
+    In addition to being able to update content they have posted, registered users will be able to update key account details i.e. Username, Email Address, First and Last Name. This option will only be visible in the main menus and footer when a user is logged in. The next release will allow users to delete their profile, however for know they could use the 'Contact Us' form to request this action.
+    Passwords can also be updated - due to the sensitive nature of this action, users wishing to update their password are taken through to another form.
+
+<p align="center">
+    <img src="readme-images/Edit_Profile.png" alt="Edit Profile Feature"/>
+</p>
+<br />
+
+
 
 
 ### Future Features
+
+Features that will be added to the backlog for the next release are as follows:
 
 
 
@@ -417,7 +512,7 @@ To deploy from GitHub, follow these steps:
 1. In Gitpod, in the project terminal window, to initialize the data model in the postgres database, run the command : python3 manage.py migrate
 1. Update the requirements.txt file with all necessary supporting files by entering the command : pip freeze > requirements.txt
 1. Commit and push any local changes to GitHub.
-1. In order to be able to run the application on localhost, add SECRECT_KEY and DATABASE_URL and their values to env.py
+1. In order to be able to run the application on localhost, add SECRET_KEY and DATABASE_URL and their values to env.py
 
 Connect GitHub Repo to Heroku App
 
