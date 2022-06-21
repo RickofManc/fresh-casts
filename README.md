@@ -1,7 +1,7 @@
 # Fresh Casts
 
 <p align="center">
-  <img src="" alt="Mockup of how the website looks on desktop, laptop and tablet"/>
+  <img src="readme-images/website_mockup.png" alt="Mockup of how the website looks on desktop, laptop, tablet and mobile"/>
 </p>
 
 [Link to Website](https://fresh-casts.herokuapp.com/)
@@ -225,6 +225,8 @@ The diagram highlights the following relationships:
 * One user can add one log post like
 * One user can add many comments to one blog post
 
+The Contact App data model does not yet have a relationship with the Blog App, however I have included for reference towards future development.
+
  
 <p align="center">
     <img src="readme-images/fresh-casts-data-schema.png" alt="Data schema for Fresh Casts"/>
@@ -404,12 +406,31 @@ Meta data is included within the HTML head element to increase the traffic to th
 <br />
 
 
+- __Contact Us__
+
+    An essential feature is a method for Fresh Casters to contact the team. This can be performed with a direct email, or by completing and submitting a short form available in the main menu or footer. The form requests some basic information and allows users to describe the reason for contact without a limit on character length.
+    Once received, the team can process the form in the backend and utilise a checkbox for status to mark when a response has been sent.
+
+<p align="center">
+    <img src="readme-images/F32_Contact_Page.png" alt="Contact Fresh Casts Feature"/>
+</p>
+<br />
 
 
 ### Future Features
 
-Features that will be added to the backlog for the next release are as follows:
+Features that will be added to the backlog for future releases are as follows:
 
+* Search for blog posts through a search bar located in the NavBar. 
+* Allow registered users to like other users comments.
+* Enable registered users to delete their own posts.
+* Provide an FAQ page to support users understanding and navigation of Fresh Cast features.
+* Integrate a podcast API that will ease the adding of blog posts through automatically generated show images, URL's etc.
+* Provide options for users to share blog posts on their socials.
+* Enable site visitors to download a podcast to listen offline, or play in their preferred app.
+* Allow registered users to update their own comments.
+* Build a user profile page that informs of recent activity, posts viewed, likes and comments.
+* Integrate a chat function that allows registered users to connect and discuss the post when listening at the same time, or just for general conversation.
 
 
 ***
