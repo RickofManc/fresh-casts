@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" , class="h-100">
+<html lang="en" class="h-100">
   <head>
     <title>Fresh Casts
     </title>
@@ -89,7 +89,7 @@
                  width="45"
                  height="45"
                  alt="Fresh Casts logo"
-                 />Fresh Casts
+                 /><h1 class="d-inline-block">Fresh Casts</h1>
           </a
             >
         </div>
@@ -263,7 +263,7 @@
       <!-- HTML page template content goes here -->
       {% endblock content %}
     </main>
-    <!-- Footer - static throughout all pages -->
+    <!-- Footer : static throughout all pages -->
     <footer class="w-100">
       <div class="container footer-div">
         <div class="row">
@@ -401,12 +401,9 @@
         </div>
         <!-- Footer bottom row for Copyright information -->
         <div class="row footer-copyright">
-          <p>
-            <a href="{% url 'copyright_statement' %}" class="footer-link"
-               >Fresh Casts © 2022.
-              <br />All rights reserved
-            </a
-              >
+          <p class="footer-item">
+            Fresh Casts © 2022.
+            <br />All rights reserved
           </p>
         </div>
       </div>

@@ -27,6 +27,11 @@ form {
     margin-top: 0rem!important;
 }
 
+a {
+    color: #100303!important;
+    text-decoration: none;
+}
+
 .btn {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -239,6 +244,7 @@ ul.pagination {
 footer {
     background-color: #100303;
     color: #fff;
+    box-shadow: 0 50vh 0 50vh #000000;
 }
 
 .footer-div {
@@ -344,6 +350,10 @@ ul.errorlist.nonfield {
     .navbar>.container-fluid {
         padding-right: 0;
         padding-left: 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
     }
     
     /* || HOMEPAGE MAIN CONTENT STYLES  */
