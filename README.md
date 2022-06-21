@@ -190,10 +190,7 @@ The logo has been selected from [Adobe Stock](https://stock.adobe.com/uk/contrib
 
 **Roboto Flex and Roboto Condensed**
 
-Today, as people constantly switch between devices, resizing browsers, and spreading our viewports across multiple screens. Google commissioned Font Bureau to re-imagine Roboto to “flex”. This was achieved by amplifying the original design to an extreme range of weights, grades, widths and optical sizes.
-
 I've selected this popular [font family](https://fonts.google.com/share?selection.family=Roboto%20Condensed:ital,wght@0,400;0,700;1,400;1,700%7CRoboto%20Flex:opsz,wght@8..144,100;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700) for its clean lines and legibility, being widely used on news and information based websites. It also offers a condensed style which can be used for larger text headers to offer some contrast to body text, without having to use a multiple font families.
-
 
 <p align="center">
     <img src="readme-images/fresh-casts-roboto-flex-font.png" alt="Fresh Casts Font"/>
@@ -210,9 +207,25 @@ As part of the project planning phase a high-level design of the site [structure
 This led to understanding the next level down through mapping out the tables, columns and attributes required for the database. The initial draft in Excel has been mapped into a data schema below using [draw.io](https://www.draw.io/index.html) to help understand how the entities and data will relate across the site.
 
 
-In consideration of the a requirement for the data to be searchable, and in time understand patterns and trends in user behaviour, an Object-Relational Database using MVT architecture has been selected. I've opted for a PostgreSQL DBMS (Database Management System) as it can support the aforementioned requirements, PostgreSQL can also support multiple programming languages and libraries that which will be used to build the Fresh Casts application. 
+In consideration of the a requirement for the data to be searchable, and in time understand patterns and trends in user behaviour, an Object-Relational Database using MVT architecture has been selected. I've opted for a PostgreSQL DBMS (Database Management System) as it can support the aforementioned requirements, PostgreSQL can also support multiple programming languages and libraries that which will be used to build the Fresh Casts application.
 
+The diagram below shows the entity relationships between a blog post and their 'comments'. The Post Model is used by the Comment Model to ensure the right blog post is being commented on. The diagram also highlights that one blog post can have many comments. 
 
+The key component in this relationship is the user. I have used the default Django User Model for ease, and whilst this is not declared in the models.py file, I have included within the diagram for clarity. 
+
+Equally one user can add many likes throughout the site, however this functionality is built within the Post Model itself so has not been declared within this class level diagram. 
+
+There are five categories created within the Django Admin panel. These are displayed to the user as a dropdown field choice when adding a blog post.
+
+The diagram highlights the following relationships:
+* One blog post can have one author (User)
+* One blog post can have one category
+* One blog post can have many comments
+* One blog post can have many likes 
+* One user can add one log post like
+* One user can add many comments to one blog post
+
+ 
 <p align="center">
     <img src="readme-images/fresh-casts-data-schema.png" alt="Data schema for Fresh Casts"/>
 </p>
@@ -225,7 +238,11 @@ In consideration of the a requirement for the data to be searchable, and in time
 explaining the security features considered
 gitignore file
 secret key use for config variables
+Securing data using CSRF toekn
 
+The CSRF middleware and template tag provides easy-to-use protection against Cross Site Request Forgeries. This type of attack occurs when a malicious website contains a link, a form button or some JavaScript that is intended to perform some action on your website, using the credentials of a logged-in user who visits the malicious site in their browser. A related type of attack, ‘login CSRF’, where an attacking site tricks a user’s browser into logging into a site with someone else’s credentials, is also covered.
+
+The first defense against CSRF attacks is to ensure that GET requests (and other ‘safe’ methods, as defined by RFC 7231#section-4.2.1) are side effect free. Requests via ‘unsafe’ methods, such as POST, PUT, and DELETE, can then be protected by following the steps below.
 
 
 ### Meta data
@@ -238,7 +255,6 @@ Meta data is included within the HTML head element to increase the traffic to th
 <br />
 
 ## Technologies
-
 
 
 ### Languages
@@ -257,6 +273,7 @@ Gunicorn was used as the Web Server to run Django on Heroku
 Django was used as the framework to support rapid and secure development of the application
 Bootstrap5 was used to build responsive web pages
 * Summernote provides WYSIWYG editing to adding and updating the blog post form.
+
 * dj_database_url library used to allow database urls to connect to the postgres db
 * psycopg2 database adapter used to support the connection to the postgres db
 Django allauth used for account registration and authentication
@@ -449,9 +466,15 @@ In the Heroku App:
 Support with how to develop ideas into code also came from various online resources:
 
 * In general the coding and testing has relied on the Code Institutes walkthrough projects "Hello Django" and "I Think Therefore I Blog" as part of their Full Stack Frameworks module.
-* [W3schools](https://www.w3schools.com/) - Source of 'How to...' information throughout the build primarily on Django.
-* [Stack Overflow](https://stackoverflow.com/) - Source of 'How to...' information on Python and Django code.
-* [GeekforGeeks](https://www.geeksforgeeks.org/urlfield-django-models) - for using dynamic URL fields in html tags.
+* [W3schools](https://www.w3schools.com/) as a source of 'How to...' information throughout the build primarily on Django.
+* [Django Project Docs](https://docs.djangoproject.com/en/4.0/ref/models/fields/) were referenced many times, especially in how to reference fields correctly across differing py files.
+* [Codemy](https://codemy.com/) provided insight on blog building in Django.
+* [GeekforGeeks](https://www.geeksforgeeks.org/urlfield-django-models) for using dynamic URL fields in html tags.
+* [Code Grepper](https://www.codegrepper.com/code-examples/whatever/bootstrap+card+with+image+on+left+and+text+on+right) guided me on how to align the post image to the left of text for the homepage list view.
+* [Jordan Raychev at Medium](https://medium.com/geekculture/django-tutorial-building-a-portfolio-application-contact-application-ac128d7b7b89) who provided an article on building a Contact app.
+* [Wolterskluwer](https://www.wolterskluwer.com/en/solutions/kluwerlawinternational/user-agreement) for information on Blog User Agreements.
+* [John Harbison](http://johnharbison.net/make-a-form-a-cancel-button) provided guidance on creating a Cancel Button as an input tag within a Form.
+* [Stack Overflow](https://stackoverflow.com/questions/10615872/bootstrap-align-input-with-button) how to align an Input tag as a button using Bootstrap.
 
 
 
