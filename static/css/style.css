@@ -27,11 +27,6 @@ form {
     margin-top: 0rem!important;
 }
 
-a {
-    color: #100303!important;
-    text-decoration: none;
-}
-
 .btn {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -315,7 +310,6 @@ textarea.form-control {
     border: 1px solid #ced4da!important;
 }
 
-
 /* || SIGN UP & SIGN IN STYLES  */
 
 a.link {
@@ -340,6 +334,12 @@ ul.errorlist.nonfield {
     padding-inline-start: 0;
 }
 
+/* || ACCESSIBILITY STATEMENT STYLES  */
+
+.mailto-anchor {
+    color: #100303!important;
+    text-decoration: none;
+}
 
 /* |||| MEDIA QUERIES  */
 
