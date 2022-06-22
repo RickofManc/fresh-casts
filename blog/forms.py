@@ -4,7 +4,28 @@ Form configuration for blog app
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User
 from django import forms
-from .models import Comment
+from django_summernote.widgets import SummernoteWidget
+from .models import Comment, Post
+
+
+class PostForm(forms.ModelForm):
+    """
+    Uses Django forms and AddPostView
+    to enable users to add blog posts
+    """
+    class Meta:
+        model = Post
+        fields = ("title", "category", "author", "content", "podcast_url",
+                  "featured_image")
+
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'category': forms.Select(attrs={'class': 'form-control'}),
+            'author': forms.Select(attrs={'class': 'form-control'}),
+            'content': SummernoteWidget(attrs={'class': 'form-control'}),
+            'podcast_url': forms.URLInput(attrs={'class': 'form-control'}),
+            'featured_image': forms.FileInput(attrs={'class': 'form-control'}),
+        }
 
 
 class CommentForm(forms.ModelForm):
@@ -62,3 +83,4 @@ class PasswordChangingForm(PasswordChangeForm):
     class Meta:
         model = User
         fields = ("old_password", "new_password1", "new_password2")
+

@@ -355,6 +355,10 @@ ul.errorlist.nonfield {
     text-decoration: none;
 }
 
+.mailto-anchor:hover {
+    color: #79ffe2;
+}
+
 /* |||| MEDIA QUERIES  */
 
 /* Small devices (smartphones, up to 767px) */
@@ -366,8 +370,12 @@ ul.errorlist.nonfield {
         padding-left: 0;
     }
 
+    .navbar-brand-image {
+        margin-right: 0;
+    }
+
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     /* || HOMEPAGE MAIN CONTENT STYLES  */
@@ -403,10 +411,10 @@ ul.errorlist.nonfield {
 
     .blog-img-div {
         padding-right: 5px;
+        }
     }
 
     /* || POST DETAIL STYLES  */
-
     .comments-row-div {
         width: 100%;
         padding-right: 1rem;
@@ -421,7 +429,6 @@ ul.errorlist.nonfield {
     }
 
     /* || CONTACT US  */
-    
     textarea#id_message {
         max-width: 100%
     }
@@ -435,7 +442,6 @@ ul.errorlist.nonfield {
     .navbar .container-fluid {
         padding-left: 0;
         padding-right: 0;
-
     }
 
     a.navbar-brand {

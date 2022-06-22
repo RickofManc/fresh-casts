@@ -10,7 +10,7 @@ from django.contrib.auth.views import PasswordChangeView
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from .models import Post, Category
-from .forms import CommentForm, EditProfileForm, PasswordChangingForm
+from .forms import CommentForm, EditProfileForm, PasswordChangingForm, PostForm
 
 
 class PostList(generic.ListView):
@@ -22,7 +22,7 @@ class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
-    paginate_by = 6
+    paginate_by = 8
 
     def get_context_data(self, *args, **kwargs):
         """Provides podcast categories in nav-menu."""
@@ -119,9 +119,10 @@ class AddPostView(CreateView):
     Returns user to homepage on form submission.
     """
     model = Post
+    form_class = PostForm
     template_name = "add_post.html"
-    fields = ("title", "category", "author", "content", "podcast_url",
-              "featured_image")
+    # fields = ("title", "category", "author", "content", "podcast_url",
+    #          "featured_image")
     success_url = reverse_lazy("home")
 
     def get_context_data(self, *args, **kwargs):
@@ -181,6 +182,7 @@ class CategoryView(generic.ListView):
     """
     model = Post
     template_name = "categories.html"
+    paginate_by = 8
 
     def get(self, request, cats, *args, **kwargs):
         """Retrieves posts filtered by requested category."""

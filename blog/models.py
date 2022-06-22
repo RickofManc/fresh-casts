@@ -46,11 +46,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     excerpt = models.TextField(max_length=180, blank=True)
-    podcast_url = models.URLField(
-        max_length=255,
-        help_text="Please add the \
-                                  podcasts web address",
-    )
+    podcast_url = models.URLField(max_length=255)
     featured_image = CloudinaryField("image", default="placeholder")
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
