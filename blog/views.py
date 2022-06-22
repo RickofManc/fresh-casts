@@ -172,11 +172,11 @@ class DeletePostView(DeleteView):
         return context
 
 
-class CategoryView(CreateView):
+class CategoryView(generic.ListView):
     """
     Displays Category page - content depending
     on which category has been selected by the user.
-    gets : requested list of podcasts with matching category
+    gets : requested list of posts with matching category
     returns : rendered view of the html template
     """
     model = Post
@@ -184,16 +184,16 @@ class CategoryView(CreateView):
 
     def get(self, request, cats, *args, **kwargs):
         """Retrieves posts filtered by requested category."""
-        category_posts = Post.objects.filter(
-            category__name__contains=cats.replace("-", " ")
-        )
+        category = Category.objects.get(name__iexact=cats)
+        category_posts = Post.objects.filter(category=category)
+
         return render(
             request,
             self.template_name,
-            {"cats": cats.title().replace("-", " "),
+            {"cats": cats.title(),
              "category_posts": category_posts},
         )
-
+        
     def get_context_data(self, *args, **kwargs):
         """Provides podcast categories in nav-menu."""
         cat_menu = Category.objects.all()

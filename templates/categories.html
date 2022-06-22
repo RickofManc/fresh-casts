@@ -1,18 +1,15 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block title %}{% trans '{{ cats }} Category' %}{% endblock %}
+{% block title %}{% trans 'Category Page' %}{% endblock %}
 {% block content %}
 {% if category_posts %}
-<!-- Main container for page content : Podcast Category (displaying 1 of 5) -->
+<!-- Main container for page content : Post Category (displaying 1 of 5 categories) -->
 <div class="container fluid">
   <div class="row">
     <div class="card w-100 left">
-      <!-- Page title -->
-      <h2 class="card-title">{% trans '{{ cats }} Category' %}
-      </h2>
       <!-- Reusing code from index.html to list all the podcasts with the same category value -->
       <div class="row">
-        {% for post in category_post %}
+        {% for post in category_posts %}
         <div class="card-body border-bottom">
           <div class="row">
             <!-- Display either podcast post image or standard Fresh Cast logo -->

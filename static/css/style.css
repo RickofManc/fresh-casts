@@ -239,7 +239,7 @@ ul.pagination {
 footer {
     background-color: #100303;
     color: #fff;
-    box-shadow: 0 50vh 0 50vh #000000;
+    box-shadow: 0 50vh 0 50vh #100303;
 }
 
 .footer-div {
@@ -272,6 +272,20 @@ a.footer-link {
     text-align: left;
     color: #f7f7f77f;
 }
+
+.footer-list-socials {
+    padding-inline-start: 0;
+}
+
+.footer-list-socials li {
+    display: inline-block;
+}
+
+.social-media-icon i {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-right: 0.5rem;
+  }
 
 /* || POST DETAIL STYLES  */
 
