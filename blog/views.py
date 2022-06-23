@@ -5,12 +5,13 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib import messages
-from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth.views import PasswordChangeView
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from .models import Post, Category
-from .forms import CommentForm, EditProfileForm, PasswordChangingForm, PostForm
+from .forms import CommentForm, EditProfileForm, PasswordChangingForm
+from .forms import PostForm, RegisterUserForm, LoginForm
 
 
 class PostList(generic.ListView):
@@ -121,8 +122,6 @@ class AddPostView(CreateView):
     model = Post
     form_class = PostForm
     template_name = "add_post.html"
-    # fields = ("title", "category", "author", "content", "podcast_url",
-    #          "featured_image")
     success_url = reverse_lazy("home")
 
     def get_context_data(self, *args, **kwargs):
@@ -200,6 +199,52 @@ class CategoryView(generic.ListView):
         """Provides podcast categories in nav-menu."""
         cat_menu = Category.objects.all()
         context = super(CategoryView, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
+
+class SignUpView(CreateView):
+    """
+    Displays SignUp page.
+    gets : requested template by name
+    returns : rendered view of the html template
+    Returns user to homepage on form submission.
+    """
+    model = User
+    form_class = RegisterUserForm
+    template_name = "signup.html"
+    success_url = reverse_lazy("home")
+
+    def get_object(self):
+        return self.request.user
+
+    def get_context_data(self, *args, **kwargs):
+        """Provides podcast categories in nav-menu."""
+        cat_menu = Category.objects.all()
+        context = super(SignUpView, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
+
+class LoginView(View):
+    """
+    Displays SignUp page.
+    gets : requested template by name
+    returns : rendered view of the html template
+    Returns user to homepage on form submission.
+    """
+    model = User
+    form_class = LoginForm
+    template_name = "login.html"
+    success_url = reverse_lazy("home")
+
+    def get_object(self):
+        return self.request.user
+
+    def get_context_data(self, *args, **kwargs):
+        """Provides podcast categories in nav-menu."""
+        cat_menu = Category.objects.all()
+        context = super(LoginView, self).get_context_data(*args, **kwargs)
         context["cat_menu"] = cat_menu
         return context
 
