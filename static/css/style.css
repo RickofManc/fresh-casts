@@ -204,6 +204,11 @@ a.post-link {
     max-width: 15rem;
 }
 
+.img-homepage {
+    width: 165px;
+    height: 165px;
+}
+
 .img-fluid {
     object-fit: contain;
 }
@@ -293,6 +298,11 @@ a.footer-link {
     max-width: 35rem;
 }
 
+.img-post-detail {
+    width: 300px;
+    height: 300px;
+}
+
 .col-sm-2 {
     width: auto;
 }
@@ -359,6 +369,7 @@ ul.errorlist.nonfield {
     color: #79ffe2;
 }
 
+
 /* |||| MEDIA QUERIES  */
 
 /* Small devices (smartphones, up to 767px) */
@@ -412,9 +423,18 @@ ul.errorlist.nonfield {
     .blog-img-div {
         padding-right: 5px;
         }
+
+    .img-homepage {
+        width: 90px;
+        height: 90px;
     }
 
     /* || POST DETAIL STYLES  */
+    .img-post-detail {
+        width: 200px;
+        height: 200px;
+    }
+    
     .comments-row-div {
         width: 100%;
         padding-right: 1rem;
@@ -432,7 +452,6 @@ ul.errorlist.nonfield {
     textarea#id_message {
         max-width: 100%
     }
-
 }
 
 /* Medium devices (tablets, 768px and up) */

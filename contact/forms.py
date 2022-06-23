@@ -21,7 +21,7 @@ class ContactForm(forms.ModelForm):
         max_length=150, widget=forms.TextInput(attrs={"class": "form-control"})
     )
     message = forms.CharField(
-        max_length=2000, widget=forms.Textarea(attrs={"class": "form-control"})
+        max_length=2000, widget=forms.TextInput(attrs={"class": "form-control"})
     )
     contact_status = forms.CharField(label="", widget=forms.CheckboxInput())
 

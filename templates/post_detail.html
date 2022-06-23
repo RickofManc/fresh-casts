@@ -12,13 +12,13 @@
                 {% if "placeholder" in post.featured_image.url %}
                 <img
                         src="static/images/fresh-casts-b-and-g-logo.png"
-                        class="img-fluid"
+                        class="img-fluid img-post-detail"
                         alt=""
                         />
                 {% else %}
                 <img
                         src="{{ post.featured_image.url }}"
-                        class="img-fluid"
+                        class="img-fluid img-post-detail"
                         alt="Podcast logo"
                         />
                 {% endif %}

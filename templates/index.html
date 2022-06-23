@@ -15,13 +15,13 @@
               <a href="{% url 'post_detail' post.slug %}" class="post-link">
                 {% if "placeholder" in featured_image.url %}
                 <img
-                     class="img-fluid"
+                     class="img-fluid img-homepage"
                      src="static/images/fresh-casts-b-and-g-logo_thumbnail.png"
                      alt=""
                      />
                 {% else %}
                 <img
-                     class="img-fluid"
+                     class="img-fluid img-homepage"
                      src=" {{ post.featured_image.url }}"
                      alt="Podcast logo"
                      />

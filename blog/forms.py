@@ -2,7 +2,7 @@
 Form configuration for blog app
 """
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django import forms
 from django_summernote.widgets import SummernoteWidget
@@ -68,7 +68,7 @@ class RegisterUserForm(UserCreationForm):
         self.fields['password2'].widget.attrs['class'] = 'form-control'
 
 
-class LoginForm(forms.ModelForm):
+class LoginForm(AuthenticationForm):
     """
     Uses Django form to enable
     users to login to their user account.
