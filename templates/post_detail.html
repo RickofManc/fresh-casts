@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load i18n %}
 {% block content %}
 <!-- Crispy Forms to render form for adding a post Comment -->
@@ -11,7 +11,7 @@
                 <!-- Featured image URL -->
                 {% if "placeholder" in post.featured_image.url %}
                 <img
-                        src="static/images/fresh-casts-b-and-g-logo.png"
+                        src="{% static 'images/fresh-casts-b-and-g-logo.png' %}"
                         class="img-fluid img-post-detail"
                         alt=""
                         />
