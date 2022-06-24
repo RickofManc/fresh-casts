@@ -44,7 +44,7 @@ class Post(models.Model):
     )
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
+    content = models.TextField(max_length=5000)
     excerpt = models.TextField(max_length=180, blank=True)
     podcast_url = models.URLField(max_length=255)
     featured_image = CloudinaryField("image", default="placeholder")

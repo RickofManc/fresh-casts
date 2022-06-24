@@ -5,7 +5,6 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django import forms
-from django_summernote.widgets import SummernoteWidget
 from .models import Comment, Post
 
 
@@ -20,11 +19,17 @@ class PostForm(forms.ModelForm):
                   "featured_image")
 
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'title': forms.TextInput(
+                attrs={'class': 'form-control',
+                       'placeholder': 'Add a title for the show here, maybe with the episode number'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
             'author': forms.Select(attrs={'class': 'form-control'}),
-            'content': SummernoteWidget(attrs={'class': 'form-control'}),
-            'podcast_url': forms.URLInput(attrs={'class': 'form-control'}),
+            'content': forms.TextInput(
+                attrs={'class': 'form-control',
+                       'placeholder': 'Add a description of the show, and why you are sharing it here'}),
+            'podcast_url': forms.URLInput(
+                attrs={'class': 'form-control',
+                       'placeholder': 'Paste the website address where we can listen to the show'}),
             'featured_image': forms.FileInput(attrs={'class': 'form-control'}),
         }
 
