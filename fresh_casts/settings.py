@@ -62,8 +62,9 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 # Redirect users after login/logout to the homepage
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/'
 
 # Standard Bootstraps message tags to change colour accordingly
 MESSAGE_TAGS = {

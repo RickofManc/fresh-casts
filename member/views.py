@@ -4,11 +4,14 @@ Django imports to support Views
 from django.views import View
 from django.views.generic import CreateView, UpdateView
 from django.contrib.auth.views import PasswordChangeView
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
 from blog.models import Category
 from .forms import EditProfileForm, PasswordChangingForm
 from .forms import RegisterUserForm, LoginForm
+
+
+User = get_user_model()
 
 
 class SignUpView(CreateView):
@@ -23,7 +26,8 @@ class SignUpView(CreateView):
     template_name = "signup.html"
     success_url = reverse_lazy("home")
 
-    def get_object(self):
+    def get_object(self, queryset=None):
+        """Returns user object"""
         return self.request.user
 
     def get_context_data(self, *args, **kwargs):
@@ -36,7 +40,7 @@ class SignUpView(CreateView):
 
 class LoginView(View):
     """
-    Displays SignUp page.
+    Displays Login page.
     gets : requested template by name
     returns : rendered view of the html template
     Returns user to homepage on form submission.
@@ -47,12 +51,13 @@ class LoginView(View):
     success_url = reverse_lazy("home")
 
     def get_object(self):
+        """Returns user object"""
         return self.request.user
 
     def get_context_data(self, *args, **kwargs):
         """Provides podcast categories in nav-menu."""
         cat_menu = Category.objects.all()
-        context = super(LoginView, self).get_context_data(*args, **kwargs)
+        context = super(LoginView).get_context_data(*args, **kwargs)
         context["cat_menu"] = cat_menu
         return context
 
@@ -68,7 +73,8 @@ class UserEditView(UpdateView):
     template_name = "edit_profile.html"
     success_url = reverse_lazy("home")
 
-    def get_object(self):
+    def get_object(self, queryset=None):
+        """Returns user object"""
         return self.request.user
 
     def get_context_data(self, *args, **kwargs):

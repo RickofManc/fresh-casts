@@ -5,12 +5,15 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib import messages
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from .models import Post, Category
 from .forms import CommentForm
 from .forms import PostForm
+
+
+User = get_user_model()
 
 
 class PostList(generic.ListView):
@@ -193,7 +196,7 @@ class CategoryView(generic.ListView):
             {"cats": cats.title(),
              "category_posts": category_posts},
         )
-        
+
     def get_context_data(self, *args, **kwargs):
         """Provides podcast categories in nav-menu."""
         cat_menu = Category.objects.all()
