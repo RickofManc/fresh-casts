@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block head_title %}{% trans 'Sign In' %}{% endblock %}
+{% block title %}{% trans 'Sign In' %}{% endblock %}
+{% load crispy_forms_tags %}
 {% block content %}
 <!-- Main container for page content : User Login / Sign In -->
 <div class="container">
@@ -31,7 +32,8 @@
         <!-- Form to input login credentials and optional checkbox to save details -->
         <form action="{% url 'account_login' %}" class="login" method="POST">
           <div class="form-group">
-            {% csrf_token %} {{ form.as_p }}
+            {% csrf_token %}
+            {{ form|crispy }}
             {% if redirect_field_value %}
             <input
                    class="form-control"

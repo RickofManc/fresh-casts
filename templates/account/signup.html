@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block head_title %}{% trans 'Sign Up' %}{% endblock %}
+{% block title %}{% trans 'Sign Up' %}{% endblock %}
+{% load crispy_forms_tags %}
 {% block content %}
 <!-- Main container for page content : User Register / Sign Up -->
 <div class="container">
@@ -38,20 +39,20 @@
                         method="POST"
                         >
                     <div class="form-group">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    {% if redirect_field_value %}
-                    <input
-                            class="form-control"
-                            type="hidden"
-                            name="{{ redirect_field_name }}"
-                            value="{{ redirect_field_name }}"
-                            />
-                    {% endif %}
-                    <!-- Button submit sign up form -->
-                    <button class="btn btn-style right" type="submit">
-                        {% trans 'Sign Up' %}
-                    </button>
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        {% if redirect_field_value %}
+                        <input
+                                class="form-control"
+                                type="hidden"
+                                name="{{ redirect_field_name }}"
+                                value="{{ redirect_field_name }}"
+                                />
+                        {% endif %}
+                        <!-- Button submit sign up form -->
+                        <button class="btn btn-style right" type="submit">
+                            {% trans 'Sign Up' %}
+                        </button>
                     </div>
                 </form>
             </div>

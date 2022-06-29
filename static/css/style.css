@@ -151,6 +151,7 @@ a:hover {
 .main-content {
     margin-top: 6rem;
     margin-bottom: 6rem;
+    
 }
 
 .card {
@@ -243,6 +244,9 @@ ul.pagination {
 /* || FOOTER STYLES  */
 
 footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
     background-color: #100303;
     color: #fff;
     box-shadow: 0 50vh 0 50vh #100303;
@@ -336,6 +340,10 @@ textarea.form-control {
 }
 
 /* || SIGN UP & SIGN IN STYLES  */
+
+.sign-out-div {
+    height: 50vh;
+}
 
 a.link {
     font-weight: 600;
