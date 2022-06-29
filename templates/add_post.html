@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load cloudinary %}
+{% cloudinary post.featured_image format="jpg" width=300 height=300 %}
 {% block title %}{% trans 'Add BlogPost' %}{% endblock %}
 {% block content %}
 <!-- Crispy Forms used to improve rendering -->
@@ -14,7 +16,8 @@
         <!-- Page title -->
         <h2 class="card-title">{% trans 'Add Blog Post' %}
         </h2>
-        <p class="card-text">Complete all fields in the form below and submit to the team who will review and publish within 24 hours.
+        <p class="card-text">Complete all fields in the form below and submit to the team who will review and publish
+          within 24 hours.
         </p>
       </div>
     </div>
@@ -24,7 +27,7 @@
     <div class="col-md-8 mt-3 offset-md-2">
       <div class="card-body">
         <!-- Form to allow users to add a blog post if logged in -->
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
           <div class="form-group">
             {% csrf_token %}
             {{ form.as_p }}
@@ -33,13 +36,8 @@
               <button class="btn btn-style right" type="submit">Submit
               </button>
               <!-- Option to cancel if navigated to in error -->
-              <input
-                     type="button"
-                     name="cancel"
-                     value="Cancel"
-                     class="anchor-btn btn-style btn-left-margin btn-cancel"
-                     onClick="window.location.href='{% url 'home' %}';"
-                     />
+              <input type="button" name="cancel" value="Cancel" class="anchor-btn btn-style btn-left-margin btn-cancel"
+                onClick="window.location.href='{% url 'home' %}';" />
             </div>
           </div>
         </form>
@@ -56,10 +54,8 @@
         Sorry you must be signed in to access this page, use the button below to
         return to our homepage
       </p>
-      <a href="{% url 'home' %}" type="button" class="anchor-btn btn-style"
-         >Home
-      </a
-        >
+      <a href="{% url 'home' %}" type="button" class="anchor-btn btn-style">Home
+      </a>
     </div>
   </div>
 </div>

@@ -10,6 +10,7 @@ from django.urls import reverse
 from cloudinary.models import CloudinaryField
 
 
+
 # Global Variables
 STATUS = ((0, "Draft"), (1, "Published"))
 

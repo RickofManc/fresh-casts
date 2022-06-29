@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Cross-Origin Resource Sharing to support third party resources to load
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -120,7 +120,7 @@ EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'freshcastsapp@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('FRESHCAST_GMAIL')
 EMAIL_USE_TLS = True
-EMAIL_USE_SSL = True
+EMAIL_USE_SSL = False
 
 
 # Email verification turned off to remove errors for optional email sign-up
