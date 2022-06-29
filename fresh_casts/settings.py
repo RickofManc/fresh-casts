@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'blog',
-    'contact.apps.ContactConfig',
+    'contact',
+    'member',
 ]
 
 # Setting the default site for the project
@@ -113,6 +114,7 @@ DATABASES = {
 }
 
 # Email Settings
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'freshcastsapp@gmail.com'
 EMAIL_HOST = 'smtp.gmail.com'

@@ -22,15 +22,15 @@ def contact(request, *args, **kwargs):
             subject = "Website Inquiry"
             body = {
                 "name": form.cleaned_data["name"],
-                "email": form.cleaned_data["email_address"],
-                "subject": form.cleaned_data["subject"],
-                "message": form.cleaned_data["message"],
+                "email": form.cleaned_data['email', ''],
+                "subject": form.cleaned_data['subject', ''],
+                "message": form.cleaned_data['message', ''],
             }
             message = "\n".join(body.values())
             try:
                 messages.success(request, 'Thank you for your contacting \
                     - Fresh Casts will reply within 24 hours!')
-                send_mail(subject, message, [], ["freshcastsapp@gmail.com"])
+                send_mail(subject, message, email, ["freshcastsapp@gmail.com"], fail_silently=False)
             except BadHeaderError:
                 return HttpResponse("Invalid header found.")
             return render(request, "contact.html", {})
