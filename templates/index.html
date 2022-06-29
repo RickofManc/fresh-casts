@@ -31,11 +31,13 @@
             <!-- Container for post details -->
             <div class="col-8 col-sm-10">
               <div class="card-block px-2">
+                <!-- Post title -->
                 <a href="{% url 'post_detail' post.slug %}" class="post-link">
                   <h2 class="card-title">{{ post.title }}
                   </h2>
                 </a
                   >
+                <!-- Post category -->
                 <a
                    href="{% url 'category' post.category|slugify %}"
                    class="post-link"
@@ -45,10 +47,13 @@
                   </h3>
                 </a
                   >
+                <!-- Post excerpt -->
                 <p class="card-text">{{ post.excerpt }}
                 </p>
+                <!-- Post author -->
                 <p class="author">Shared By {{ post.author }}
                 </p>
+                <!-- Post created on date -->
                 <p class="card-text text-left">{{ post.created_on }}
                 </p>
                 <p class="card-text">

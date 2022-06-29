@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-{% load i18n %}{% block title %}{% trans 'Delete Blog Post' %}{% endblock %}
+{% load i18n %}
+{% block title %}{% trans 'Delete Blog Post' %}{% endblock %}
 {% block content %}
 <!-- User must be authenticated and accessing own blog posts to view page -->
 {% if user.is_authenticated %}

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% block title %}{% trans 'Post in Detail' %}{% endblock %}
 {% block content %}
 <!-- Crispy Forms to render form for adding a post Comment -->
 {% load crispy_forms_tags %}
@@ -27,6 +28,16 @@
                 <!-- Post title -->
                 <h2 class="card-title">{{ post.title }}
                 </h2>
+                <!-- Post category -->
+                <a
+                   href="{% url 'category' post.category|slugify %}"
+                   class="post-link"
+                   >
+                  <h3 class="card-subtitle">
+                    Category : {{ post.category }}
+                  </h3>
+                </a
+                  >
                 <!-- Post author -->
                 <p class="author">Shared By {{ post.author }}
                 </p>
