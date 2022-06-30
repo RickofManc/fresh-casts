@@ -13,6 +13,7 @@ from .forms import CommentForm
 from .forms import PostForm
 
 
+# Global Variables
 User = get_user_model()
 
 

@@ -11,6 +11,7 @@ from .forms import EditProfileForm, PasswordChangingForm
 from .forms import RegisterUserForm, LoginForm
 
 
+# Global Variables
 User = get_user_model()
 
 

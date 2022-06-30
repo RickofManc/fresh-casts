@@ -5,14 +5,14 @@ Standard Django reverse url model
 Cloudinary model to support image repository
 """
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
 
 
-
 # Global Variables
 STATUS = ((0, "Draft"), (1, "Published"))
+User = get_user_model()
 
 
 class Category(models.Model):
