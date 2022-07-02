@@ -439,44 +439,139 @@ Features that will be added to the backlog for future releases are as follows:
 
 ## Testing 
 
-
-### Automatic Testing
-
+<br />
 
 ### Manual Testing 
 
+<br />
 
-### **Code** 
-The code on each file has been assessed using the appropriate validation service; W3C Markup for HTML, W3C for CSS, and PEP8 Online for Python / Django.
+#### **Code**
 
-Below are the summarised results from these tests:
+The code on each file has been tested using the appropriate validation service; W3C Markup for HTML, W3C Jigsaw for CSS and Pep8 Online for Python.
 
+As this project uses Django templates the html has been validated by manually clicking through the application pages, copying the templates to validate using the W3C Validator. HTML for the Django admin site pages was not edited so has not been validated here. The Signup, Login and Logout pages from Django allauth were customised and so have been validated. The same process was undertaken to test the python files with Pep8 Online and CSS with W3C Jigsaw.
 
+Due to the nature of extending the base.html template the W3C Validator consistently found the following warnings or errors. As these are incurred as part of the design they have not been listed within the table. Only exceptions  not anticipated have been listed.
+- Consider adding a lang attribute to the html start tag to declare the language of this document.
+- Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>.
+- Element head is missing a required instance of child element title. 
+- Bad value {% url 'xyz' %} for attribute href on element a: Illegal character in path segment: { is not allowed.
 
-
-### **Browser**
-
-
-
-
-### **Device**
-
-
+Use the arrow below to view the results in detail.
 
 
-### **Accessibility**
+<details>
+    <summary></summary>
+    <p align="center">
+    <img src="readme-images/fresh-casts-code-testing.png" alt="Code Validation Results"/>
+    </p>
+</details>
+
+<br />
+
+#### **Browser**
+
+To ensure site visitors can view and use Fresh Cast features on differing browsers, testing was performed on the test scenarios listed in the table below.
+
+To achieve a 'Pass' the following criteria had to be met across all website pages;
+1. All buttons provide user feedback on hover and execute correctly when clicked
+2. All colours load and displayed correctly
+3. All elements retain integrity
+4. Fonts and images load
+5. Navigation is not impacted and nav-menu collapses as intended
+
+<p align="center">
+    <img src="readme-images/fresh-casts-browser-testing.png" alt="Browser Testing Results"/>
+    </p>
+
+<br />
+
+#### **Device**
+
+To ensure site visitors can view and use Fresh Cast on differing devices, testing was performed on the test scenarios listed in the table below.
+This physical testing is in addition to the continual device testing for UX using Chrome Developer tools.
+				
+To achieve a 'Pass' the following criteria had to be met across all website pages;				
+1. All buttons provide user feedback on hover and execute correctly when clicked				
+2. All colours load and displayed correctly				
+3. All elements retain integrity				
+4. Fonts and images load				
+5. Navigation is not impacted and nav-menu collapses as intended				
+
+<p align="center">
+    <img src="readme-images/fresh-casts-device-testing.png" alt="Device Testing Results"/>
+    </p>
+
+<br />
+
+#### **Accessibility**
+
+The website has been thoroughly tested throughout all pages using the [Wave (Web Accessibility Evaluation Tool)](https://wave.webaim.org/). In general all pages performed well with 0 Errors identified.
+
+A general theme was identified as Alerts where 'Adjacent links go to the same URL.' was noted. An example of this is within the 'Sign Up' page where a link is offered within the text to navigate to the 'Sign In' page if you already have an account. As the Nav-Menu and Footer offer the same link an Alert was raised. Consideration has been given and where deemed workable links have been removed to avoid additional navigation and repetition for keyboard and screen reader users.
 
 
 
-
-### **Performance** 
+#### **Performance** 
 
                    
 
 
-### **Bugs**
+#### **Bugs**
+
+The following bugs do not impact the main purpose, functionality or features of Fresh Casts. However, at the time of writing further research was being undertaken in order to provide resolution. 
+
+**B04 - Slug not auto generating from 'title' on front-end 'Add Blog Post' form**
+
+Early research indicates the pre-population of this field can only work on within Django Admin. There is another workaround however this will require research where time required to develop may not be ready for MVP release.
+As a temporary solution Site Admin will add the slug when approving the post in Django Admin.
+
+[https://docs.djangoproject.com/en/4.0/ref/contrib/admin/#django.contrib.admin.ModelAdmin.prepopulated_fields]
+
+[https://www.reddit.com/r/django/comments/tc818z/i_need_some_advice_with_django_prepopulated_field/i0gc6k4/]
 
 
+
+**B07 - Javascript URL redirect on input tag working but throwing error**
+
+Input tag used to create functionality for a Cancel button. The JavaScript used to redirect the user back to the homepage is working correctly, however an error is being identified in the terminal.
+
+```html
+<div class="input-group"> <button class="btn btn-style right" type="submit">Submit </button> <input type="button" name="cancel" value="Cancel" class="anchor-btn btn-style btn-left-margin btn-cancel" onClick="window.location.href='{% url 'home' %}';" /> </div>
+```
+Error:
+';' expected.
+
+
+**B09 - External emails not being received from the backend**
+
+Raised from the following user stories:
+- [#17]: Site Admin - Approve new posts
+- [#20]: Contact Us Page
+
+I have tried to build in additional functionality where the Fresh Casts team receive an email to their Gmail account when action within Django Admin is required. This functionality would be applied to a Contact Form submitted, approve new Blog Posts and Comments etc. However currently despite the configuration appearing to be correct within the code and the Gmail account, emails are not being received.
+
+Prior to attempting to use a direct connection with Gmail, I attempted to integrate with SendGrid however I understand that it is no longer possible to use a SendGrid/Gmail combination for this purpose as Gmail is a free account as opposed to a business and paid for type of account.
+
+
+**B11 - Context Processing function not returning list of categories1**
+
+The following function has been added to all views site wide to replicate the blog categories list found in the NavBar Main Menu on the Base/Index html templates. Despite plenty of stackoverflow research and tutor support I've been unable within the time frame to debug this issue.
+
+```python
+def get_context_data(self, *args, **kwargs): 
+    """Provides podcast categories in nav-menu."""
+    cat_menu = Category.objects.al(context = super(SignUpView, self).get_context_data(*args, **kwargs) 
+    context["cat_menu"] = cat_menu
+    return context
+```
+
+<br />
+
+
+### Automatic Testing
+
+<br />
 
 
 ***

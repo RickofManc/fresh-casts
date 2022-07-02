@@ -3,8 +3,11 @@ Form configuration for member app
 """
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.forms import PasswordChangeForm, AuthenticationForm
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django import forms
+
+# Global Variables
+User = get_user_model()
 
 
 class RegisterUserForm(UserCreationForm):
@@ -68,7 +71,7 @@ class EditProfileForm(UserChangeForm):
     username = forms.CharField(
         max_length=100, widget=forms.TextInput(attrs={"class": "form-control"})
     )
-    
+
     class Meta:
         model = User
         fields = ("first_name", "last_name", "username", "email", "password")
@@ -95,4 +98,3 @@ class PasswordChangingForm(PasswordChangeForm):
     class Meta:
         model = User
         fields = ("old_password", "new_password1", "new_password2")
-

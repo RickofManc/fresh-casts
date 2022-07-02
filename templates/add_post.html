@@ -3,6 +3,7 @@
 {% load cloudinary %}
 {% cloudinary post.featured_image format="jpg" width=300 height=300 %}
 {% block title %}{% trans 'Add Blog Post' %}{% endblock %}
+{% load crispy_forms_tags %}
 {% block content %}
 <!-- Crispy Forms used to improve rendering -->
 {% load crispy_forms_tags %}
@@ -31,7 +32,7 @@
         <form method="POST" enctype="multipart/form-data">
           <div class="form-group">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form|crispy }}
             <div class="input-group">
               <!-- Button to submit the form adding a post. Form must be approved by Site Admin before going live -->
               <button class="btn btn-style right" type="submit">Submit
