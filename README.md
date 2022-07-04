@@ -511,18 +511,40 @@ The website has been thoroughly tested throughout all pages using the [Wave (Web
 A general theme was identified as Alerts where 'Adjacent links go to the same URL.' was noted. An example of this is within the 'Sign Up' page where a link is offered within the text to navigate to the 'Sign In' page if you already have an account. As the Nav-Menu and Footer offer the same link an Alert was raised. Consideration has been given and where deemed workable links have been removed to avoid additional navigation and repetition for keyboard and screen reader users.
 
 
+<p align="center">
+    <img src="readme-images/fresh-casts-wave-testing.png" alt="WAVE Testing Results"/>
+    </p>
 
-#### **Performance** 
+<br />
 
-                   
+
+#### **Lighthouse** 
+
+
+Using Lighthouse Performance testing within Chrome Developer Tools, the website has been tested for use on Desktop and Mobile devices. 
+The website scored highly across all criteria, however further work was required to;
+- improve the contrast of the background to foreground for Accessibility,
+- ensure there was sufficient spacing between links for mobile use,
+- transform all future images uploaded to webP format and 300x300px in size to improve page loading times.
+Site wide research to improve Best Practices is required to add security where front-end JavaScript libraries are being used, in this case, jQuery as part of the Bootstrap use which scored a 3 for Vulnerability Count."																	
+																	
+Test occurred using Lighthouse within Chrome Dev Tools on 4 July 2022with the following results:
+
+
+<p align="center">
+    <img src="readme-images/fresh-casts-lighthouse-testing.png" alt="Lighthouse Testing Results"/>
+    </p>
+
+<br />
 
 
 #### **Bugs**
 
 The following bugs do not impact the main purpose, functionality or features of Fresh Casts. However, at the time of writing further research was being undertaken in order to provide resolution. 
 
-**B04 - Slug not auto generating from 'title' on front-end 'Add Blog Post' form**
+<br />
 
+**B04 - Slug not auto generating from 'title' on front-end 'Add Blog Post' form**
 Early research indicates the pre-population of this field can only work on within Django Admin. There is another workaround however this will require research where time required to develop may not be ready for MVP release.
 As a temporary solution Site Admin will add the slug when approving the post in Django Admin.
 
@@ -531,9 +553,10 @@ As a temporary solution Site Admin will add the slug when approving the post in 
 [https://www.reddit.com/r/django/comments/tc818z/i_need_some_advice_with_django_prepopulated_field/i0gc6k4/]
 
 
+<br />
+
 
 **B07 - Javascript URL redirect on input tag working but throwing error**
-
 Input tag used to create functionality for a Cancel button. The JavaScript used to redirect the user back to the homepage is working correctly, however an error is being identified in the terminal.
 
 ```html
@@ -542,9 +565,10 @@ Input tag used to create functionality for a Cancel button. The JavaScript used 
 Error:
 ';' expected.
 
+<br />
+
 
 **B09 - External emails not being received from the backend**
-
 Raised from the following user stories:
 - [#17]: Site Admin - Approve new posts
 - [#20]: Contact Us Page
@@ -553,9 +577,10 @@ I have tried to build in additional functionality where the Fresh Casts team rec
 
 Prior to attempting to use a direct connection with Gmail, I attempted to integrate with SendGrid however I understand that it is no longer possible to use a SendGrid/Gmail combination for this purpose as Gmail is a free account as opposed to a business and paid for type of account.
 
+<br />
+
 
 **B11 - Context Processing function not returning list of categories1**
-
 The following function has been added to all views site wide to replicate the blog categories list found in the NavBar Main Menu on the Base/Index html templates. Despite plenty of stackoverflow research and tutor support I've been unable within the time frame to debug this issue.
 
 ```python
