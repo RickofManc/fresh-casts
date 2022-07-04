@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block title %}{% trans 'Edit Blog Post' %}{% endblock %}
+{% load crispy_forms_tags %}
 {% block content %}
 <!-- User must be authenticated and accessing own blog posts to view page -->
 {% if user.is_authenticated %}
@@ -27,7 +28,7 @@
         <form method="POST">
           <div class="form-group">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form|crispy }}
             <div class="input-group">
               <!-- Button to submit post updates -->
               <button class="btn btn-style right" type="submit">Submit

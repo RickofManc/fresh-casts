@@ -9,9 +9,7 @@ from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from .models import Post, Category
-from .forms import CommentForm
-from .forms import PostForm
-
+from .forms import CommentForm, PostForm, UpdateForm
 
 # Global Variables
 User = get_user_model()
@@ -144,7 +142,7 @@ class UpdatePostView(UpdateView):
     """
     model = Post
     template_name = "update_post.html"
-    fields = ("title", "category", "content", "podcast_url", "featured_image")
+    form_class = UpdateForm
     success_url = reverse_lazy("home")
 
     def get_context_data(self, *args, **kwargs):
