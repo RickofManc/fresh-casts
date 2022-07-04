@@ -93,6 +93,8 @@ nav {
 
 .navbar-brand-image {
     margin-right: 0.625rem;
+    max-width: 3rem;
+    max-height: 3rem;
 }
 
 .navbar-toggler {
@@ -151,7 +153,6 @@ a:hover {
 .main-content {
     margin-top: 6rem;
     margin-bottom: 6rem;
-    
 }
 
 .card {
@@ -207,8 +208,8 @@ a.post-link {
 }
 
 .img-homepage {
-    width: 165px;
-    height: 165px;
+    width: 10.3125rem;
+    height: 10.3125rem;
 }
 
 .img-fluid {
@@ -392,7 +393,11 @@ ul.errorlist.nonfield {
 
     .navbar-brand-image {
         margin-right: 0;
+        width: 2rem;
+        height: 2rem;
+        vertical-align: middle!important;
     }
+
 
     h1 {
         font-size: 1.3rem;
@@ -434,8 +439,8 @@ ul.errorlist.nonfield {
         }
 
     .img-homepage {
-        width: 90px;
-        height: 90px;
+        max-width: 6.25rem;
+        max-height: 6.25rem;
     }
 
     /* || POST DETAIL STYLES  */
@@ -460,6 +465,12 @@ ul.errorlist.nonfield {
     /* || CONTACT US  */
     textarea#id_message {
         max-width: 100%
+    }
+
+    /* || FOOTER STYLES  */
+    .footer-item {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
 }
 

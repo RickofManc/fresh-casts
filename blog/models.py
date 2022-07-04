@@ -48,7 +48,9 @@ class Post(models.Model):
     content = models.TextField(max_length=5000)
     excerpt = models.TextField(max_length=180, blank=True)
     podcast_url = models.URLField(max_length=255)
-    featured_image = CloudinaryField("image", default="placeholder")
+    featured_image = CloudinaryField(
+        "sample.webp", default="placeholder",
+        transformation={"height": "300", "width": "300", "crop": "fit"})
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name="blogpost_like", blank=True
