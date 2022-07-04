@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Cross-Origin Resource Sharing to support third party resources to load
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -109,11 +109,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'fresh_casts.wsgi.application'
 
-# Database Settings
+# Database Settings for Production
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
+# Database Settings for Testing in Development
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
