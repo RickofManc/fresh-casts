@@ -445,8 +445,8 @@ ul.errorlist.nonfield {
 
     /* || POST DETAIL STYLES  */
     .img-post-detail {
-        width: 200px;
-        height: 200px;
+        width: 12.5rem;
+        height: 12.5rem;
     }
     
     .comments-row-div {
