@@ -16,7 +16,7 @@
 <br />
 
 Fresh Casts is a website built for people who enjoy listening to podcasts, and would also like to share and discover new shows and series.
-Through clear and intuitive design, Fresh Casts goal is ensure the pleasure of listening, sharing and discussing podcasts is accessible to all possible user groups, no matter of age or background.
+Through clear and intuitive design, Fresh Casts goal is to ensure the pleasure of listening, sharing and discussing podcasts is accessible to all possible user groups, no matter of age or background.
 
 ***
 <br />
@@ -56,7 +56,7 @@ There's an opportunity to help people share podcasts, making it easier to discus
 ### Objective
 
 By summer 2022, I will develop and deploy a website that promotes the sharing and discussion of podcasts they are enjoying. 
-All visitors will be able to listen to shared podcasts. Users who create a Fresh Casters profile will be able to comment and like shared shows, as well as posting their own favourites. The site will meet WCAG 2.1 AA standards, and will be thoroughly tested to ensure all user groups can access and enjoy content.
+All visitors will be able to listen to shared podcasts. Users who create a Fresh Casts profile will be able to comment and like shared shows, as well as posting their own favourites. The site will meet WCAG 2.1 AA standards, and will be thoroughly tested to ensure all user groups can access and enjoy content.
 
 <br />
 
@@ -85,28 +85,28 @@ The chart below highlights the features roadmap assessed by importance versus vi
 
 ### Scope
 
-An agile approach of keeping the in scope features simple and aligned to the strategy for the MVP will be adopted. Below is a list of the leading features for the the Fresh Casts MVP.
+An agile approach of keeping the in scope features simple and aligned to the strategy for the MVP will be adopted. Below is a list of the leading features for the Fresh Casts MVP.
 
 
 #### In Scope Features
 * Create an accessible website that follows convention for sites built to inform.
 * Conventionally the site will have a fixed Header, Navbar and Footer.
-* Main Menu accessible through a hamburger icon.
+* Main Menu will be accessible through a hamburger icon.
 * By default, the homepage will show the latest posts in ascending order.
 * A clickable link will enable Fresh Casters to find out more information on the post.
-* Podcasts will be playable directly in the page browser.
+* Podcasts will be able ot click through to listen to shows in their host site.
 * A user account will provide access to Commenting, Liking, Posting.
-* Update own content - providing Fresh Casters with an option to edit their own posts.
+* Fresh Casters will be able to edit their own posts.
 * A 'Contact Us' page will enable Fresh Casters to get in touch with Site Admin.
 * An Accessibility Statement will inform of how Fresh Casts cares about accessibility.
-* The site will be responsive across differing devices, from mobile first design through to 5K screens supported.
+* The site will be responsive across differing devices, from mobile first design through to large +2300px wide screens supported.
 
 
 #### Out of Scope Features - for future release
 * Search and learn - Using keywords, Fresh Casters will be able to search and hone in their choices.
-* Recent activity - Pulling commenting, liking, posting data from across the site into Fresh Casters profile page.
+* Recent activity - Compiling users activity data from across the site into their profile page.
 * Podcast downloading - enabling Fresh Casters to listen offline.
-* Preferred app - allowing Fresh Casters to listen to a podcast in favourite listening app.
+* Preferred app - allowing Fresh Casters to listen to a podcast in their favourite listening app.
 * Fresh Casters will be supported with a page dedicated to FAQ's.
 * Single Sign On (SSO) - Use social apps such as Google, Facebook and Twitter to sign-in.
 * Connecting Fresh Casters - Provide chat service to allow the community to interact directly.
@@ -117,7 +117,7 @@ An agile approach of keeping the in scope features simple and aligned to the str
 
 This website will be structured with the following design considerations.
 
-* A Hub and Spoke structure, where the main content will be the homepage hub, and spokes are the pages to find out more information on a post. The spokes will also house the useful pages such as Sign-up, FAQ, Contact Us, About Us etc.
+* A Hub and Spoke structure, where the main content will be the homepage hub, and spokes are the pages to find out more information on a post. The spokes will also house useful pages such as Sign-up, Contact Us, About Us etc.
 * Each post will be displayed in a shortened list view for the homepage with just enough information to entice the user. The post image and title will be clickable to open in a new page with full post details.
 * Users wishing to add a comment or like will be asked to first create a user account as a Fresh Caster. Once a brief form has been completed and submitted, users will have immediate access to all features. 
 * Having a user account will allow users to interact with the site, adding comments, likes and being able to post their own podcast review.
