@@ -173,7 +173,7 @@ class DeletePostView(DeleteView):
         return context
 
 
-class CategoryView(generic.ListView):
+class CategoryView(generic.ListView, object):
     """
     Displays Category page - content depending
     on which category has been selected by the user.

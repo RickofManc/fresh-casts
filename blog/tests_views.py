@@ -3,6 +3,7 @@ from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from .models import Post, Comment, Category
+from .views import CategoryView
 
 
 # Global Variables
@@ -151,14 +152,3 @@ class TestViews(TestCase):
                     data={'message': 'new_comment'})
         self.assertRedirects(
             response, reverse('post_detail', args=[self.post.slug]))
-
-    def test_context(self, *args, **kwargs):
-        """
-        test passing additional information to the template
-        """
-        context = super(self.category, self).get_context_data(*args, **kwargs)
-        response = self.client.get(Category.objects.all())
-        self.assertIsNone(response.context['cat_menu'])
-        self.assertIsNone(response.context['PostDetail'])
-
-

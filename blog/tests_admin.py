@@ -51,17 +51,18 @@ class TestViews(TestCase):
         )
         self.client.login(username='admin', password='543210')
         # count how many of the current posts are approved
-        approved = Post.objects.filter(status=1).count()
-        self.assertEqual(self.post.status, 0)
+        published = Post.objects.filter(status=0).count()
+        self.assertEqual(self.post.status, 1)
         # provide an action to approve a post
-        data = {'action': 'approve_post',
+        data = {'actions': 'approve_post',
                 '_selected_action': [self.post.title, ]}
-        change_url = reverse('admin:post_changelist')
+        change_url = reverse('admin:blog_post_changelist')
         response = self.client.post(change_url, data, follow=True)
 
         self.assertEqual(response.status_code, 200)
         # count number of approved posts to assess if 1 has been approved
-        self.assertEqual(Post.objects.filter(status=1).count(), approved+1)
+        self.assertEqual(
+            Post.objects.filter(status=1).count(), published+1)
 
     def test_approve_comments(self):
         """ test approving blog comments """
@@ -76,9 +77,9 @@ class TestViews(TestCase):
         self.assertFalse(self.comment.approved)
 
         data = {
-            'action': 'approve_comments',
+            'action': 'approve_comment',
             '_selected_action': [self.comment.id, ]}
-        change_url = reverse('admin:blog_post_comment')
+        change_url = reverse('admin:blog_comment_changelist')
         response = self.client.post(change_url, data, follow=True)
 
         self.assertEqual(response.status_code, 200)
