@@ -190,7 +190,7 @@ The logo has been selected from [Adobe Stock](https://stock.adobe.com/uk/contrib
 
 **Roboto Flex and Roboto Condensed**
 
-I've selected this popular [font family](https://fonts.google.com/share?selection.family=Roboto%20Condensed:ital,wght@0,400;0,700;1,400;1,700%7CRoboto%20Flex:opsz,wght@8..144,100;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700) for its clean lines and legibility, being widely used on news and information based websites. It also offers a condensed style which can be used for larger text headers to offer some contrast to body text, without having to use a multiple font families.
+I've selected this popular [font family](https://fonts.google.com/share?selection.family=Roboto%20Condensed:ital,wght@0,400;0,700;1,400;1,700%7CRoboto%20Flex:opsz,wght@8..144,100;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700) for its clean lines and legibility, being widely used on news and information based websites. It also offers a condensed style which can be used for larger text headers to offer some contrast to body text.
 
 <p align="center">
     <img src="readme-images/fresh-casts-roboto-flex-font.png" alt="Fresh Casts Font"/>
@@ -225,7 +225,7 @@ The diagram highlights the following relationships:
 * One user can add one log post like
 * One user can add many comments to one blog post
 
-The Contact App data model does not yet have a relationship with the Blog App, however I have included for reference towards future development.
+The Contact App data model does not yet have a relationship with the Blog App, however I have included for awareness towards future development.
 
  
 <p align="center">
@@ -272,9 +272,9 @@ Meta data is included within the HTML head element to increase the traffic to th
 * [Gunicorn](https://gunicorn.org/) was used as the Web Server to run Django on Heroku.
 * [Django-allauth](https://django-allauth.readthedocs.io/en/latest/) used for addressing user authentication, registration and account management.
 * [Bootstrap5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) was used to build responsive web pages.
-* [Summernote](https://summernote.org/) provides WYSIWYG editing of blog post descriptions.
-* [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) is simplifying rendering on the Comments form.
-* [Cloudinary](https://cloudinary.com/products/programmable_media) has been used to store the images uploaded by user for blog posts.
+* [Summernote](https://summernote.org/) provides WYSIWYG editing of blog post descriptions on the admin side. An option was considered to allow users to edit the styles of their posts, however in practice this led to poor accessibility with differing font sizes and colours used.
+* [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) is simplifying rendering on several forms.
+* [Cloudinary](https://cloudinary.com/products/programmable_media) has been used to store the images uploaded by users for their blog posts.
 
 
 ### Software & Web Applications
@@ -329,11 +329,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 
 - __Fixed Footer__
 
-    Utilising Bootstraps NavBar, users have three distinct sections to reach features.
-    The left hand side uses the conventional hamburger menu icon to reveal a menu that offers access to user features, blog post categories and other useful pieces of information.
-    Centrally the Fresh Casts name and logo takes a leading role to convey the brand as well as acting as a link back to the homepage.
-    Whilst on the right hand side the resource profile icon provides a short menu with access to user features.
-    The menu collapses either with a user choosing a menu item, by clicking the menu button or after a short time period.
+    Similar to the NavBar Main Menu, users have three distinct sections to reach features from the Footer.
 
 <p align="center">
     <img src="readme-images/F04_Footer.png" alt="Footer features"/>
@@ -343,7 +339,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 
 - __Create a Blog Post__
 
-    Registered users have the ability to add to Fresh Casts content through creating a blog post. A simple form asks for basic show information, including a link to the hosting URL. On form submission, users are informed the post will be reviewed by Site Admin and hopefully published if deemed appropriate within 24 hours.
+    Registered users have the ability to add to Fresh Casts content through creating a blog post. A simple form asks for basic details, including a link to the hosting URL. On form submission, users are informed the post will be reviewed by Site Admin and hopefully published if deemed appropriate within 24 hours.
     Users can also upload an image to support the post, if an image is not uploaded at the time, the Fresh Casts logo will be displayed. Users can update the post with an image once live. This feature currently works best on a desktop application, with a future feature using a podcast API to retrieve the URL and featured image automatically to the Form using search functionality.
 
 <p align="center">
@@ -355,7 +351,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 - __Read a Blog Post__
 
     When a user chooses a blog post from the main homepage list view or category page, they are taken through to a single page that displays all posted details and further features.
-    All site visitors will be able to read about the shared podcast, and use the 'Listen' button to here the show from the host site. Development work is going on to enable users to listen to the show within the site page.
+    All site visitors will be able to read about the shared podcast, and use the 'Listen' button to hear/see the show from the host site. Development work is going on to enable users to listen to the show within the site page.
     If users are registered and logged in they will be able to add a like or comment in the conventional manner, a counter provides an indication on how favoured a post is. If users have posted the item further options to Edit or Delete their post will be visible.
 
 <p align="center">
@@ -366,8 +362,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 
 - __Commenting__
 
-    A key feature for Fresh Casts is enable the community to share their views with one another. All site visitors will be able to read a blog posts comments just below the main content. Registered users will be able to add comments to kick start or join in a conversation about a particular podcast.
-    Commenting counters are displayed on the Homepage list view as a method of enticing users to understand more about a post and get involved.
+    A key feature for Fresh Casts is enabling the community to share their views with one another. All site visitors will be able to read a blog posts comments just below the main post content. Registered users will be able to add comments to kick start, or join in a conversation about a particular podcast.
 
 <p align="center">
     <img src="readme-images/F14_Comments.png" alt="Blog Post Commenting Feature"/>
@@ -397,8 +392,8 @@ Meta data is included within the HTML head element to increase the traffic to th
 
 - __Update Profile__
 
-    In addition to being able to update content they have posted, registered users will be able to update key account details i.e. Username, Email Address, First and Last Name. This option will only be visible in the main menus and footer when a user is logged in. The next release will allow users to delete their profile, however for know they could use the 'Contact Us' form to request this action.
-    Passwords can also be updated - due to the sensitive nature of this action, users wishing to update their password are taken through to another form.
+    In addition to being able to update content they have posted, registered users will be able to update key account details i.e. Username, Email Address, First and Last Name. This option will only be visible in the Main Menus and Footer when a user is logged in. The next release will allow users to delete their profile. As a temporary solution, users can use the 'Contact Us' form to request this action.
+    Passwords can also be updated - due to the sensitive and secure nature of this action, users wishing to update their password are taken through to another screen.
 
 <p align="center">
     <img src="readme-images/Edit_Profile.png" alt="Edit Profile Feature"/>
@@ -408,7 +403,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 
 - __Contact Us__
 
-    An essential feature is a method for Fresh Casters to contact the team. This can be performed with a direct email, or by completing and submitting a short form available in the main menu or footer. The form requests some basic information and allows users to describe the reason for contact without a limit on character length.
+    An essential feature is a method for Fresh Casters to contact the team. This can be performed with a direct email or by submitting a short form available from the Main Menu or Footer. The form requests some basic information and allows users to describe the reason for contact.
     Once received, the team can process the form in the backend and utilise a checkbox for status to mark when a response has been sent.
 
 <p align="center">
@@ -449,9 +444,9 @@ Features that will be added to the backlog for future releases are as follows:
 
 The code on each file has been tested using the appropriate validation service; W3C Markup for HTML, W3C Jigsaw for CSS and Pep8 Online for Python.
 
-As this project uses Django templates the html has been validated by manually clicking through the application pages, copying the templates to validate using the W3C Validator. HTML for the Django admin site pages was not edited so has not been validated here. The Signup, Login and Logout pages from Django allauth were customised and so have been validated. The same process was undertaken to test the python files with Pep8 Online and CSS with W3C Jigsaw.
+As this project uses Django templates the html has been validated by manually clicking through the application pages, copying the templates to validate using the W3C Validator. HTML for the Django admin site pages was not edited so has not been validated here. The Signup, Login and Logout pages from Django allauth were customised and so have been validated. The same process was undertaken to test the Python files with Pep8 Online and CSS with W3C Jigsaw.
 
-Due to the nature of extending the base.html template the W3C Validator consistently found the following warnings or errors. As these are incurred as part of the design they have not been listed within the table. Only exceptions  not anticipated have been listed.
+Due to the nature of extending the base.html template the W3C Validator consistently found the following warnings or errors. As these are incurred as part of the design they have not been listed within the table. Only exceptions not anticipated have been listed.
 - Consider adding a lang attribute to the html start tag to declare the language of this document.
 - Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>.
 - Element head is missing a required instance of child element title. 
@@ -471,7 +466,7 @@ Use the arrow below to view the results in detail.
 
 #### **Browser**
 
-To ensure site visitors can view and use Fresh Cast features on differing browsers, testing was performed on the test scenarios listed in the table below.
+To ensure site visitors can view and use Fresh Cast features on differing browsers, testing was performed on the test scenarios listed below.
 
 To achieve a 'Pass' the following criteria had to be met across all website pages;
 1. All buttons provide user feedback on hover and execute correctly when clicked
@@ -488,8 +483,8 @@ To achieve a 'Pass' the following criteria had to be met across all website page
 
 #### **Device**
 
-To ensure site visitors can view and use Fresh Cast on differing devices, testing was performed on the test scenarios listed in the table below.
-This physical testing is in addition to the continual device testing for UX using Chrome Developer tools.
+To ensure site visitors can view and use Fresh Cast on differing devices, testing was performed on the test scenarios listed below.
+This physical testing is in addition to the continual device testing as part of UX development using Chrome Developer tools.
 				
 To achieve a 'Pass' the following criteria had to be met across all website pages;				
 1. All buttons provide user feedback on hover and execute correctly when clicked				
@@ -508,7 +503,7 @@ To achieve a 'Pass' the following criteria had to be met across all website page
 
 The website has been thoroughly tested throughout all pages using the [Wave (Web Accessibility Evaluation Tool)](https://wave.webaim.org/). In general all pages performed well with 0 Errors identified.
 
-A general theme was identified as Alerts where 'Adjacent links go to the same URL.' was noted. An example of this is within the 'Sign Up' page where a link is offered within the text to navigate to the 'Sign In' page if you already have an account. As the Nav-Menu and Footer offer the same link an Alert was raised. Consideration has been given and where deemed workable links have been removed to avoid additional navigation and repetition for keyboard and screen reader users.
+A general theme was identified as Alerts where 'Adjacent links go to the same URL.' was noted. An example of this is within the 'Sign Up' page where a link is offered within the text to navigate to the 'Sign In' page if you already have an account. As the Nav-Menu and Footer offer the same link an Alert was raised. Consideration was given and where deemed necessary, workable links have been removed to avoid additional navigation and repetition for keyboard and screen reader users.
 
 
 <p align="center">
@@ -521,14 +516,14 @@ A general theme was identified as Alerts where 'Adjacent links go to the same UR
 #### **Lighthouse** 
 
 
-Using Lighthouse Performance testing within Chrome Developer Tools, the website has been tested for use on Desktop and Mobile devices. 
-The website scored highly across all criteria, however further work was required to;
+Using Lighthouse testing within Chrome Developer Tools, the website has been tested for use on Desktop and Mobile devices. 
+The website scored well across all criteria, however further work was required to;
 - improve the contrast of the background to foreground for Accessibility,
-- ensure there was sufficient spacing between links for mobile use,
+- ensure there was sufficient spacing between Footer links for mobile users,
 - transform all future images uploaded to webP format and 300x300px in size to improve page loading times.
 Site wide research to improve Best Practices is required to add security where front-end JavaScript libraries are being used, in this case, jQuery as part of the Bootstrap use which scored a 3 for Vulnerability Count."																	
 																	
-Test occurred using Lighthouse within Chrome Dev Tools on 4 July 2022with the following results:
+Testing occurred using Lighthouse within Chrome Dev Tools on 4 July 2022 with the following results:
 
 
 <p align="center">
@@ -551,7 +546,7 @@ Test scripts were written for the following blog app files;
 - forms.py
 - admin.py
 
-Whilst further testing is required to achieve 100%, the results thus far are highlight in the summary report below:
+Whilst further testing is required to achieve 100%, the results thus far are highlighted in the summary report below:
 
 <p align="center">
     <img src="readme-images/fresh-casts-blog-app-automated-testing.png" alt="Django Testing Results"/>
@@ -636,7 +631,7 @@ To fork this website to either propose changes or to use as an idea for another 
 1. If you haven't yet, you should first set up Git. Don't forget to set up authentication to GitHub.com from Git as well
 1. Navigate to the [Fresh Casts](https://github.com/RickofManc/fresh-casts).
 1. Click the 'Fork' button on the upper right part of the page. It's in between 'Watch' and 'Star'
-1. You will now have a fork of the VV Pizzas repository added to your GitHub profile. Navigate to your own profile and find the forked repository to add the required files.
+1. You will now have a fork of the Fresh Casts repository added to your GitHub profile. Navigate to your own profile and find the forked repository to add the required files.
 1. Above the list of forked files click the 'Code' button
 1. A drop-down menu will appear providing a choice of cloning options. Select the one which is applicable to your setup
 Further details on completing the last step can be found on GitHub's [Fork a Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo) page
@@ -661,7 +656,7 @@ To deploy from GitHub, follow these steps:
 1. On the Application Configuration page for the new app, click on the Resources tab.
 1. In the Add-ons search bar enter "Postgres" and select "Heroku Postgres" from the list - click the "Submit Order Form" button on the pop-up dialog.
 1. Next, click on Settings on the Application Configuration page and click on the "Reveal Config Vars" button - check the DATABASE_URL has been automatically set up.
-1. Add a new Config Var called DISABLE_COLLECTSTATIC and assign it a value of 1.
+1. Add a new Config Var called DISABLE_COLLECTSTATIC and assign it a value of 1 - Remove this when releasing for Production.
 1. Add a new Config Var called SECRET_KEY and assign it a value - any random string of letters, digits and symbols.
 1. The settings.py file should be updated to use the DATABASE_URL and SECRET_KEY environment variable values as follows :
 
