@@ -538,7 +538,31 @@ Test occurred using Lighthouse within Chrome Dev Tools on 4 July 2022with the fo
 <br />
 
 
-#### **Bugs**
+### Automatic Testing
+
+Django testing tools have been used to perform basic automated testing on Fresh Casts Python code, primarily for template rendering and some user functionality.
+
+Tests were run using the local SQLite3 database as opposed to the production PostgreSQL database.
+
+Test scripts were written for the following blog app files;
+
+- models.py
+- views.py
+- forms.py
+- admin.py
+
+Whilst further testing is required to achieve 100%, the results thus far are highlight in the summary report below:
+
+<p align="center">
+    <img src="readme-images/fresh-casts-blog-app-automated-testing.png" alt="Django Testing Results"/>
+    </p>
+
+
+
+<br />
+
+
+### Bugs
 
 The following bugs do not impact the main purpose, functionality or features of Fresh Casts. However, at the time of writing further research was being undertaken in order to provide resolution. 
 
@@ -590,11 +614,6 @@ def get_context_data(self, *args, **kwargs):
     context["cat_menu"] = cat_menu
     return context
 ```
-
-<br />
-
-
-### Automatic Testing
 
 <br />
 
