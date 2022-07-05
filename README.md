@@ -119,8 +119,8 @@ This website will be structured with the following design considerations.
 
 * A Hub and Spoke structure, where the main content will be the homepage hub, and spokes are the pages to find out more information on a post. The spokes will also house useful pages such as Sign-up, Contact Us, About Us etc.
 * Each post will be displayed in a shortened list view for the homepage with just enough information to entice the user. The post image and title will be clickable to open in a new page with full post details.
-* Users wishing to add a comment or like will be asked to first create a user account as a Fresh Caster. Once a brief form has been completed and submitted, users will have immediate access to all features. 
-* Having a user account will allow users to interact with the site, adding comments, likes and being able to post their own podcast review.
+* Users wishing to add a comment or like will be asked to first create a user account. Once a brief form has been completed and submitted, users will have immediate access to all features. 
+* Having a user account will allow users to interact with the site, adding comments, likes and being able to post their own content.
 * All site visitors will be able to contact Fresh Casts through a contact form available from the Main Menu or Footer. 
 * All pages will be available to users consistently through either the Main Menu or Footer - this should ensure users are never two clicks away from where they would like to be.
 
@@ -142,14 +142,14 @@ Key to the UX attributes is the speed and ease for which users can learn about n
 
 The 'Hub and Spoke' structure should provide users with content from their initial landing, and allowing their intrigue to click on a post and find out more, or refine the content by choosing one of five categories located conveniently in the NavBar Menu, Footer or by clicking a category within the posts listed on the homepage.
 
-Aesthetically pages will be clean to promote the information, and allow users to flow between differing categories and expanding posts to learn more and add a Like. Convention from popular information based sites will be adopted so users feel at home and therefore capture their engagement within the first few seconds.
+Aesthetically pages will be clean to promote the information, and allow users to flow between differing categories and expanding posts to learn more and add contribute. Convention from popular information based sites will be adopted so users feel at home and therefore capture their engagement within the first few seconds.
 
 
 #### Wireframes
 
 As part of this phase wireframes for mobile and desktop devices have been produced using [Balsamiq](https://balsamiq.com/wireframes/) (see image below - the wireframes are located within the project [Repo](wireframes)).
 
-The website is responsive through differing screen widths being designed for mobile first to a max-width of 767px. Tablets are responsive from 768px through to 1023px, and desktops from 1024px upward. 
+The website is responsive through differing screen widths being designed for mobile first to a max-width of 767px. Tablets are responsive from 768px through to 1023px, laptops from 1023-1440px, and desktops from 1440px upward. 
 
 <details>
     <summary><b>Wireframes</b></summary>
@@ -161,12 +161,12 @@ The website is responsive through differing screen widths being designed for mob
 
 ### Surface 
 
-In consideration that accessibility is a key design criteria, the developed visual language offers contrast using a simple colour palette, readable font and clear layout. Throughout the website this language has been applied consistently to promote intuitive behaviour with the most important links and information easily recognised.
+In consideration that accessibility is a key design criteria, the visual language offers contrast using a simple colour palette, readable font and clear layout. Throughout the website this language has been applied consistently to promote intuitive behaviour with the most important links and information easily recognised.
 
 
 #### Colour
 
-This palette has been carefully selected to bring high contrasting colours to improve accessibility to visually impaired users. As the primary aim of the site is to inform, Black text on a White background will be adopted throughout. The Teal based accents will be used to highlight buttons, points of reference or navigation and other key pieces of user information.
+This palette has been carefully selected to bring high contrasting colours to improve accessibility to visually impaired users. As the primary aim of the site is to inform, Black text on a White background is adopted throughout. The Teal based accents will be used to highlight buttons, points of reference or navigation and other key pieces of user information.
 
 <details>
     <summary><b>Colour Palette</b></summary>
