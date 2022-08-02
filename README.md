@@ -55,7 +55,7 @@ There's an opportunity to help people share podcasts, making it easier to discus
 
 ### Objective
 
-By summer 2022, I will develop and deploy a website that promotes the sharing and discussion of podcasts they are enjoying. 
+Develop and deploy a website that promotes the sharing and discussion of podcasts they are enjoying. 
 All visitors will be able to listen to shared podcasts. Users who create a Fresh Casts profile will be able to comment and like shared shows, as well as posting their own favourites. The site will meet WCAG 2.1 AA standards, and will be thoroughly tested to ensure all user groups can access and enjoy content.
 
 <br />
