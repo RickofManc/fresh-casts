@@ -30,7 +30,9 @@ def contact(request, *args, **kwargs):
             try:
                 messages.success(request, 'Thank you for your contacting \
                     - Fresh Casts will reply within 24 hours!')
-                send_mail(subject, message, 'email', ["freshcastsapp@gmail.com"], fail_silently=False)
+                send_mail(subject, message, 'email',
+                          ["freshcastsapp@gmail.com"],
+                          fail_silently=False)
             except BadHeaderError:
                 return HttpResponse("Invalid header found.")
             return render(request, "contact.html", {})
