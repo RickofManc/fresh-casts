@@ -5,6 +5,7 @@ Standard Django reverse url model
 Cloudinary model to support image repository
 """
 from django.db import models
+from django_extensions.db.fields import AutoSlugField
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
@@ -36,7 +37,7 @@ class Post(models.Model):
     Models the fields for a blog Post.
     """
     title = models.CharField(max_length=255, unique=True, primary_key=True)
-    slug = models.SlugField(max_length=255, unique=True)
+    slug = AutoSlugField(populate_from='title', unique=True,)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
