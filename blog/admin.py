@@ -12,15 +12,10 @@ class PostAdmin(SummernoteModelAdmin):
     Displays the fields and values
     for Post Model in admin panel.
     """
-    list_display = ('title', 'slug', 'author', 'created_on')
-    search_fields = ['title', 'content', 'author']
-    list_filter = ('status', 'author', 'created_on')
+    list_display = ('title', 'slug', 'author', 'category', 'created_on')
+    search_fields = ['title', 'content', 'author', 'category']
+    list_filter = ('status', 'author', 'category', 'created_on')
     summernote_fields = ('content',)
-    actions = ['approve_post']
-
-    def approve_post(self, request, queryset):
-        """ Function to approve user posts """
-        queryset.update(approved=True)
 
 
 @admin.register(Comment)
