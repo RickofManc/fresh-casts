@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
@@ -110,10 +111,12 @@ class PostLike(View):
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
+            messages.success(
+                request, 'Thanks for liking this post')
         return HttpResponseRedirect(reverse("post_detail", args=[slug]))
 
 
-class AddPostView(CreateView):
+class AddPostView(SuccessMessageMixin, CreateView):
     """
     Displays Add Post page.
     gets : requested template by name
@@ -124,6 +127,8 @@ class AddPostView(CreateView):
     form_class = PostForm
     template_name = "add_post.html"
     success_url = reverse_lazy("home")
+    success_message = "Thank you for posting \
+                    - Fresh Casts will review and publish asap!"
 
     def get_context_data(self, *args, **kwargs):
         """Provides podcast categories in nav-menu."""
@@ -133,7 +138,7 @@ class AddPostView(CreateView):
         return context
 
 
-class UpdatePostView(UpdateView):
+class UpdatePostView(SuccessMessageMixin, UpdateView):
     """
     Displays Edit Post page.
     gets : requested template by name
@@ -143,7 +148,9 @@ class UpdatePostView(UpdateView):
     model = Post
     template_name = "update_post.html"
     form_class = UpdateForm
-    success_url = reverse_lazy("home")
+    success_message = "Thank you for updating your post \
+                       , your updates are visible immediately and \
+                       will be reviewed by Fresh Casts"
 
     def get_context_data(self, *args, **kwargs):
         """Provides podcast categories in nav-menu."""
@@ -153,7 +160,7 @@ class UpdatePostView(UpdateView):
         return context
 
 
-class DeletePostView(DeleteView):
+class DeletePostView(SuccessMessageMixin, DeleteView):
     """
     Displays Delete Post page.
     gets : requested template by name
@@ -163,7 +170,7 @@ class DeletePostView(DeleteView):
     model = Post
     template_name = "delete_post.html"
     fields = "title"
-    success_url = reverse_lazy("home")
+    success_message = "You have successfully deleted your post"
 
     def get_context_data(self, *args, **kwargs):
         """Provides podcast categories in nav-menu."""
