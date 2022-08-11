@@ -16,9 +16,6 @@ class PostForm(forms.ModelForm):
             attrs={'class': 'form-control',
                    'placeholder': 'Add a title for the show here, \
                     maybe with the episode number'})),
-    slug = forms.SlugField(
-        max_length=255, widget=forms.TextInput(
-            attrs={'class': 'form-control'})),
     category = forms.ChoiceField(
         widget=forms.Select(attrs={'class': 'form-control'})),
     author = forms.ChoiceField(
