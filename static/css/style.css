@@ -379,6 +379,12 @@ ul.errorlist.nonfield {
     color: #79ffe2;
 }
 
+/* || 404 & 505 ERROR PAGE STYLES  */
+
+.error-page-header {
+    font-weight: 500;
+}
+
 
 /* |||| MEDIA QUERIES  */
 
