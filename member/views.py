@@ -42,7 +42,7 @@ class SignUpView(SuccessMessageMixin, CreateView):
         return context
 
 
-class LoginView(View):
+class LoginView(SuccessMessageMixin, View):
     """
     Displays Login page.
     gets : requested template by name
@@ -53,6 +53,7 @@ class LoginView(View):
     form_class = LoginForm
     template_name = "login.html"
     success_url = reverse_lazy("home")
+    success_message = "Welcome back to Fresh Casts"
 
     def get_object(self):
         """Returns user object"""
