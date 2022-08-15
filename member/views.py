@@ -25,7 +25,7 @@ class SignUpView(SuccessMessageMixin, CreateView):
     """
     model = User
     form_class = RegisterUserForm
-    template_name = "signup.html"
+    template_name = "sign_up.html"
     success_url = reverse_lazy("home")
     success_message = "Thank you for joining our community! \
                        You can now like and add blog posts"
