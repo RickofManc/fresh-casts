@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<!-- Main container for page content : Details of 500 error and button to navigate to home -->
+<div class="jumbotron">
+    <h1 class="display-4 error-page-header">500 Internal Server Error</h1>
+    <p class="lead">Oops! Something has gone wrong with the Fresh Casts website.</p>
+    <hr class="my-4">
+    <p>This isn’t a problem with your browser, your computer, or your internet connection. We have been alerted to this issue and will despatch a Fresh Caster to fix it.</p>
+    <p>Please use the button below to return to the Fresh Casts website and select a page from the menu or by clicking on a podcast.</p>
+    <p class="lead">
+        <a class="btn btn-style btn-lg" href="{% url 'home' %}" role="button">Home</a>
+    </p>
+</div>
+{% endblock content %}
