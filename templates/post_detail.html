@@ -11,17 +11,9 @@
             <div class="col post-img-div">
                 <!-- Featured image URL -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img
-                        src="static/images/fresh-casts-b-and-g-logo.png"
-                        class="img-fluid img-post-detail"
-                        alt=""
-                        />
+                <img src="static/images/fresh-casts-b-and-g-logo.png" class="img-fluid img-post-detail" alt="" />
                 {% else %}
-                <img
-                        src="{{ post.featured_image.url }}"
-                        class="img-fluid img-post-detail"
-                        alt="Podcast logo"
-                        />
+                <img src="{{ post.featured_image.url }}" class="img-fluid img-post-detail" alt="Podcast logo" />
                 {% endif %}
             </div>
             <div class="col card-body">
@@ -29,15 +21,11 @@
                 <h2 class="card-title">{{ post.title }}
                 </h2>
                 <!-- Post category -->
-                <a
-                   href="{% url 'category' post.category|slugify %}"
-                   class="post-link"
-                   >
-                  <h3 class="card-subtitle">
-                    Category : {{ post.category }}
-                  </h3>
-                </a
-                  >
+                <a href="{% url 'category' post.category|slugify %}" class="post-link">
+                    <h3 class="card-subtitle">
+                        Category : {{ post.category }}
+                    </h3>
+                </a>
                 <!-- Post author -->
                 <p class="author">Shared By {{ post.author }}
                 </p>
@@ -58,99 +46,62 @@
                 <p class="card-text">{{ post.content | safe }}
                 </p>
                 <!--- Anchor button to listen to podcast in host site -->
-                <a
-                    href="{{ post.podcast_url }}"
-                    target="_blank"
-                    class="anchor-btn btn-style"
-                    >Listen
-                </a
-                    >
+                <a href="{{ post.podcast_url }}" target="_blank" class="anchor-btn btn-style">Listen
+                </a>
                 <!--- User features to Update or Delete with authentication and own content conditions -->
                 {% if user.is_authenticated %} {% if user.id == post.author.id %}
-                <a
-                    href="{% url 'update_post' post.slug %}"
-                    class="anchor-btn btn-style btn-left-margin"
-                    >Edit
-                </a
-                    >
-                <a
-                    href="{% url 'delete_post' post.slug %}"
-                    class="anchor-btn btn-style btn-left-margin"
-                    >Delete
-                </a
-                    >
+                <a href="{% url 'update_post' post.slug %}" class="anchor-btn btn-style btn-left-margin">Edit
+                </a>
+                <a href="{% url 'delete_post' post.slug %}" class="anchor-btn btn-style btn-left-margin">Delete
+                </a>
                 {% endif %} {% endif %}
                 <br />
                 <!--- User features to add a post Like or Comment depending on login status -->
                 <div class="row justify-content-start">
                     <div class="col-sm-2 col-lg-1 xs-col-width">
-                    {% if user.is_authenticated %}
-                    <form
-                            action="{% url 'post_like' post.slug %}"
-                            method="POST"
-                            class="d-inline"
-                            >
-                        {% csrf_token %}
-                        {% if liked %}
-                        <strong
-                                >
-                        <button
-                                type="submit"
-                                name="blogpost_id"
-                                value="{{post.slug}}"
-                                class="btn-like"
-                                aria-label="Like Blog Post"
-                                >
-                            <i class="fas fa-heart">
-                            </i>
-                        </button
-                            >
-                        </strong>
+                        {% if user.is_authenticated %}
+                        <form action="{% url 'post_like' post.slug %}" method="POST" class="d-inline">
+                            {% csrf_token %}
+                            {% if liked %}
+                            <strong>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
+                                    aria-label="Like Blog Post">
+                                    <i class="fas fa-heart">
+                                    </i>
+                                </button>
+                            </strong>
+                            {% else %}
+                            <strong>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+                                    <i class="far fa-heart">
+                                    </i>
+                                </button>
+                            </strong>
+                            {% endif %}
+                        </form>
                         {% else %}
-                        <strong
-                                >
-                        <button
-                                type="submit"
-                                name="blogpost_id"
-                                value="{{post.slug}}"
-                                class="btn-like"
-                                >
-                            <i class="far fa-heart">
-                            </i>
-                        </button
-                            >
+                        <strong>
+                            <span class="text-secondary">
+                                <i class="far fa-heart">
+                                </i>
+                            </span>
                         </strong>
                         {% endif %}
-                    </form>
-                    {% else %}
-                    <strong
-                            >
-                        <span class="text-secondary">
-                        <i class="far fa-heart">
-                        </i>
-                        </span
-                        >
-                    </strong>
-                    {% endif %}
-                    <!--- Number of post likes information -->
-                    <strong
-                            >
-                        <span class="text-secondary"
-                            >{{ post.number_of_likes }}
-                        </span
-                        >
-                    </strong
-                        >
+                        <!--- Number of post likes information -->
+                        <strong>
+                            <span class="text-secondary">{{ post.number_of_likes }}
+                            </span>
+                        </strong>
                     </div>
                     <div class="col-sm-2 col-lg-1 xs-col-width">
-                    <!--- Number of post comments information -->
-                    <strong class="text-secondary">
-                        {% with comments.count as total_comments %}
-                        <i class="far fa-comments">
-                        </i>
-                        {{ total_comments }}
-                    </strong>
-                    {% endwith %}
+                        <!--- Number of post comments information -->
+                        <strong class="text-secondary">
+                            {% with comments.count as total_comments %}
+                            <i class="far fa-comments">
+                            </i>
+                            {{ total_comments }}
+                        </strong>
+                        {% endwith %}
                     </div>
                 </div>
             </div>
@@ -160,7 +111,7 @@
 <!--- Container for horizontal page break before Comments section -->
 <div class="row">
     <div class="col">
-    <hr />
+        <hr />
     </div>
 </div>
 <!--- Container for Comments section -->
@@ -177,21 +128,31 @@
                     </p>
                     {{ comment.message | linebreaks }}
                     <span class="text-muted font-weight-normal">
-                    {{ comment.created_on }}
+                        {{ comment.created_on }}
                     </span>
                 </div>
                 {% endfor %}
             </div>
         </div>
-    </div>    
+    </div>
     <!--- Container to add a comment if depending on login status -->
     <div class="col-md-4 card mb-4 mt-3">
         <div class="card-body">
+            <!--- Link to inform how none registered users can comment -->
+            {% if not user.is_authenticated %}
+            <div class="card-block">
+                <p class="card-text">
+                    Would you like to comment? Please use the button below to register first.
+                </p>
+                <a href="{% url 'account_signup' %}" class="anchor-btn btn-style">Register
+                </a>
+            </div>
             <!--- Msg if comment has been submitted -->
-            {% if commented %}
+            {% else %} {% if commented %}
             <div class="alert alert-success" role="alert">
                 Your comment is awaiting approval
             </div>
+            <!--- Signed user can leave a comment -->
             {% else %} {% if user.is_authenticated %}
             <h3 class="card-title">Leave a comment:
             </h3>
@@ -207,7 +168,7 @@
                 <button type="submit" class="btn btn-style">Submit
                 </button>
             </form>
-            {% endif %} {% endif %}
+            {% endif %} {% endif %} {% endif %}
         </div>
     </div>
 </div>
