@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans 'Sign Up' %}{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- Main container for page content : User Register / Sign Up -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <div class="card-body">
+                <h2 class="card-title">{% trans 'Sign Up' %}
+                </h2>
+                <p class="card-text">
+                    {% blocktrans %}
+                    Welcome to Fresh Casts.
+                    <br />Do you already have an
+                    account? If yes, please
+                    <a href="{{ login_url }}" class="link">Sign In
+                    </a> instead.
+                    {% endblocktrans %}
+                    <br />
+                    Otherwise, please complete the form below and start enjoying member features of adding your own
+                    posts, liking and commenting on other Fresh Casters posts.
+                    <br />
+                    Thank you!
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Container for sign up form -->
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <div class="card-body">
+                <form class="form-group" method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    {% if redirect_field_value %}
+                    <input class="form-control" type="hidden" name="{{ redirect_field_name }}"
+                        value="{{ redirect_field_name }}" />
+                    {% endif %}
+                    <!-- Button submit sign up form -->
+                    <button class="btn btn-style right" type="submit">
+                        {% trans 'Sign Up' %}
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
