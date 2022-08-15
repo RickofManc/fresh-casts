@@ -11,13 +11,11 @@
                 <h2 class="card-title">{% trans 'Sign Up' %}
                 </h2>
                 <p class="card-text">
-                    {% blocktrans %}
                     Welcome to Fresh Casts.
                     <br />Do you already have an
                     account? If yes, please
-                    <a href="{{ login_url }}" class="link">Sign In
+                    <a href="{% url 'account_login' %}" class="link">Sign In
                     </a> instead.
-                    {% endblocktrans %}
                     <br />
                     Otherwise, please complete the form below and start enjoying member features of adding your own
                     posts, liking and commenting on other Fresh Casters posts.
