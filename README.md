@@ -563,18 +563,6 @@ The following bugs do not impact the main purpose, functionality or features of 
 
 <br />
 
-**B04 - Slug not auto generating from 'title' on front-end 'Add Blog Post' form**
-Early research indicates the pre-population of this field can only work on within Django Admin. There is another workaround however this will require research where time required to develop may not be ready for MVP release.
-As a temporary solution Site Admin will add the slug when approving the post in Django Admin.
-
-[https://docs.djangoproject.com/en/4.0/ref/contrib/admin/#django.contrib.admin.ModelAdmin.prepopulated_fields]
-
-[https://www.reddit.com/r/django/comments/tc818z/i_need_some_advice_with_django_prepopulated_field/i0gc6k4/]
-
-
-<br />
-
-
 **B07 - Javascript URL redirect on input tag working but throwing error**
 Input tag used to create functionality for a Cancel button. The JavaScript used to redirect the user back to the homepage is working correctly, however an error is being identified in the terminal.
 
@@ -599,7 +587,7 @@ Prior to attempting to use a direct connection with Gmail, I attempted to integr
 <br />
 
 
-**B11 - Context Processing function not returning list of categories1**
+**B11 - Context Processing function not returning list of categories**
 The following function has been added to all views site wide to replicate the blog categories list found in the NavBar Main Menu on the Base/Index html templates. Despite plenty of stackoverflow research and tutor support I've been unable within the time frame to debug this issue.
 
 ```python
@@ -622,27 +610,36 @@ def get_context_data(self, *args, **kwargs):
 This project was deployed using the steps below with version releasing active. Please do not make any changes to files within this repository as any changes pushed to the main branch will be automatically reflected on the live website. Instead, please follow the steps below which guide you to forking the website where changes can be made without impact to the live website. Thanks!
 
 
-### Fork and Deploy with GitHub
+### Fork and Deploy Locally with GitHub
 
 <details>
     <summary></summary>
 
 To fork this website to either propose changes or to use as an idea for another website, follow these steps:
-1. If you haven't yet, you should first set up Git. Don't forget to set up authentication to GitHub.com from Git as well
+1. If you haven't yet, you should first set up Git. Don't forget to set up authentication to GitHub.com from Git as well.
 1. Navigate to the [Fresh Casts](https://github.com/RickofManc/fresh-casts).
-1. Click the 'Fork' button on the upper right part of the page. It's in between 'Watch' and 'Star'
+1. Click the 'Fork' button on the upper right part of the page. It's in between 'Watch' and 'Star'.
 1. You will now have a fork of the Fresh Casts repository added to your GitHub profile. Navigate to your own profile and find the forked repository to add the required files.
-1. Above the list of forked files click the 'Code' button
-1. A drop-down menu will appear providing a choice of cloning options. Select the one which is applicable to your setup
+1. Above the list of forked files click the 'Code' button.
+1. A drop-down menu will appear providing a choice of cloning options. Select the one which is applicable to your setup.
+</br>
 Further details on completing the last step can be found on GitHub's [Fork a Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo) page
 
-To deploy from GitHub, follow these steps:
+To deploy locally with GitHub, follow these steps:
 1. Log into your GitHub repository, create a GitHub account if necessary
 1. Click 'Settings' in the main Repository menu
 1. Click 'Pages' from the left-hand side navigation menu
 1. Within the Source section, click the "Branch" button and change from 'None' to 'Main'
 1. The page should automatically refresh with a url displayed
 1. Test the link by clicking on the url
+1. From this point you can push code to this page using the following steps from with GitPod;
+    1. With the application open, open the command line terminal (CLI)
+    1. Stage any changes using the command 'git add .' or by specifying the file with changes i.e 'git add settings.py'
+    1. Commit the changes to GitHub by adding a commit message describing the changes i.e. 'git commit -m "Update docbook dependency and generate epub"
+    1. Finally add the command 'git push' which will push all the code to GitHub. You can view the deployed code using the url generated within the steps above.
+    1. Additionally if you would like to run the application locally pre/post any changes, from the terminal type 'python3 manage.py runserver'.
+    1. A dialog box should open asking you to open port 8000, click 'Open' and navigate to the opened tab/window which should allow you to view the running application.
+    1. If the dialog box does not automatically appear, find the 'Remote Explorer' section of the left hand navbar within GitPod and click on the port '8000' and the internet/globe icon to the right which should open the running application.
 </details>
 
 ### Deploy with Heroku
