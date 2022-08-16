@@ -27,13 +27,6 @@ class PostList(generic.ListView):
     template_name = "index.html"
     paginate_by = 8
 
-    def get_context_data(self, *args, **kwargs):
-        """Provides podcast categories in nav-menu."""
-        cat_menu = Category.objects.all()
-        context = super(PostList, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
-        return context
-
 
 class PostDetail(CreateView):
     """
@@ -89,13 +82,6 @@ class PostDetail(CreateView):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
-    def get_context_data(self, *args, **kwargs):
-        """Provides podcast categories in nav-menu."""
-        cat_menu = Category.objects.all()
-        context = super(PostDetail, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
-        return context
-
 
 class PostLike(View):
     """
@@ -130,13 +116,6 @@ class AddPostView(SuccessMessageMixin, CreateView):
     success_message = "Thank you for posting \
                     - Fresh Casts will review and publish asap!"
 
-    def get_context_data(self, *args, **kwargs):
-        """Provides podcast categories in nav-menu."""
-        cat_menu = Category.objects.all()
-        context = super(AddPostView, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
-        return context
-
 
 class UpdatePostView(SuccessMessageMixin, UpdateView):
     """
@@ -152,13 +131,6 @@ class UpdatePostView(SuccessMessageMixin, UpdateView):
                        , your updates are visible immediately and \
                        will be reviewed by Fresh Casts"
 
-    def get_context_data(self, *args, **kwargs):
-        """Provides podcast categories in nav-menu."""
-        cat_menu = Category.objects.all()
-        context = super(UpdatePostView, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
-        return context
-
 
 class DeletePostView(SuccessMessageMixin, DeleteView):
     """
@@ -171,13 +143,6 @@ class DeletePostView(SuccessMessageMixin, DeleteView):
     template_name = "delete_post.html"
     fields = "title"
     success_message = "You have successfully deleted your post"
-
-    def get_context_data(self, *args, **kwargs):
-        """Provides podcast categories in nav-menu."""
-        cat_menu = Category.objects.all()
-        context = super(DeletePostView, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
-        return context
 
 
 class CategoryView(generic.ListView, object):
@@ -203,13 +168,6 @@ class CategoryView(generic.ListView, object):
              "category_posts": category_posts},
         )
 
-    def get_context_data(self, *args, **kwargs):
-        """Provides podcast categories in nav-menu."""
-        cat_menu = Category.objects.all()
-        context = super(CategoryView, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
-        return context
-
 
 class About(CreateView):
     """
@@ -221,13 +179,6 @@ class About(CreateView):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {})
-
-    def get_context_data(self, *args, **kwargs):
-        """Provides podcast categories in nav-menu."""
-        cat_menu = Category.objects.all()
-        context = super(About, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
-        return context
 
 
 class AccessibilityStatement(CreateView):
@@ -241,14 +192,6 @@ class AccessibilityStatement(CreateView):
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {})
 
-    def get_context_data(self, *args, **kwargs):
-        """Provides podcast categories in nav-menu."""
-        cat_menu = Category.objects.all()
-        context = super(
-            AccessibilityStatement, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
-        return context
-
 
 class CopyrightStatement(CreateView):
     """
@@ -261,14 +204,6 @@ class CopyrightStatement(CreateView):
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {})
 
-    def get_context_data(self, *args, **kwargs):
-        """Provides podcast categories in nav-menu."""
-        cat_menu = Category.objects.all()
-        context = super(
-            CopyrightStatement, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
-        return context
-
 
 class UserAgreement(CreateView):
     """
@@ -280,10 +215,3 @@ class UserAgreement(CreateView):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {})
-
-    def get_context_data(self, *args, **kwargs):
-        """Provides podcast categories in nav-menu."""
-        cat_menu = Category.objects.all()
-        context = super(UserAgreement, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
-        return context

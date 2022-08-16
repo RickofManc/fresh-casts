@@ -7,7 +7,6 @@ from django.contrib.auth.views import PasswordChangeView
 from django.contrib.auth import get_user_model
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
-from blog.models import Category
 from .forms import EditProfileForm, PasswordChangingForm
 from .forms import RegisterUserForm, LoginForm
 
@@ -34,13 +33,6 @@ class SignUpView(SuccessMessageMixin, CreateView):
         """Returns user object"""
         return self.request.user
 
-    def get_context_data(self, *args, **kwargs):
-        """Provides podcast categories in nav-menu."""
-        cat_menu = Category.objects.all()
-        context = super(SignUpView, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
-        return context
-
 
 class LoginView(SuccessMessageMixin, View):
     """
@@ -59,13 +51,6 @@ class LoginView(SuccessMessageMixin, View):
         """Returns user object"""
         return self.request.user
 
-    def get_context_data(self, *args, **kwargs):
-        """Provides podcast categories in nav-menu."""
-        cat_menu = Category.objects.all()
-        context = super(LoginView).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
-        return context
-
 
 class UserEditView(SuccessMessageMixin, UpdateView):
     """
@@ -83,13 +68,6 @@ class UserEditView(SuccessMessageMixin, UpdateView):
         """Returns user object"""
         return self.request.user
 
-    def get_context_data(self, *args, **kwargs):
-        """Provides podcast categories in nav-menu."""
-        cat_menu = Category.objects.all()
-        context = super(UserEditView, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
-        return context
-
 
 class PasswordsChangeView(SuccessMessageMixin, PasswordChangeView):
     """
@@ -102,11 +80,3 @@ class PasswordsChangeView(SuccessMessageMixin, PasswordChangeView):
     template_name = "change-password.html"
     success_url = reverse_lazy("home")
     success_message = "Your password has been successfully updated"
-
-    def get_context_data(self, *args, **kwargs):
-        """Provides podcast categories in nav-menu."""
-        cat_menu = Category.objects.all()
-        context = super(
-            PasswordsChangeView, self).get_context_data(*args, **kwargs)
-        context["cat_menu"] = cat_menu
-        return context
