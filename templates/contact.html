@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block title %}{% trans 'Contact Us' %}{% endblock %}
+{% load crispy_forms_tags %}
 {% block content %}
 <!-- Main container for page content : Contact Fresh Casts -->
 <div class="container">
@@ -22,43 +23,19 @@
     <div class="col-md-8 mt-3 offset-md-2">
       <div class="card-body">
         <!-- Form for user to input details and reason for contacting Fresh Casts -->
-        <form action="" method="POST" class="control-form">
+        <form class="mt-3 text-black" action="{% url 'contact' %}" method="POST" id="contact-form">
           {% csrf_token %}
-          <div class="form-group">
-            <label for="name" class="form-label">Name
-            </label>
-            <input type="text" id="name" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="email" class="form-label">Email
-            </label>
-            <input type="email" id="email" class="form-control">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-              else.
-            </small>
-          </div>
-          <div class="form-group">
-            <label for="subject" class="form-label">Subject
-            </label>
-            <input type="text" id="subject" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="message" class="form-label">Message
-            </label>
-            <input type="textarea" id="message" class="form-control">
-          </div>
-          <!-- Form posts to Django admin and emails Site Admin (superuser). See Contact App.Model  -->
-          <div class="form-actions">
-            <div class="input-group">
-              <!-- Button to submit contact form to Fresh Casts -->
-              <button type="submit" class="btn btn-style right">Submit
-              </button>
-              <!-- Option to cancel if navigated to in error -->
-              <input type="button" name="cancel" value="Cancel"
-                     class="anchor-btn btn-style btn-left-margin btn-cancel"
-                     onClick="window.location.href='{% url 'home' %}';" />
-            </div>
-          </div>
+          {{ form|crispy }}
+          <small id="emailHelp" class="form-text text-muted">Rest assured we won't share your details with anyone
+            else.
+          </small>
+          <!-- Button to submit contact form to Fresh Casts -->
+          <button type="submit" class="btn btn-style right" value="Send Message">Submit
+          </button>
+          <!-- Option to cancel if navigated to in error -->
+          <input type="button" name="cancel" value="Cancel"
+                 class="anchor-btn btn-style btn-left-margin btn-cancel"
+                 onClick="window.location.href='{% url 'home' %}';" />
         </form>
       </div>
     </div>
