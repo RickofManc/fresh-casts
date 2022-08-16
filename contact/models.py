@@ -25,3 +25,8 @@ class Contact(models.Model):
     date_submitted = models.DateTimeField(default=timezone.now)
     contact_status = models.CharField(
         max_length=15, choices=FORM_STATUS, default=1)
+
+    class Meta:
+        """ Set verbose name """
+        verbose_name = 'Contact Form'
+        verbose_name_plural = 'Contact Forms'
