@@ -533,6 +533,18 @@ Testing occurred using Lighthouse within Chrome Dev Tools on 4 July 2022 with th
 <br />
 
 
+#### **Feature**
+
+Testing in Development and Production has been performed to ensure all the committed features for the MVP are working as designed. A table of results is available below.
+
+
+<p align="center">
+    <img src="readme-images/fresh-casts-feature-testing.png" alt="Feature Testing Results"/>
+    </p>
+
+<br />
+
+
 ### Automatic Testing
 
 Django testing tools have been used to perform basic automated testing on Fresh Casts Python code, primarily for template rendering and some user functionality.
