@@ -24,7 +24,6 @@ class ContactForm(forms.ModelForm):
         widget=forms.Textarea(
                 attrs={'class': 'form-control',
                        'placeholder': 'Add your message here'}))
-    contact_status = forms.CharField(label="", widget=forms.CheckboxInput())
 
     class Meta:
         model = Contact
