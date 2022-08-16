@@ -31,6 +31,9 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse("home")
 
+    class Meta:
+        verbose_name_plural = "categories"
+
 
 class Post(models.Model):
     """
