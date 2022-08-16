@@ -552,16 +552,12 @@ Whilst further testing is required to achieve 100%, the results thus far are hig
     <img src="readme-images/fresh-casts-blog-app-automated-testing.png" alt="Django Testing Results"/>
     </p>
 
-
-
 <br />
-
 
 ### Bugs
 
-The following bugs do not impact the main purpose, functionality or features of Fresh Casts. However, at the time of writing further research was being undertaken in order to provide resolution. 
+The following bug does not impact the main purpose, functionality or features of Fresh Casts. However, at the time of writing further research was required in order to provide resolution. 
 
-<br />
 
 **B07 - Javascript URL redirect on input tag working but throwing error**
 Input tag used to create functionality for a Cancel button. The JavaScript used to redirect the user back to the homepage is working correctly, however an error is being identified in the terminal.
@@ -574,18 +570,6 @@ Error:
 
 <br />
 
-**B11 - Context Processing function not returning list of categories**
-The following function has been added to all views site wide to replicate the blog categories list found in the NavBar Main Menu on the Base/Index html templates. Despite plenty of stackoverflow research and tutor support I've been unable within the time frame to debug this issue.
-
-```python
-def get_context_data(self, *args, **kwargs): 
-    """Provides podcast categories in nav-menu."""
-    cat_menu = Category.objects.al(context = super(SignUpView, self).get_context_data(*args, **kwargs) 
-    context["cat_menu"] = cat_menu
-    return context
-```
-
-<br />
 
 ***
 
