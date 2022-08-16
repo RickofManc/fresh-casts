@@ -574,19 +574,6 @@ Error:
 
 <br />
 
-
-**B09 - External emails not being received from the backend**
-Raised from the following user stories:
-- [#17]: Site Admin - Approve new posts
-- [#20]: Contact Us Page
-
-I have tried to build in additional functionality where the Fresh Casts team receive an email to their Gmail account when action within Django Admin is required. This functionality would be applied to a Contact Form submitted, approve new Blog Posts and Comments etc. However currently despite the configuration appearing to be correct within the code and the Gmail account, emails are not being received.
-
-Prior to attempting to use a direct connection with Gmail, I attempted to integrate with SendGrid however I understand that it is no longer possible to use a SendGrid/Gmail combination for this purpose as Gmail is a free account as opposed to a business and paid for type of account.
-
-<br />
-
-
 **B11 - Context Processing function not returning list of categories**
 The following function has been added to all views site wide to replicate the blog categories list found in the NavBar Main Menu on the Base/Index html templates. Despite plenty of stackoverflow research and tutor support I've been unable within the time frame to debug this issue.
 
@@ -599,7 +586,6 @@ def get_context_data(self, *args, **kwargs):
 ```
 
 <br />
-
 
 ***
 
