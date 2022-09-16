@@ -61,33 +61,7 @@
       </div>
       <!-- Navbar left button : Main Menu Content -->
       <div class="navbar-collapse collapse" id="navbarToggleMenu">
-        <!-- Nav menu section 1 of 3 for user features, dependent on login status -->
-        <ul class="navbar-nav me-auto mb-2 mt-lg-0">
-          {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a href="{% url 'add_post' %}" class="nav-link">add post
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{% url 'edit_profile' %}" class="nav-link">edit profile
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{% url 'account_logout' %}" class="nav-link">sign out
-            </a>
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a href="{% url 'sign_up' %}" class="nav-link">register
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{% url 'account_login' %}" class="nav-link">sign in
-            </a>
-          </li>
-          {% endif %}
-        </ul>
-        <!-- Nav menu section 2 of 3 for podcast categories links -->
+        <!-- Nav menu section 1 of 2 for podcast categories links -->
         <div class="nav-menu">
           <h2 class="nav-menu-header">podcast categories
           </h2>
@@ -102,7 +76,7 @@
               </a>{% endfor %}
             </li>
           </ul>
-          <!-- Nav menu section 3 of 3 for additional site information links -->
+          <!-- Nav menu section 2 of 2 for additional site information links -->
           <h2 class="nav-menu-header">useful links
           </h2>
           <ul class="nav-menu-list">
