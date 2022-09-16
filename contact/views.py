@@ -29,8 +29,8 @@ def contact(request, *args, **kwargs):
                       settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER],
                       fail_silently=False)
             messages.success(
-                request, 'Thank you for your contacting \
-                - Fresh Casts will reply within 24 hours!')
+                request, 'Thank you for contacting Fresh Casts \
+                - we will reply within 24 hours!')
            
             # redirect to home page
             return redirect(reverse('home'))
