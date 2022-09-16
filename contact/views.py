@@ -19,11 +19,11 @@ def contact(request, *args, **kwargs):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            name = form.cleaned_data["name"],
+            name = form.cleaned_data['name'],
             email = form.cleaned_data['email'],
             subject = form.cleaned_data['subject'],
             message = form.cleaned_data['message'],
-            
+           
             # send mail combining field forms
             send_mail({subject}, f'{name}, {email}, {message}',
                       settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER],
@@ -31,9 +31,9 @@ def contact(request, *args, **kwargs):
             messages.success(
                 request, 'Thank you for your contacting \
                 - Fresh Casts will reply within 24 hours!')
-            
-            # redirect to contact page
-            return redirect(reverse('contact'))
+           
+            # redirect to home page
+            return redirect(reverse('home'))
         else:
             messages.error(
                 request, "Something went wrong with your submission.\
