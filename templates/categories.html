@@ -10,47 +10,49 @@
       <!-- Reusing code from index.html to list all the podcasts with the same category value -->
       <div class="row">
         {% for post in category_posts %}
-        <div class="card-body border-bottom">
-          <div class="row">
-            <!-- Display either podcast post image or standard Fresh Cast logo -->
-            <div class="col-4 col-sm-2 blog-img-div">
-              {% if "placeholder" in featured_image.url %}
-              <img
-                   class="img-fluid"
-                   src="static/images/fresh-casts-b-and-g-logo_thumbnail.png"
-                   alt=""
-                   />
-              {% else %}
-              <img
-                   class="img-fluid"
-                   src=" {{ post.featured_image.url }}"
-                   alt="Podcast Logo"
-                   />
-              {% endif %}
-            </div>
-            <!-- Container for reduced post details for list view purposes -->
-            <div class="col-8 col-sm-10">
-              <div class="card-block px-2">
-                <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                  <h2 class="card-title">{{ post.title }}
-                  </h2>
-                  <h3 class="card-subtitle">{{ post.category }}
-                  </h3>
-                  <p class="card-text">{{ post.excerpt }}
-                  </p>
-                  <p class="author">Shared By {{ post.author }}
-                  </p>
-                  <p class="card-text text-left">{{ post.created_on }}
-                  </p>
-                  <p class="card-text">
-                    <i class="far fa-heart">
-                    </i>{{ post.number_of_likes }}
-                  </p>
-                </a>
+          {% if post.status == 1 %}
+          <div class="card-body border-bottom">
+            <div class="row">
+              <!-- Display either podcast post image or standard Fresh Cast logo -->
+              <div class="col-4 col-sm-2 blog-img-div">
+                {% if "placeholder" in featured_image.url %}
+                <img
+                    class="img-fluid"
+                    src="static/images/fresh-casts-b-and-g-logo_thumbnail.png"
+                    alt=""
+                    />
+                {% else %}
+                <img
+                    class="img-fluid"
+                    src=" {{ post.featured_image.url }}"
+                    alt="Podcast Logo"
+                    />
+                {% endif %}
+              </div>
+              <!-- Container for reduced post details for list view purposes -->
+              <div class="col-8 col-sm-10">
+                <div class="card-block px-2">
+                  <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                    <h2 class="card-title">{{ post.title }}
+                    </h2>
+                    <h3 class="card-subtitle">{{ post.category }}
+                    </h3>
+                    <p class="card-text">{{ post.excerpt }}
+                    </p>
+                    <p class="author">Shared By {{ post.author }}
+                    </p>
+                    <p class="card-text text-left">{{ post.created_on }}
+                    </p>
+                    <p class="card-text">
+                      <i class="far fa-heart">
+                      </i>{{ post.number_of_likes }}
+                    </p>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+          {% endif %}
         {% if forloop.counter|divisibleby:3 %}
       </div>
       <div class="row">{% endif %} {% endfor %}
