@@ -116,6 +116,10 @@ class AddPostView(SuccessMessageMixin, CreateView):
     success_message = "Thank you for posting \
                     - Fresh Casts will review and publish asap!"
 
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 class UpdatePostView(SuccessMessageMixin, UpdateView):
     """
