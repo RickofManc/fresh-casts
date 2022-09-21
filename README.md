@@ -568,17 +568,8 @@ Whilst further testing is required to achieve 100%, the results thus far are hig
 
 ### Bugs
 
-The following bug does not impact the main purpose, functionality or features of Fresh Casts. However, at the time of writing further research was required in order to provide resolution. 
+At the time of the second release all known bugs from the first release have been resolved.
 
-
-**B07 - Javascript URL redirect on input tag working but throwing error**
-Input tag used to create functionality for a Cancel button. The JavaScript used to redirect the user back to the homepage is working correctly, however an error is being identified in the terminal.
-
-```html
-<div class="input-group"> <button class="btn btn-style right" type="submit">Submit </button> <input type="button" name="cancel" value="Cancel" class="anchor-btn btn-style btn-left-margin btn-cancel" onClick="window.location.href='{% url 'home' %}';" /> </div>
-```
-Error:
-';' expected.
 
 <br />
 
@@ -703,7 +694,9 @@ Support with how to develop ideas into code also came from various online resour
 * [Jordan Raychev at Medium](https://medium.com/geekculture/django-tutorial-building-a-portfolio-application-contact-application-ac128d7b7b89) who provided an article on building a Contact app.
 * [Wolterskluwer](https://www.wolterskluwer.com/en/solutions/kluwerlawinternational/user-agreement) for information on Blog User Agreements.
 * [John Harbison](http://johnharbison.net/make-a-form-a-cancel-button) provided guidance on creating a Cancel Button as an input tag within a Form.
+* [StackOverflow](https://stackoverflow.com/questions/18407832/how-to-create-a-html-cancel-button-that-redirects-to-a-url) page that provided a fix for a JavaScript error that appeared against the code of my cancel buttons.
 * [Stack Overflow](https://stackoverflow.com/questions/10615872/bootstrap-align-input-with-button) how to align an Input tag as a button using Bootstrap.
+* [Stack Overflow](https://stackoverflow.com/questions/48356012/how-to-close-the-first-menu-collapse-when-the-second-one-is-open) provided the code to close an open nav menu before the other one opens.
 
 
 
