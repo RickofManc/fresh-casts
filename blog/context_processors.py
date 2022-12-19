@@ -1,4 +1,4 @@
-""" Import the model to be used across the project """
+""" Enabling categories to be available site wide """
 from blog.models import Category
 
 

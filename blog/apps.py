@@ -1,6 +1,4 @@
-"""
-blog app configuration
-"""
+""" Standard apps for the Blog """
 from django.apps import AppConfig
 
 
