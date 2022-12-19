@@ -3,8 +3,6 @@ from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from .models import Post, Comment, Category
-from .views import CategoryView
-
 
 # Global Variables
 User = get_user_model()
@@ -123,9 +121,9 @@ class TestViews(TestCase):
 
     # Test user features and functionality
     def test_post_like_view(self):
-        """ 
-        test Post Liking feature by adding a 'like'
-        and checking it has been counted
+        """
+        test Post Liking feature by adding
+        a like and checking it has been counted
         """
         self.client.login(username='testdummy', password='543210')
         number_of_likes = self.post.likes.count()
