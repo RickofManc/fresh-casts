@@ -1,6 +1,5 @@
 """ Django automated testing """
 from django.test import TestCase
-from django.urls import reverse
 from django.contrib.auth import get_user_model
 from .models import Post, Comment, Category
 
@@ -42,7 +41,7 @@ class TestViews(TestCase):
             message="test comment for test blog post"
         )
 
-    # Test string methods for Comments 
+    # Test string methods for Comments
     def test_comment_str(self):
         """
         test the __str__ method used for
