@@ -1,13 +1,8 @@
-"""
-Standard Django database models
-Standard Django authentication model
-Standard Django reverse url model
-Cloudinary model to support image repository
-"""
+""" Models the Category, Blog Posts and Comments """
 from django.db import models
-from django_extensions.db.fields import AutoSlugField
-from django.contrib.auth import get_user_model
 from django.urls import reverse
+from django.contrib.auth import get_user_model
+from django_extensions.db.fields import AutoSlugField
 from cloudinary.models import CloudinaryField
 
 
@@ -29,6 +24,7 @@ class Category(models.Model):
         return self.name
 
     def get_absolute_url(self):
+        """ Keeps users on the same page """
         return reverse("home")
 
     class Meta:
@@ -74,6 +70,7 @@ class Post(models.Model):
         return self.likes.count()
 
     def get_absolute_url(self):
+        """ Keeps users on the same page """
         return reverse("home")
 
 
