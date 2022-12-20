@@ -13,13 +13,13 @@
 
 ## About
 
-<br />
+<br>
 
 Fresh Casts is a website built for people who enjoy listening to podcasts, and would also like to share and discover new shows and series.
 Through clear and intuitive design, Fresh Casts goal is to ensure the pleasure of listening, sharing and discussing podcasts is accessible to all possible user groups, no matter of age or background.
 
 ***
-<br />
+<br>
 
 ## Index - Table of Contents
 
@@ -35,14 +35,14 @@ Through clear and intuitive design, Fresh Casts goal is to ensure the pleasure o
 * [Deployment](#Deployment)
 * [Credits](#Credit)
 
-<br />
+<br>
 
 ***
-<br />
+<br>
 
 ## User Experience Research and Design
 
-<br />
+<br>
 
 ### Problem Statement
 
@@ -51,14 +51,14 @@ Listeners may feedback or rate a podcast within a listening app, however these a
 Podcast listenership continues to increase with over 2 million shows to choose from, and by nature humans are social, we like to converse.
 There's an opportunity to help people share podcasts, making it easier to discuss and find shows that may have slipped under their radar.
 
-<br />
+<br>
 
 ### Objective
 
 Develop and deploy a website that promotes the sharing and discussion of podcasts they are enjoying. 
 All visitors will be able to listen to shared podcasts. Users who create a Fresh Casts profile will be able to comment and like shared shows, as well as posting their own favourites. The site will meet WCAG 2.1 AA standards, and will be thoroughly tested to ensure all user groups can access and enjoy content.
 
-<br />
+<br>
 
 ### Design Thinking
 
@@ -67,7 +67,7 @@ Following a Design Thinking process, I've identified four key personas to empath
 
 <details><summary><b>User Personas</b></summary>
   <img src="readme-images/fresh-casts-user-personas.png" alt="User Personas; Listener, Commenter, Blogger, Podcaster"/>
-</details><br />
+</details><br>
 
 
 This phase led to User Stories being drafted complete with Acceptance Criteria and initial Tasks for the development phase. User Stories have been added to GitHub [here](https://github.com/users/RickofManc/projects/4/views/2) and are being tracked through to completion. Due the deadline for MVP release some User Stories have been archived and will be assessed for the Product Backlog and the next release.
@@ -81,7 +81,7 @@ The chart below highlights the features roadmap assessed by importance versus vi
   <img src="readme-images/fresh-casts-features-roadmap.png" alt="Strategic Opportunities Roadmap"/>
 </p>
 
-<br />
+<br>
 
 ### Scope
 
@@ -111,7 +111,7 @@ An agile approach of keeping the in scope features simple and aligned to the str
 * Single Sign On (SSO) - Use social apps such as Google, Facebook and Twitter to sign-in.
 * Connecting Fresh Casters - Provide chat service to allow the community to interact directly.
 
-<br />
+<br>
 
 ### Structure
 
@@ -133,7 +133,7 @@ This website will be structured with the following design considerations.
     <p align="center">
         <img src="readme-images/fresh-casts-site-structure.png" alt="Fresh Casts Site Structure"/>
     </p>
-</details><br />
+</details><br>
 
 
 ### Skeleton
@@ -156,7 +156,7 @@ The website is responsive through differing screen widths being designed for mob
     <p align="center">
         <img src="readme-images/fresh-casts-mobile-wireframes.png" alt="Fresh Casts wireframe for mobile devices" />
     </p>
-</details><br />
+</details><br>
 
 
 ### Surface 
@@ -174,7 +174,7 @@ This palette has been carefully selected to bring high contrasting colours to im
         <img src="readme-images/fresh-casts-colour-palette.png" alt="Fresh Casts Colour Palette"/>
     </p>
 </details>
-<br />
+<br>
 
 
 #### Logo
@@ -184,7 +184,7 @@ The logo has been selected from [Adobe Stock](https://stock.adobe.com/uk/contrib
 <p align="center">
     <img src="readme-images/fresh-casts-b-and-g-logo_380px.png" alt="Fresh Casts Logo"/>
 </p>
-<br />
+<br>
 
 #### Fonts
 
@@ -195,11 +195,11 @@ I've selected this popular [font family](https://fonts.google.com/share?selectio
 <p align="center">
     <img src="readme-images/fresh-casts-roboto-flex-font.png" alt="Fresh Casts Font"/>
 </p>
-<br />
+<br>
 
 ***
 
-<br />
+<br>
 
 ## Data Model
 
@@ -231,7 +231,7 @@ The Contact App data model does not yet have a relationship with the Blog App, h
 <p align="center">
     <img src="readme-images/fresh-casts-data-schema.png" alt="Data schema for Fresh Casts"/>
 </p>
-<br />
+<br>
 
 
 
@@ -252,7 +252,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 
 ***
 
-<br />
+<br>
 
 ## Technologies
 
@@ -295,7 +295,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 
 ***
 
-<br />
+<br>
 
 ## Features
 
@@ -309,7 +309,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 <p align="center">
     <img src="readme-images/F05F08_Homepage.png" alt="Homepage features"/>
 </p>
-<br />
+<br>
 
 
 - __NavBar with Collapsing Menu__
@@ -324,7 +324,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 <p align="center">
     <img src="readme-images/F01F02F03_Header_NavMenu.png" alt="NavBar features"/>
 </p>
-<br />
+<br>
 
 
 - __Fixed Footer__
@@ -334,7 +334,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 <p align="center">
     <img src="readme-images/F04_Footer.png" alt="Footer features"/>
 </p>
-<br />
+<br>
 
 
 - __Create a Blog Post__
@@ -345,7 +345,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 <p align="center">
     <img src="readme-images/F41_Create_Posts.png" alt="Create Blog Post Feature"/>
 </p>
-<br />
+<br>
 
 
 - __Read a Blog Post__
@@ -357,7 +357,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 <p align="center">
     <img src="readme-images/F09F17F14_Post_Details.png" alt="Blog Post Features"/>
 </p>
-<br />
+<br>
 
 
 - __Commenting__
@@ -367,7 +367,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 <p align="center">
     <img src="readme-images/F14_Comments.png" alt="Blog Post Commenting Feature"/>
 </p>
-<br />
+<br>
 
 
 - __Update a Blog Post__
@@ -377,7 +377,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 <p align="center">
     <img src="readme-images/F21_Update_Post.png" alt="Update Blog Post Feature"/>
 </p>
-<br />
+<br>
 
 
 - __Delete a Blog Post__
@@ -387,7 +387,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 <p align="center">
     <img src="readme-images/F23_Delete_Post.png" alt="Delete Blog Post Feature"/>
 </p>
-<br />
+<br>
 
 
 - __Update Profile__
@@ -398,7 +398,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 <p align="center">
     <img src="readme-images/Edit_Profile.png" alt="Edit Profile Feature"/>
 </p>
-<br />
+<br>
 
 
 - __Contact Us__
@@ -409,7 +409,7 @@ Meta data is included within the HTML head element to increase the traffic to th
 <p align="center">
     <img src="readme-images/F32_Contact_Page.png" alt="Contact Fresh Casts Feature"/>
 </p>
-<br />
+<br>
 
 
 ### Future Features
@@ -430,15 +430,15 @@ Features that will be added to the backlog for future releases are as follows:
 
 ***
 
-<br />
+<br>
 
 ## Testing 
 
-<br />
+<br>
 
 ### Manual Testing 
 
-<br />
+<br>
 
 #### **Code**
 
@@ -462,7 +462,7 @@ Use the arrow below to view the results in detail.
     </p>
 </details>
 
-<br />
+<br>
 
 #### **Browser**
 
@@ -479,7 +479,7 @@ To achieve a 'Pass' the following criteria had to be met across all website page
     <img src="readme-images/fresh-casts-browser-testing.png" alt="Browser Testing Results"/>
     </p>
 
-<br />
+<br>
 
 #### **Device**
 
@@ -497,7 +497,7 @@ To achieve a 'Pass' the following criteria had to be met across all website page
     <img src="readme-images/fresh-casts-device-testing.png" alt="Device Testing Results"/>
     </p>
 
-<br />
+<br>
 
 #### **Accessibility**
 
@@ -510,7 +510,7 @@ A general theme was identified as Alerts where 'Adjacent links go to the same UR
     <img src="readme-images/fresh-casts-wave-testing.png" alt="WAVE Testing Results"/>
     </p>
 
-<br />
+<br>
 
 
 #### **Lighthouse** 
@@ -530,7 +530,7 @@ Testing occurred using Lighthouse within Chrome Dev Tools on 4 July 2022 with th
     <img src="readme-images/fresh-casts-lighthouse-testing.png" alt="Lighthouse Testing Results"/>
     </p>
 
-<br />
+<br>
 
 
 #### **Feature**
@@ -542,7 +542,7 @@ Testing in Development and Production has been performed to ensure all the commi
     <img src="readme-images/fresh-casts-feature-testing.png" alt="Feature Testing Results"/>
     </p>
 
-<br />
+<br>
 
 
 ### Automatic Testing
@@ -564,19 +564,19 @@ Whilst further testing is required to achieve 100%, the results thus far are hig
     <img src="readme-images/fresh-casts-blog-app-automated-testing.png" alt="Django Testing Results"/>
     </p>
 
-<br />
+<br>
 
 ### Bugs
 
 At the time of the second release all known bugs from the first release have been resolved.
 
 
-<br />
+<br>
 
 
 ***
 
-<br />
+<br>
 
 ## Deployment
 
@@ -671,7 +671,7 @@ In the Heroku App:
 
 ***
 
-<br />
+<br>
 
 ## Credit
 
