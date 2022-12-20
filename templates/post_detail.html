@@ -11,9 +11,9 @@
             <div class="col post-img-div">
                 <!-- Featured image URL -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="static/images/fresh-casts-b-and-g-logo.png" class="img-fluid img-post-detail" alt="" />
+                <img src="static/images/fresh-casts-b-and-g-logo.png" class="img-fluid img-post-detail" alt="No podcast show logo so Fresh Casts logo used instead.">
                 {% else %}
-                <img src="{{ post.featured_image.url }}" class="img-fluid img-post-detail" alt="Podcast logo" />
+                <img src="{{ post.featured_image.url }}" class="img-fluid img-post-detail" alt="Podcast show logo.">
                 {% endif %}
             </div>
             <div class="col card-body">
