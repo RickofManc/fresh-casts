@@ -40,25 +40,26 @@
                      value="Cancel"
                      class="anchor-btn btn-style btn-left-margin btn-cancel"
                      onClick="window.location='https://fresh-casts.herokuapp.com/';return false;" 
-                     />
+                     >
             </div>
           </div>
         </form>
       </div>
     </div>
   </div>
-  {% endif %} {% else %}
+</div>
+{% endif %}
+{% else %}
 <!-- Information to user if navigated to in error without being signed in -->
-  <div class="container fluid">
-    <div class="row justify-content-center">
-      <div class="card-block">
-        <p class="card-text">
-          Sorry you must be signed in to access this page, use the button below
-          to return to our homepage
-        </p>
-        <a href="{% url 'home' %}" class="anchor-btn btn-style">Home
-        </a>
-      </div>
+<div class="container fluid">
+  <div class="row justify-content-center">
+    <div class="card-block">
+      <p class="card-text">
+        Sorry you must be signed in to access this page, use the button below
+        to return to our homepage
+      </p>
+      <a href="{% url 'home' %}" class="anchor-btn btn-style">Home
+      </a>
     </div>
   </div>
 </div>
