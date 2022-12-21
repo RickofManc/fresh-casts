@@ -174,7 +174,7 @@ a.post-link {
 
 .card-title {
     font-family: 'Roboto Condensed';
-    font-size: 1.875rem;
+    font-size: 2.275rem;
     font-weight: 700;
     color: #100303;
 }
@@ -183,11 +183,13 @@ a.post-link {
     font-family: 'Roboto Condensed';
     font-size: 1.25rem;
     font-weight: 600;
+    color: #4b4a4a;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .author {
     color: #312e2e;
-    text-transform: uppercase;
     margin-top: 0.5rem;
 }
 
