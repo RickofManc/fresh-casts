@@ -377,6 +377,7 @@ ul.errorlist.nonfield {
 /* || ACCESSIBILITY STATEMENT STYLES  */
 
 .mailto-anchor {
+    color: #102b73;
     text-decoration: none;
 }
 
