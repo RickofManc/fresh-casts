@@ -21,16 +21,14 @@
                 <h2 class="card-title">{{ post.title }}
                 </h2>
                 <!-- Post category -->
-                <a href="{% url 'category' post.category|slugify %}" class="post-link">
-                    <h3 class="card-subtitle">
-                        Category : {{ post.category }}
-                    </h3>
-                </a>
+                <h3 class="card-subtitle">
+                    {{ post.category }} category 
+                </h3>
                 <!-- Post author -->
-                <p class="author">Shared By {{ post.author }}
+                <p class="author">Shared by <strong>{{ post.author }}</strong>
                 </p>
                 <!-- Post created on date -->
-                <p class="card-text">{{ post.created_on }}
+                <p class="card-text">On {{ post.created_on }}
                 </p>
             </div>
         </div>
@@ -45,13 +43,16 @@
                 <!--- Post description as content -->
                 <p class="card-text">{{ post.content | safe }}</p>
                 <!--- Anchor button to listen to podcast in host site -->
-                <a href="{{ post.podcast_url }}" target="_blank" class="anchor-btn btn-style">Listen
+                <a href="{{ post.podcast_url }}" target="_blank" role="button" class="anchor-btn btn-style">Listen
+                </a>
+                <!--- Button to navigate to category view -->
+                <a href="{% url 'category' post.category|slugify %}" role="button" class="anchor-btn btn-style btn-left-margin">View posts from {{ post.category }} category
                 </a>
                 <!--- User features to Update or Delete with authentication and own content conditions -->
                 {% if user.is_authenticated %} {% if user.id == post.author.id %}
-                <a href="{% url 'update_post' post.slug %}" class="anchor-btn btn-style btn-left-margin">Edit
+                <a href="{% url 'update_post' post.slug %}" role="button" class="anchor-btn btn-style btn-left-margin">Edit
                 </a>
-                <a href="{% url 'delete_post' post.slug %}" class="anchor-btn btn-style btn-left-margin">Delete
+                <a href="{% url 'delete_post' post.slug %}" role="button" class="anchor-btn btn-style btn-left-margin">Delete
                 </a>
                 {% endif %} {% endif %}
                 <br>
