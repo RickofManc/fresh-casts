@@ -450,7 +450,7 @@ Due to the nature of extending the base.html template the W3C Validator consiste
 - Consider adding a lang attribute to the html start tag to declare the language of this document.
 - Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>.
 - Element head is missing a required instance of child element title. 
-- Bad value {% url 'xyz' %} for attribute href on element a: Illegal character in path segment: { is not allowed.
+- Bad value for attribute href on anchor element: Illegal character in path segment: { is not allowed.
 
 Use the arrow below to view the results in detail.
 
