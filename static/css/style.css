@@ -377,12 +377,11 @@ ul.errorlist.nonfield {
 /* || ACCESSIBILITY STATEMENT STYLES  */
 
 .mailto-anchor {
-    color: #100303!important;
     text-decoration: none;
 }
 
 .mailto-anchor:hover {
-    color: #79ffe2;
+    text-decoration: underline;
 }
 
 /* || 404 & 505 ERROR PAGE STYLES  */
