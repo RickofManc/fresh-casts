@@ -13,32 +13,31 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = (
-            "title",
-            "category",
-            "content",
-            "excerpt",
-            "podcast_url",
-            "featured_image",
+            'title',
+            'category',
+            'content',
+            'excerpt',
+            'podcast_url',
+            'featured_image',
         )
 
     title = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                "class": "form-control",
-                "placeholder": "Add a title for the show here",
+                'class': 'form-control',
+                'placeholder': 'Add a title for the show here',
             }
         )
     )
     category = (
-        forms.ChoiceField(widget=forms.Select(attrs={"class":
-                                                     "form-control"})),
+        forms.ChoiceField(widget=forms.Select(attrs={'class':
+                                                     'form-control'})),
     )
     content = forms.CharField(
         widget=forms.Textarea(
             attrs={
-                "class": "form-control",
-                "placeholder": "Add a description of the show, \
-                                and why you are sharing",
+                'class': 'form-control',
+                'placeholder': 'Add a description of the show',
             }
         )
     )
@@ -46,12 +45,12 @@ class PostForm(forms.ModelForm):
         max_length=180,
         widget=forms.TextInput(
             attrs={
-                "class": "form-control",
-                "placeholder": "Add a tag line of no more than 180 characters",
+                'class': 'form-control',
+                'placeholder': 'Add a tag line of no more than 180 characters',
             }
         ),
     )
-    podcast_url = forms.URLInput(attrs={"class": "form-control"})
+    podcast_url = forms.URLInput(attrs={'class': 'form-control'})
     featured_image = CloudinaryFileField()
 
 
@@ -64,39 +63,38 @@ class UpdateForm(forms.ModelForm):
     title = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                "class": "form-control",
-                "placeholder": "Add a title for the show here",
+                'class': 'form-control',
+                'placeholder': 'Add a title for the show here',
             }
         )
     )
     category = (
-        forms.ChoiceField(widget=forms.Select(attrs={"class":
-                                                     "form-control"})),
+        forms.ChoiceField(widget=forms.Select(attrs={'class':
+                                                     'form-control'})),
     )
     content = forms.CharField(
         widget=forms.Textarea(
             attrs={
-                "class": "form-control",
-                "placeholder": "Add a description of the show, \
-                                and why you are sharing",
+                'class': 'form-control',
+                'placeholder': 'Add a description of the show',
             }
         )
     )
     excerpt = forms.CharField(
-        max_length=180, widget=forms.TextInput(attrs={"class": "form-control"})
+        max_length=180, widget=forms.TextInput(attrs={'class': 'form-control'})
     )
-    podcast_url = forms.URLInput(attrs={"class": "form-control"})
+    podcast_url = forms.URLInput(attrs={'class': 'form-control'})
     featured_image = CloudinaryFileField()
 
     class Meta:
         model = Post
         fields = (
-            "title",
-            "category",
-            "content",
-            "excerpt",
-            "podcast_url",
-            "featured_image",
+            'title',
+            'category',
+            'content',
+            'excerpt',
+            'podcast_url',
+            'featured_image',
         )
 
 
@@ -109,4 +107,4 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ("message",)
+        fields = ('message',)

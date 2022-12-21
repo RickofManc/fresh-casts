@@ -38,7 +38,7 @@ class TestViews(TestCase):
         self.comment = Comment.objects.create(
             post=self.post,
             username=self.user,
-            message="test comment for test blog post"
+            message='test comment for test blog post'
         )
 
     # Test string methods for Comments
@@ -49,7 +49,7 @@ class TestViews(TestCase):
         """
         self.assertEqual(
             str(self.comment),
-            f"Comment {self.comment.message} by {self.user}")
+            f'Comment {self.comment.message} by {self.user}')
 
     # Test default field values for Post and Comment approval
     def test_post_approved(self):

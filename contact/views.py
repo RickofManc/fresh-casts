@@ -16,7 +16,7 @@ def contact(request, *args, **kwargs):
     Email sent externally to Fresh Casts Gmail.
     Retains user on same page after commenting.
     """
-    if request.method == "POST":
+    if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data['name'],
@@ -36,8 +36,8 @@ def contact(request, *args, **kwargs):
             return redirect(reverse('home'))
         else:
             messages.error(
-                request, "Something went wrong with your submission.\
-                Please try again."
+                request, 'Something went wrong with your submission.\
+                Please try again.'
             )
     # blank form created if any other method is used
     else:

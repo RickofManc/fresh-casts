@@ -39,7 +39,7 @@ class TestViews(TestCase):
         self.comment = Comment.objects.create(
             post=self.post,
             username=self.user,
-            message="test comment for test blog post"
+            message='test comment for test blog post'
         )
 
     def test_approve_posts(self):

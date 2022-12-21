@@ -24,10 +24,10 @@ class SignUpView(SuccessMessageMixin, CreateView):
     """
     model = User
     form_class = RegisterUserForm
-    template_name = "sign_up.html"
-    success_url = reverse_lazy("home")
-    success_message = "Thank you for joining our community! \
-                       You can now like and add blog posts"
+    template_name = 'sign_up.html'
+    success_url = reverse_lazy('home')
+    success_message = 'Thank you for joining our community! \
+                       You can now like and add blog posts'
 
     def get_object(self, queryset=None):
         """Returns user object"""
@@ -43,9 +43,9 @@ class LoginView(SuccessMessageMixin, View):
     """
     model = User
     form_class = LoginForm
-    template_name = "login.html"
-    success_url = reverse_lazy("home")
-    success_message = "Welcome back to Fresh Casts"
+    template_name = 'login.html'
+    success_url = reverse_lazy('home')
+    success_message = 'Welcome back to Fresh Casts'
 
     def get_object(self):
         """Returns user object"""
@@ -60,9 +60,9 @@ class UserEditView(SuccessMessageMixin, UpdateView):
     Returns user to homepage on form submission.
     """
     form_class = EditProfileForm
-    template_name = "edit_profile.html"
-    success_url = reverse_lazy("home")
-    success_message = "Your profile has been successfully updated"
+    template_name = 'edit_profile.html'
+    success_url = reverse_lazy('home')
+    success_message = 'Your profile has been successfully updated'
 
     def get_object(self, queryset=None):
         """Returns user object"""
@@ -77,6 +77,6 @@ class PasswordsChangeView(SuccessMessageMixin, PasswordChangeView):
     Returns user to homepage on form submission.
     """
     form_class = PasswordChangingForm
-    template_name = "change-password.html"
-    success_url = reverse_lazy("home")
-    success_message = "Your password has been successfully updated"
+    template_name = 'change-password.html'
+    success_url = reverse_lazy('home')
+    success_message = 'Your password has been successfully updated'

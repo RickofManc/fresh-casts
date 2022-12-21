@@ -7,7 +7,7 @@ from cloudinary.models import CloudinaryField
 
 
 # Global Variables
-STATUS = ((0, "Draft"), (1, "Published"))
+STATUS = ((0, 'Draft'), (1, 'Published'))
 User = get_user_model()
 
 
@@ -25,10 +25,10 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         """ Keeps users on the same page """
-        return reverse("home")
+        return reverse('home')
 
     class Meta:
-        verbose_name_plural = "categories"
+        verbose_name_plural = 'categories'
 
 
 class Post(models.Model):
@@ -38,7 +38,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255, unique=True, primary_key=True)
     slug = AutoSlugField(populate_from='title', unique=True,)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts"
+        User, on_delete=models.CASCADE, related_name='blog_posts'
     )
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, blank=False
@@ -49,15 +49,15 @@ class Post(models.Model):
     excerpt = models.TextField(max_length=180, blank=True)
     podcast_url = models.URLField(max_length=255)
     featured_image = CloudinaryField(
-        "sample.webp", default="placeholder",
-        transformation={"height": "300", "width": "300", "crop": "fit"})
+        'sample.webp', default='placeholder',
+        transformation={'height': '300', 'width': '300', 'crop': 'fit'})
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
-        User, related_name="blogpost_like", blank=True
+        User, related_name='blogpost_like', blank=True
     )
 
     class Meta:
-        ordering = ["-created_on"]
+        ordering = ['-created_on']
 
     def __str__(self):
         return self.title
@@ -82,13 +82,13 @@ class Comment(models.Model):
         Post, on_delete=models.CASCADE, related_name='comments'
     )
     username = models.ForeignKey(User, on_delete=models.CASCADE,
-                                 related_name="user_comments")
-    message = models.TextField(help_text="Add your comment here")
+                                 related_name='user_comments')
+    message = models.TextField(help_text='Add your comment here')
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ["-created_on"]
+        ordering = ['-created_on']
 
     def __str__(self):
-        return f"Comment {self.message} by {self.username}"
+        return f'Comment {self.message} by {self.username}'
