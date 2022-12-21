@@ -69,8 +69,10 @@ class UpdateForm(forms.ModelForm):
             }
         )
     )
-    category = forms.ChoiceField(widget=forms.Select(attrs={"class":
-                                                            "form-control"}))
+    category = (
+        forms.ChoiceField(widget=forms.Select(attrs={"class":
+                                                     "form-control"})),
+    )
     content = forms.CharField(
         widget=forms.Textarea(
             attrs={
