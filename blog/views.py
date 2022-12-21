@@ -1,7 +1,7 @@
 """
 Django imports to support Views
 """
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib import messages
@@ -136,7 +136,7 @@ class UpdatePostView(SuccessMessageMixin, UpdateView):
                        will be reviewed by Fresh Casts"
 
 
-class DeletePostView(SuccessMessageMixin, DeleteView):
+class DeletePostView(DeleteView):
     """
     Displays Delete Post page.
     gets : requested template by name
@@ -146,7 +146,15 @@ class DeletePostView(SuccessMessageMixin, DeleteView):
     model = Post
     template_name = "delete_post.html"
     fields = "title"
-    success_message = "You have successfully deleted your post"
+    success_message = "deleted successfully"
+
+    def delete(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+
+        if request.method == 'POST':
+            post.delete()
+            messages.success(self.request, self.success_message)
+            return redirect("home")
 
 
 class CategoryView(generic.ListView, object):
