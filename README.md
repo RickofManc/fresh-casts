@@ -697,6 +697,7 @@ Support with how to develop ideas into code also came from various online resour
 * [StackOverflow](https://stackoverflow.com/questions/18407832/how-to-create-a-html-cancel-button-that-redirects-to-a-url) page that provided a fix for a JavaScript error that appeared against the code of my cancel buttons.
 * [Stack Overflow](https://stackoverflow.com/questions/10615872/bootstrap-align-input-with-button) how to align an Input tag as a button using Bootstrap.
 * [Stack Overflow](https://stackoverflow.com/questions/48356012/how-to-close-the-first-menu-collapse-when-the-second-one-is-open) provided the code to close an open nav menu before the other one opens.
+*[Stack Overflow](https://stackoverflow.com/questions/65761250/pylint-django-raising-error-about-django-not-being-configured-when-thats-not-th#:~:text=Finding%20foreign%2Dkey%20relationships%20from,settings%60%20.) helped with configuring pylint plugin which in turn removed an error from all python files (Bug 14).
 
 
 
