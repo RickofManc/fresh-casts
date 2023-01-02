@@ -8,49 +8,47 @@
       <div class="row">
         <!-- Blog app View with reduced post details for list view purposes -->
         {% for post in post_list %}
-        <div class="card-body border-bottom">
+        <div class="card-body card-hover border-bottom">
           <div class="row">
             <!-- Display either podcast post image or standard Fresh Cast logo -->
-            <div class="col-4 col-sm-2 blog-img-div">
-              <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                {% if "placeholder" in featured_image.url %}
-                <img
-                     class="img-fluid img-homepage"
-                     src="static/images/fresh-casts-b-and-g-logo.png"
-                     alt="No podcast show logo so Fresh Casts logo used instead."
-                     >
-                {% else %}
-                <img
-                     class="img-fluid img-homepage"
-                     src=" {{ post.featured_image.url }}"
-                     alt="Podcast show logo."
-                     >
-                {% endif %}
-              </a>
-            </div>
-            <!-- Container for post details -->
-            <div class="col-8 col-sm-10">
-              <div class="card-block px-2">
-                <!-- Post title -->
-                <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                  <h2 class="card-title">{{ post.title }}
-                  </h2>
-                </a>
-                <!-- Post excerpt -->
-                <p class="card-text">{{ post.excerpt }}
-                </p>
-                <!-- Post author -->
-                <p class="author">Shared by <strong>{{ post.author }}</strong>
-                </p>
-                <!-- Post created on date -->
-                <p class="card-text text-left">{{ post.created_on }}
-                </p>
-                <p class="card-text">
-                  <i class="far fa-heart">
-                  </i>{{ post.number_of_likes }}
-                </p>
+            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+              <div class="col-4 col-sm-2 mb-3 blog-img-div">
+                  {% if "placeholder" in featured_image.url %}
+                  <img
+                      class="img-fluid img-homepage"
+                      src="static/images/fresh-casts-b-and-g-logo.png"
+                      alt="No podcast show logo so Fresh Casts logo used instead."
+                      >
+                  {% else %}
+                  <img
+                      class="img-fluid img-homepage"
+                      src=" {{ post.featured_image.url }}"
+                      alt="Podcast show logo."
+                      >
+                  {% endif %}
               </div>
-            </div>
+              <!-- Container for post details -->
+              <div class="col-8 col-sm-10">
+                <div class="card-block px-2">
+                  <!-- Post title -->
+                  <h2 class="card-title title-link">{{ post.title }}
+                  </h2>
+                  <!-- Post excerpt -->
+                  <p class="card-text">{{ post.excerpt }}
+                  </p>
+                  <!-- Post author -->
+                  <p class="author">Shared by <strong>{{ post.author }}</strong>
+                  </p>
+                  <!-- Post created on date -->
+                  <p class="card-text text-left">{{ post.created_on }}
+                  </p>
+                  <p class="card-text">
+                    <i class="far fa-heart">
+                    </i>{{ post.number_of_likes }}
+                  </p>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
         {% if forloop.counter|divisibleby:3 %}
