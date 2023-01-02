@@ -84,9 +84,41 @@ Summary of the results;
  
 ## Performance
 
+All pages were tested using Chrome's developer tool 'Lighthouse Testing'. At a high-level the tool tests performance in terms of loading speed, best-practice in regards to layout, SEO for how searchable the website and how accessible it is for visually impaired users who may also require a screen reader. Despite trying I could not test the 404 and 500 error pages and so they have been discounted from the results below.
 
+To try and achieve clear and consistent results I used an incognito version of Chrome. 
 
+The website scored well across all criteria, however further work was required to;
+- improve the contrast of the background to foreground for Accessibility,
+- ensure there was sufficient spacing between Footer links for mobile users,
+- transform all future images uploaded to webP format and 300x300px in size to improve page loading times.
 
+Research is required to improve an average Best Practices score of 83. The issue raised relates to the use of front-end JavaScript libraries with known security vulnerabilities. Three medium severity counts have been identified against the use of JQuery version 3.3.1 from Jan 2018. A fix is likely to be upgrading to a newer version of the library where a fix has been applied. However I need to ensure a newer version will be compatible with the version of Bootstrap I've implemented.
+
+																	
+The results below show mobile in the first 4 columns and desktop in the second 4 columns.
+
+<br>
+
+| File path                                                               | File Type | Performance | Accessibility | Best Practice | SEO | Performance | Accessibility | Best Practice | SEO |
+| ----------------------------------------------------------------------- | --------- | ----------- | ------------- | ------------- | --- | ----------- | ------------- | ------------- | --- |
+| templates/account/login.html                                            | HTML      | 96          | 100           | 83            | 92  | 100         | 100           | 83            | 90  |
+| templates/account/logout.html                                           | HTML      | 91          | 100           | 83            | 92  | 100         | 100           | 83            | 90  |
+| templates/about.html                                                    | HTML      | 93          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
+| templates/accessibility\_statement.html                                 | HTML      | 96          | 100           | 83            | 92  | 99          | 100           | 83            | 90  |
+| templates/add\_post.html                                                | HTML      | 53          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
+| templates/base.html                                                     | HTML      |             |               |               |     |             |               |               |     |
+| templates/categories.html                                               | HTML      | 77          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
+| templates/change-password.html                                          | HTML      | 92          | 100           | 83            | 92  | 99          | 100           | 83            | 90  |
+| templates/contact.html                                                  | HTML      | 85          | 100           | 83            | 92  | 99          | 100           | 83            | 90  |
+| templates/copyright\_statement.html                                     | HTML      | 96          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
+| templates/delete\_post.html                                             | HTML      | 83          | 100           | 83            | 92  | 100         | 100           | 83            | 90  |
+| templates/edit\_profile.html                                            | HTML      | 94          | 97            | 83            | 92  | 99          | 97            | 83            | 90  |
+| [https://fresh-casts.herokuapp.com](https://fresh-casts.herokuapp.com/) | HTML      | 72          | 100           | 83            | 92  | 96          | 100           | 83            | 90  |
+| templates/post\_detail.html                                             | HTML      | 75          | 100           | 83            | 92  | 99          | 93            | 83            | 90  |
+| templates/sign\_up.html                                                 | HTML      | 89          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
+| templates/update\_post.html                                             | HTML      | 92          | 97            | 83            | 92  | 91          | 97            | 83            | 90  |
+| templates/user\_agreement.html                                          | HTML      | 96          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
 
 <br>
 
@@ -187,20 +219,18 @@ The following issue was identified and not resolved so carries an 'EXC' which me
 ### Automatic Testing
 
 Django testing tools have been used to perform basic automated testing on Fresh Casts Python code, primarily for template rendering and some user functionality.
-
 Tests were run using the local SQLite3 database as opposed to the production PostgreSQL database.
 
 Test scripts were written for the following blog app files;
-
 - models.py
 - views.py
 - forms.py
 - admin.py
 
-Whilst further testing is required to achieve 100%, the results thus far are highlighted in the summary report below:
+Whilst further testing is required to achieve 100% coverage, the results so far are highlighted in the summary report below:
 
 <p align="center">
-    <img src="readme-images/fresh-casts-blog-app-automated-testing.png" alt="Django Testing Results"/>
+    <img src="readme-images/fresh-casts-blog-app-automated-testing.png" alt="Django automatic testing results"/>
     </p>
 
 <br>
@@ -210,6 +240,14 @@ Whilst further testing is required to achieve 100%, the results thus far are hig
 
 
 
+
+
+
+#### Performance
+Research is required to improve an average Best Practices score of 83. The issue raised relates to the use of front-end JavaScript libraries with known security vulnerabilities. Three medium severity counts have been identified against the use of JQuery version 3.3.1 from Jan 2018. A fix is likely to be upgrading to a newer version of the library where a fix has been applied. However I need to ensure a newer version will be compatible with the version of Bootstrap I've implemented.
+#### Code
+The following issue was identified and not resolved so carries an 'EXC' which means passed with an acceptable exception.
+* settings.py - E501 error as lines for AUTH_PASSWORD_VALIDATORS breach 79 characters. I attempted to split the code over two lines however this triggered other errors. As the code is functioning I have chosen to allow this exception for the MVP.
 
 <br>
 
@@ -243,25 +281,4 @@ To achieve a 'Pass' the following criteria had to be met across all website page
 3. All elements retain integrity				
 4. Fonts and images load				
 5. Navigation is not impacted and nav-menu collapses as intended				
-
-
-
-
-#### **Lighthouse** 
-
-
-Using Lighthouse testing within Chrome Developer Tools, the website has been tested for use on Desktop and Mobile devices. 
-The website scored well across all criteria, however further work was required to;
-- improve the contrast of the background to foreground for Accessibility,
-- ensure there was sufficient spacing between Footer links for mobile users,
-- transform all future images uploaded to webP format and 300x300px in size to improve page loading times.
-Site wide research to improve Best Practices is required to add security where front-end JavaScript libraries are being used, in this case, jQuery as part of the Bootstrap use which scored a 3 for Vulnerability Count."																	
-																	
-Testing occurred using Lighthouse within Chrome Dev Tools on 4 July 2022 with the following results:
-
-
-
-#### **Feature**
-
-Testing in Development and Production has been performed to ensure all the committed features for the MVP are working as designed. A table of results is available below.
 
