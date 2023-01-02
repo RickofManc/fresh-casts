@@ -262,11 +262,12 @@ Meta data is included within the HTML head element to increase the traffic to th
 * HTML5
 * CSS3
 * Python
-* Jquery
+
 
 ### Frameworks & Libraries
 
 * [Django 3.2](https://docs.djangoproject.com/en/4.0/releases/3.2/) has been adopted as more preferable over the newest beta Django 4 to rapidly and securely develop this application.
+* [ElephantSQL](https://elephantsql.com/) as a free service providing a configured and optimized PostgreSQL database.
 * [dj_database_url](https://pypi.org/project/dj-database-url/) library used to allow Database urls to connect to the Postgres database.
 * [Psycopg2](https://pypi.org/project/psycopg2/) supports the connection to the Postgres database.
 * [Gunicorn](https://gunicorn.org/) was used as the Web Server to run Django on Heroku.
@@ -282,14 +283,15 @@ Meta data is included within the HTML head element to increase the traffic to th
 * [Balsamiq](https://balsamiq.com/) to build wireframes in the Skelton phase.
 * [Lucid Spark](https://lucidspark.com/) for the high-level site structure.
 * [draw.io](https://www.draw.io/index.html) to diagram data schema/model.
+* [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) Used as the primary method for developing the sites responsiveness and identifying bugs.
 * [GitPod](https://gitpod.io/) used for the IDE and [GitHub](https://github.com/) as a hosting repository. In addition, for this project GitHub was used for the agile development aspect through the use of User Stories (GitHub Issues) and tracking them on a Kanban board.
 * [Heroku](https://dashboard.heroku.com/) to host the Fresh Casts website, including database.
 * [Wave](https://wave.webaim.org/) - Accessibility Testing to ensure content is readable for all users.
 * [HTML Validator](https://validator.w3.org/) validates HMTL code.
 * [W3 CSS Validator](https://jigsaw.w3.org/css-validator/validator) validates CSS code.
-* [PEP8 Validator](http://pep8online.com/)  validates Python / Django code.
+* [CI Python Linter for Python](https://pep8ci.herokuapp.com/) validates Python code.
+* [JSHint](https://jshint.com/) validates JavaScript code.
 * [Code Beautify](https://codebeautify.org/) validates the code formatting for browser reading.
-* [IE NetREnderer](https://netrenderer.com/index.php) for cross browser testing, specifically Microsoft IE versions 7-10.
 * [LambdaTest](https://www.lambdatest.com/) for cross browser testing, specifically macOS Safari and Opera.
 
 
@@ -446,7 +448,7 @@ Testing procedures will ensure the deployed site aligns to the site in developme
 * Performance - using Chrome's developer tool 'Lighthouse Testing' pages are tested for performance, best-practice, SEO and accessibility.
 * Browser - pages are tested for layout, features and general performance across Chrome, Firefox, Edge, Safari and Opera.
 * Device - manual testing will be performed on an iOS and Android mobile, Tablet, Laptop and Desktop to ensure all users have a positive experience no matter which device or browser they prefer to use. 
-* Code validation - ensuring the code base is validated using industry standard tools for HTML, CSS, JavaScript and Python code.
+* Code validation - ensuring the code base is validated using industry standard tools for HTML, CSS and Python code.
 
 As the size of results tables as summaries is quite large, I've opted to document this in a separate file.
 
