@@ -54,6 +54,7 @@ To achieve a pass, each page had to have 0 Errors and 0 Contrast Errors from WAV
 
 Summary of the results;
 * When using WAVE, it was not possible to run a test on the pages where authentication was required; add_post.html, delete_post.html, edit_profile.html and update_post.html. In this scenario Chrome's Developer Tools helped in providing the assessment.
+* The test highlight multiple links to the same page. This was prevalent on the homepage where there was a link to categories in the navbar drop-down menu, and another within the post details in the homepage page list view. To improve the experience for users with screen readers I opted to remove the category name and link from each post, and instead allow users to navigate using the navbar menu only.
 
 <br>
 
@@ -108,9 +109,77 @@ Summary of the results;
 
 ## Code
 
+Writing well formed, quality code is essential for the future development of this, or any website. To support this aim I have used industry standard tools [list below] to validate every line of code using the input method. As well as using these tools, using GitPod as IDE allowed me to utilise the inbuilt code checkers such as Pycodestyle for Python. The 404 and 500 error pages passed the test using the direct input method as opposed to the URL as the page was not visible to the W3 Validator via this method.
+
+* W3 Validator for HTML
+* W3 Jigsaw for CSS
+* CI Python Linter for Python
+
+To gain passes across the code base I had to address minor issues such as;
+
+* Python - General formatting and resolving E501 line length errors.
+* Python - Adding new lines to the end of Python files to resolve W292 errors.
+* Python - All python files were reporting "Django was not configured. For more information run pylint --load-plugins=pylint_django --help-msg=django-not-configured" on investigation and support from [Stack Overflow](https://stackoverflow.com/questions/65761250/pylint-django-raising-error-about-django-not-being-configured-when-thats-not-th), I added code to support the pylint plugin within the settings.json file. This removed the warning message. 
+* Python - Reported from pycodestyle on blog/tests_models.py and tests_views.py files; Class method setUpTestData should have 'cls' as first argument instead of 'self'. I researched this issue and found other developers noting this was a style issue, and that the tests in question were effective when using 'self'. The warning message was removed following the fix above to configure the pylint plugin differently.
+* Python - Reported from pycodestyle on the blog/views.py file on four occasions 'Number of parameters was 4 (...) and is now 5 in overridden (...) method'. The code past the CI Python Linter, and functionally work as designed. Whilst investigating the issue I noted it was no longer trigger following the fix above to configure the pylint plugin differently.
+* HTML - Removing unnecessary trailing slashes from elements e.g. <br/>.
+* HTML - Some posts were highlighting an additional </p> tag however on investigation this was dependent on how the text for the content field has been input.
 
 
+The following issue was identified and not resolved so carries an 'EXC' which means passed with an acceptable exception.
 
+* settings.py - E501 error as lines for AUTH_PASSWORD_VALIDATORS breach 79 characters. I attempted to split the code over two lines however this triggered other errors. As the code is functioning I have chosen to allow this exception for the MVP.
+
+<br>
+
+| File path                                                               | File Type | HTML | CSS  | JavaScript | Python | GitPod errors |
+| ----------------------------------------------------------------------- | --------- | ---- | ---- | ---------- | ------ | ------------- |
+| blog/admin.py                                                           | PY        |      |      |            | PASS   | 1             |
+| blog/apps.py                                                            | PY        |      |      |            | PASS   | 1             |
+| blog/context\_processors.py                                             | PY        |      |      |            | PASS   | 1             |
+| blog/forms.py                                                           | PY        |      |      |            | PASS   | 1             |
+| blog/models.py                                                          | PY        |      |      |            | PASS   | 1             |
+| blog/tests\_admin.py                                                    | PY        |      |      |            | PASS   | 1             |
+| blog/tests\_forms.py                                                    | PY        |      |      |            | PASS   | 1             |
+| blog/tests\_models.py                                                   | PY        |      |      |            | PASS   | 1             |
+| blog/tests\_views.py                                                    | PY        |      |      |            | EXC    | 1             |
+| blog/urls.py                                                            | PY        |      |      |            | EXC    | 1             |
+| blog/views.py                                                           | PY        |      |      |            | EXC    | 3             |
+| contact/admin.py                                                        | PY        |      |      |            | PASS   | 1             |
+| contact/apps.py                                                         | PY        |      |      |            | PASS   | 1             |
+| contact/forms.py                                                        | PY        |      |      |            | PASS   | 1             |
+| contact/models.py                                                       | PY        |      |      |            | PASS   | 1             |
+| contact/urls.py                                                         | PY        |      |      |            | PASS   | 1             |
+| contact/views.py                                                        | PY        |      |      |            | PASS   | 1             |
+| fresh\_casts/settings.py                                                | PY        |      |      |            | EXC    | 1             |
+| fresh\_casts/urls.py                                                    | PY        |      |      |            | PASS   | 1             |
+| member/admin.py                                                         | PY        |      |      |            | n/a    | 1             |
+| member/apps.py                                                          | PY        |      |      |            | PASS   | 1             |
+| member/forms.py                                                         | PY        |      |      |            | PASS   | 1             |
+| member/models.py                                                        | PY        |      |      |            | n/a    | 1             |
+| member/tests.py                                                         | PY        |      |      |            | n/a    | 1             |
+| member/urls.py                                                          | PY        |      |      |            | PASS   | 1             |
+| member/views.py                                                         | PY        |      |      |            | PASS   | 1             |
+| static/css/style.css                                                    | CSS       |      | PASS |            |        | PASS          |
+| templates/account/login.html                                            | HTML      | PASS |      |            |        | PASS          |
+| templates/account/logout.html                                           | HTML      | PASS |      |            |        | PASS          |
+| templates/404.html                                                      | HTML      | PASS |      |            |        | PASS          |
+| templates/500.html                                                      | HTML      | PASS |      |            |        | PASS          |
+| templates/about.html                                                    | HTML      | PASS |      |            |        | PASS          |
+| templates/accessibility\_statement.html                                 | HTML      | PASS |      |            |        | PASS          |
+| templates/add\_post.html                                                | HTML      | PASS |      |            |        | PASS          |
+| templates/base.html                                                     | HTML      | PASS |      |            |        | PASS          |
+| templates/categories.html                                               | HTML      | PASS |      |            |        | PASS          |
+| templates/change-password.html                                          | HTML      | PASS |      |            |        | PASS          |
+| templates/contact.html                                                  | HTML      | PASS |      |            |        | PASS          |
+| templates/copyright\_statement.html                                     | HTML      | PASS |      |            |        | PASS          |
+| templates/delete\_post.html                                             | HTML      | PASS |      |            |        | PASS          |
+| templates/edit\_profile.html                                            | HTML      | PASS |      |            |        | PASS          |
+| [https://fresh-casts.herokuapp.com](https://fresh-casts.herokuapp.com/) | HTML      | PASS |      |            |        | PASS          |
+| templates/post\_detail.html                                             | HTML      | EXC  |      |            |        | PASS          |
+| templates/sign\_up.html                                                 | HTML      | PASS |      |            |        | PASS          |
+| templates/update\_post.html                                             | HTML      | PASS |      |            |        | PASS          |
+| templates/user\_agreement.html                                          | HTML      | PASS |      |            |        | PASS          |
 
 <br>
 
@@ -135,7 +204,6 @@ Whilst further testing is required to achieve 100%, the results thus far are hig
     </p>
 
 <br>
-
 
 
 ## Bugs
@@ -175,14 +243,6 @@ To achieve a 'Pass' the following criteria had to be met across all website page
 3. All elements retain integrity				
 4. Fonts and images load				
 5. Navigation is not impacted and nav-menu collapses as intended				
-
-
-
-#### **Accessibility**
-
-The website has been thoroughly tested throughout all pages using the [Wave (Web Accessibility Evaluation Tool)](https://wave.webaim.org/). In general all pages performed well with 0 Errors identified.
-
-A general theme was identified as Alerts where 'Adjacent links go to the same URL.' was noted. An example of this is within the 'Sign Up' page where a link is offered within the text to navigate to the 'Sign In' page if you already have an account. As the Nav-Menu and Footer offer the same link an Alert was raised. Consideration was given and where deemed necessary, workable links have been removed to avoid additional navigation and repetition for keyboard and screen reader users.
 
 
 
