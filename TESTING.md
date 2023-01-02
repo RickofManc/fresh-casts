@@ -125,8 +125,31 @@ The results below show mobile in the first 4 columns and desktop in the second 4
 
 ## Browser
 
+Performing cross browser testing is key to ensuring a positive user experience no matter which browser users prefer to use. To perform a thorough test, I used Firefox, Chrome and Edge on my local machine, which uses Windows 10 as the operating system. To gain further coverage I used Lambda Testing, a browser test tool that virtualises browsers, devices and screen sizes. Here I could test the site on Safari and Opera. IE11 or previous versions were not tested at this time as Microsoft has ceased supporting this browser as they look to embed Edge.
 
+Reassuringly the tests proved the website loads on all 5 browser types. All elements such as buttons, forms, menus and images loaded and were functional where required. Despite getting some poor lighthouse performance results for the website loading on mobile devices, I didn't experience this in reality from either browser or device testing.
 
+<br>
+
+| File path                                                               | Chrome (v107) | Firefox (v107 win 10) | Edge (v104 Win 10) | Safari (v15 macOS Monterey) | Opera (v89 macOS Monterey) |
+| ----------------------------------------------------------------------- | ------------- | --------------------- | ------------------ | --------------------------- | -------------------------- |
+| templates/account/login.html                                            | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/account/logout.html                                           | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/about.html                                                    | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/accessibility\_statement.html                                 | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/add\_post.html                                                | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/base.html                                                     | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/categories.html                                               | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/change-password.html                                          | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/contact.html                                                  | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/copyright\_statement.html                                     | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/delete\_post.html                                             | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/edit\_profile.html                                            | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| [https://fresh-casts.herokuapp.com](https://fresh-casts.herokuapp.com/) | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/post\_detail.html                                             | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/sign\_up.html                                                 | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/update\_post.html                                             | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
+| templates/user\_agreement.html                                          | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
 
 <br>
 
@@ -255,16 +278,6 @@ The following issue was identified and not resolved so carries an 'EXC' which me
 
 <br>
 
-#### **Browser**
-
-To ensure site visitors can view and use Fresh Cast features on differing browsers, testing was performed on the test scenarios listed below.
-
-To achieve a 'Pass' the following criteria had to be met across all website pages;
-1. All buttons provide user feedback on hover and execute correctly when clicked
-2. All colours load and displayed correctly
-3. All elements retain integrity
-4. Fonts and images load
-5. Navigation is not impacted and nav-menu collapses as intended
 
 
 
