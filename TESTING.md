@@ -58,26 +58,26 @@ Summary of the results;
 
 <br>
 
-| File path                                                               | File Type | Result |
-| ----------------------------------------------------------------------- | --------- | --------- |
-| templates/account/login.html                                            | HTML      | PASS      |
-| templates/account/logout.html                                           | HTML      | PASS      |
-| templates/404.html                                                      | HTML      | PASS      |
-| templates/500.html                                                      | HTML      | PASS      |
-| templates/about.html                                                    | HTML      | PASS      |
-| templates/accessibility\_statement.html                                 | HTML      | PASS      |
-| templates/add\_post.html                                                | HTML      | NP        |
-| templates/categories.html                                               | HTML      | PASS      |
-| templates/change-password.html                                          | HTML      | PASS      |
-| templates/contact.html                                                  | HTML      | PASS      |
-| templates/copyright\_statement.html                                     | HTML      | PASS      |
-| templates/delete\_post.html                                             | HTML      | NP        |
-| templates/edit\_profile.html                                            | HTML      | NP        |
-| [https://fresh-casts.herokuapp.com](https://fresh-casts.herokuapp.com/) | HTML      | PASS      |
-| templates/post\_detail.html                                             | HTML      | PASS      |
-| templates/sign\_up.html                                                 | HTML      | PASS      |
-| templates/update\_post.html                                             | HTML      | NP        |
-| templates/user\_agreement.html                                          | HTML      | PASS      |
+| File path                                                               | Result |
+| ----------------------------------------------------------------------- | --------- |
+| templates/account/login.html                                            | PASS      |
+| templates/account/logout.html                                           | PASS      |
+| templates/404.html                                                      | PASS      |
+| templates/500.html                                                      | PASS      |
+| templates/about.html                                                    | PASS      |
+| templates/accessibility\_statement.html                                 | PASS      |
+| templates/add\_post.html                                                | NP        |
+| templates/categories.html                                               | PASS      |
+| templates/change-password.html                                          | PASS      |
+| templates/contact.html                                                  | PASS      |
+| templates/copyright\_statement.html                                     | PASS      |
+| templates/delete\_post.html                                             | NP        |
+| templates/edit\_profile.html                                            | NP        |
+| [https://fresh-casts.herokuapp.com](https://fresh-casts.herokuapp.com/) | PASS      |
+| templates/post\_detail.html                                             | PASS      |
+| templates/sign\_up.html                                                 | PASS      |
+| templates/update\_post.html                                             | NP        |
+| templates/user\_agreement.html                                          | PASS      |
 
 <br>
 
@@ -100,25 +100,24 @@ The results below show mobile in the first 4 columns and desktop in the second 4
 
 <br>
 
-| File path                                                               | File Type | Performance | Accessibility | Best Practice | SEO | Performance | Accessibility | Best Practice | SEO |
-| ----------------------------------------------------------------------- | --------- | ----------- | ------------- | ------------- | --- | ----------- | ------------- | ------------- | --- |
-| templates/account/login.html                                            | HTML      | 96          | 100           | 83            | 92  | 100         | 100           | 83            | 90  |
-| templates/account/logout.html                                           | HTML      | 91          | 100           | 83            | 92  | 100         | 100           | 83            | 90  |
-| templates/about.html                                                    | HTML      | 93          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
-| templates/accessibility\_statement.html                                 | HTML      | 96          | 100           | 83            | 92  | 99          | 100           | 83            | 90  |
-| templates/add\_post.html                                                | HTML      | 53          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
-| templates/base.html                                                     | HTML      |             |               |               |     |             |               |               |     |
-| templates/categories.html                                               | HTML      | 77          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
-| templates/change-password.html                                          | HTML      | 92          | 100           | 83            | 92  | 99          | 100           | 83            | 90  |
-| templates/contact.html                                                  | HTML      | 85          | 100           | 83            | 92  | 99          | 100           | 83            | 90  |
-| templates/copyright\_statement.html                                     | HTML      | 96          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
-| templates/delete\_post.html                                             | HTML      | 83          | 100           | 83            | 92  | 100         | 100           | 83            | 90  |
-| templates/edit\_profile.html                                            | HTML      | 94          | 97            | 83            | 92  | 99          | 97            | 83            | 90  |
-| [https://fresh-casts.herokuapp.com](https://fresh-casts.herokuapp.com/) | HTML      | 72          | 100           | 83            | 92  | 96          | 100           | 83            | 90  |
-| templates/post\_detail.html                                             | HTML      | 75          | 100           | 83            | 92  | 99          | 93            | 83            | 90  |
-| templates/sign\_up.html                                                 | HTML      | 89          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
-| templates/update\_post.html                                             | HTML      | 92          | 97            | 83            | 92  | 91          | 97            | 83            | 90  |
-| templates/user\_agreement.html                                          | HTML      | 96          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
+| File path                                                               | Performance | Accessibility | Best Practice | SEO | Performance | Accessibility | Best Practice | SEO |
+| ----------------------------------------------------------------------- | ----------- | ------------- | ------------- | --- | ----------- | ------------- | ------------- | --- |
+| templates/account/login.html                                            | 96          | 100           | 83            | 92  | 100         | 100           | 83            | 90  |
+| templates/account/logout.html                                           | 91          | 100           | 83            | 92  | 100         | 100           | 83            | 90  |
+| templates/about.html                                                    | 93          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
+| templates/accessibility\_statement.html                                 | 96          | 100           | 83            | 92  | 99          | 100           | 83            | 90  |
+| templates/add\_post.html                                                | 53          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
+| templates/categories.html                                               | 77          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
+| templates/change-password.html                                          | 92          | 100           | 83            | 92  | 99          | 100           | 83            | 90  |
+| templates/contact.html                                                  | 85          | 100           | 83            | 92  | 99          | 100           | 83            | 90  |
+| templates/copyright\_statement.html                                     | 96          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
+| templates/delete\_post.html                                             | 83          | 100           | 83            | 92  | 100         | 100           | 83            | 90  |
+| templates/edit\_profile.html                                            | 94          | 97            | 83            | 92  | 99          | 97            | 83            | 90  |
+| [https://fresh-casts.herokuapp.com](https://fresh-casts.herokuapp.com/) | 72          | 100           | 83            | 92  | 96          | 100           | 83            | 90  |
+| templates/post\_detail.html                                             | 75          | 100           | 83            | 92  | 99          | 93            | 83            | 90  |
+| templates/sign\_up.html                                                 | 89          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
+| templates/update\_post.html                                             | 92          | 97            | 83            | 92  | 91          | 97            | 83            | 90  |
+| templates/user\_agreement.html                                          | 96          | 100           | 83            | 92  | 98          | 100           | 83            | 90  |
 
 <br>
 
@@ -138,7 +137,6 @@ Reassuringly the tests proved the website loads on all 5 browser types. All elem
 | templates/about.html                                                    | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
 | templates/accessibility\_statement.html                                 | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
 | templates/add\_post.html                                                | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
-| templates/base.html                                                     | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
 | templates/categories.html                                               | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
 | templates/change-password.html                                          | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
 | templates/contact.html                                                  | PASS          | PASS                  | PASS               | PASS                        | PASS                       |
@@ -156,8 +154,32 @@ Reassuringly the tests proved the website loads on all 5 browser types. All elem
 
 ## Device
 
+Similar to the aims of browser testing, I wanted to tests users experience of the website across conventional devices. For this I used an iPhone SE, iPad, Laptop, 27" Monitor and lastly a virtual environment for a mobile phone using an Android operating system.
 
+The only major issue identified was on mobile and tablet devices where as a user I assumed I could click on any part of a posts summary card to reveal further information. However on the homepage and categories view I could only click on the image or post title. To improve the user experience by aligning with convention on blog/news feed sites, I updated the code to ensure all the card was clickable and also changed the user feedback from a coloured hyperlink style flash under text, to a flash of colour from the whole card. As a result of this issue, a Fail was recorded against the relating pages, however this has been fixed.
 
+<br>
+
+| File path                                                               | Mobile (iOS) | Mobile (Android) | Tablet | Desktop |
+| ----------------------------------------------------------------------- | ------------ | ---------------- | ------ | ------- |
+| templates/account/login.html                                            | PASS         | PASS             | PASS   | PASS    |
+| templates/account/logout.html                                           | PASS         | PASS             | PASS   | PASS    |
+| templates/404.html                                                      | PASS         | PASS             | PASS   | PASS    |
+| templates/500.html                                                      | PASS         | PASS             | PASS   | PASS    |
+| templates/about.html                                                    | PASS         | PASS             | PASS   | PASS    |
+| templates/accessibility\_statement.html                                 | PASS         | PASS             | PASS   | PASS    |
+| templates/add\_post.html                                                | PASS         | PASS             | PASS   | PASS    |
+| templates/categories.html                                               | FAIL         | FAIL             | FAIL   | PASS    |
+| templates/change-password.html                                          | PASS         | PASS             | PASS   | PASS    |
+| templates/contact.html                                                  | PASS         | PASS             | PASS   | PASS    |
+| templates/copyright\_statement.html                                     | PASS         | PASS             | PASS   | PASS    |
+| templates/delete\_post.html                                             | PASS         | PASS             | PASS   | PASS    |
+| templates/edit\_profile.html                                            | PASS         | PASS             | PASS   | PASS    |
+| [https://fresh-casts.herokuapp.com](https://fresh-casts.herokuapp.com/) | FAIL         | FAIL             | FAIL   | PASS    |
+| templates/post\_detail.html                                             | PASS         | PASS             | PASS   | PASS    |
+| templates/sign\_up.html                                                 | PASS         | PASS             | PASS   | PASS    |
+| templates/update\_post.html                                             | PASS         | PASS             | PASS   | PASS    |
+| templates/user\_agreement.html                                          | PASS         | PASS             | PASS   | PASS    |
 
 <br>
 
@@ -263,7 +285,8 @@ Whilst further testing is required to achieve 100% coverage, the results so far 
 
 
 
-
+#### Device
+The only major issue identified was on mobile devices where as a user I assumed I could click on any part of a posts summary card to reveal further information. However on the homepage and categories view I could only click on the image or post title. To improve the user experience by aligning with convention on blog/news feed sites, I updated the code to ensure all the card was clickable and also changed the user feedback from a coloured hyperlink style flash under text to a flash of colour from the whole card. As a result of this issue, a Fail was recorded against the relating pages, however this has been fixed.
 
 
 #### Performance
