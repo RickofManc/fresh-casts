@@ -283,38 +283,3 @@ Whilst further testing is required to achieve 100% coverage, the results so far 
 
 ## Bugs
 
-
-
-#### Device
-The only major issue identified was on mobile devices where as a user I assumed I could click on any part of a posts summary card to reveal further information. However on the homepage and categories view I could only click on the image or post title. To improve the user experience by aligning with convention on blog/news feed sites, I updated the code to ensure all the card was clickable and also changed the user feedback from a coloured hyperlink style flash under text to a flash of colour from the whole card. As a result of this issue, a Fail was recorded against the relating pages, however this has been fixed.
-
-
-#### Performance
-Research is required to improve an average Best Practices score of 83. The issue raised relates to the use of front-end JavaScript libraries with known security vulnerabilities. Three medium severity counts have been identified against the use of JQuery version 3.3.1 from Jan 2018. A fix is likely to be upgrading to a newer version of the library where a fix has been applied. However I need to ensure a newer version will be compatible with the version of Bootstrap I've implemented.
-#### Code
-The following issue was identified and not resolved so carries an 'EXC' which means passed with an acceptable exception.
-* settings.py - E501 error as lines for AUTH_PASSWORD_VALIDATORS breach 79 characters. I attempted to split the code over two lines however this triggered other errors. As the code is functioning I have chosen to allow this exception for the MVP.
-
-<br>
-
-
-
-<br>
-
-
-
-
-<br>
-
-#### **Device**
-
-To ensure site visitors can view and use Fresh Cast on differing devices, testing was performed on the test scenarios listed below.
-This physical testing is in addition to the continual device testing as part of UX development using Chrome Developer tools.
-				
-To achieve a 'Pass' the following criteria had to be met across all website pages;				
-1. All buttons provide user feedback on hover and execute correctly when clicked				
-2. All colours load and displayed correctly				
-3. All elements retain integrity				
-4. Fonts and images load				
-5. Navigation is not impacted and nav-menu collapses as intended				
-
