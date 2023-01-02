@@ -493,6 +493,37 @@ To deploy locally with GitHub, follow these steps:
     1. If the dialog box does not automatically appear, find the 'Remote Explorer' section of the left hand navbar within GitPod and click on the port '8000' and the internet/globe icon to the right which should open the running application.
 </details>
 
+
+### PostgreSQL Database
+
+<details>
+    <summary></summary>
+
+ElephantSQL replaced the originally selected free Heroku add-on PostgreSQL database due to the Heroku version becoming a chargeable service.
+Post MVP release I followed steps provided by the Code Institute to migrate the database from the Heroku version to Elephant. Dependant on your circumstances you may wish to use Heroku, Elephant or another service for your database. 
+
+1. If using Elephant, navigate to elephantsql.com and click 'Get a managed database today'. When presented with options for differing plans, I chose the free 'Tiny Turtle' plan.
+1. Select “Log in with GitHub” and authorize ElephantSQL with your selected GitHub account.
+1. In the Create new team form:
+    * Add a team name (your own name is fine).
+    * Read and agree to the Terms of Service.
+    * Select Yes for GDPR.
+    * Provide your email address.
+    * Click “Create Team”.
+1. Your account should now be created.
+1. Now you will need to create your database. Navigate to your elephantsql.com dashboard, and click "Create New Instance".
+1. Set up your plan:
+    * Give your plan a Name (this is commonly the name of the project).
+    * Select the Tiny Turtle (Free) plan.
+    * You can leave the Tags field blank.
+1. Select a data center near you.
+1. Then click "Review".
+1. Check your details are correct and then click "Create Instance".
+1. Return to the ElephantSQL dashboard and click on the database instance name for this project.
+1. You will return to this projects dashboard as part of the steps to 'Deploy with Heroku' as you will need the DATABASE_URL.
+</details>
+
+
 ### Deploy with Heroku
 
 <details>
@@ -502,10 +533,10 @@ To deploy locally with GitHub, follow these steps:
 1. From the Heroku dashboard, click the Create new app button. For a new account an icon will be visible on screen to allow you to Create an app, otherwise a link to this function is located under the New dropdown menu at the top right of the screen.
 1. On the Create New App page, enter a unique name for the application and select region. Then click Create app.
 1. On the Application Configuration page for the new app, click on the Resources tab.
-1. In the Add-ons search bar enter "Postgres" and select "Heroku Postgres" from the list - click the "Submit Order Form" button on the pop-up dialog.
-1. Next, click on Settings on the Application Configuration page and click on the "Reveal Config Vars" button - check the DATABASE_URL has been automatically set up.
-1. Add a new Config Var called DISABLE_COLLECTSTATIC and assign it a value of 1 - Remove this when releasing for Production.
-1. Add a new Config Var called SECRET_KEY and assign it a value - any random string of letters, digits and symbols.
+1. Next, click on Settings on the Application Configuration page and click on "Reveal Config Vars".
+1. Add a new Config Var called DISABLE_COLLECTSTATIC and assign it a value of 1, and click Add to save it. Remove this when releasing for Production.
+1. Add a new Config Var called SECRET_KEY and assign it a value - any random string of letters, digits and symbols, and click Add to save it.
+1. Add a new Config Var called DATABASE_URL and paste in the value for your ElephantSQL database, and click Add to save it.
 1. The settings.py file should be updated to use the DATABASE_URL and SECRET_KEY environment variable values as follows :
 
         DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
