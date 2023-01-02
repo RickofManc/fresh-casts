@@ -8,24 +8,17 @@
       <div class="row">
         <!-- Blog app View with reduced post details for list view purposes -->
         {% for post in post_list %}
-        <div class="card-body card-hover border-bottom">
-          <div class="row">
-            <!-- Display either podcast post image or standard Fresh Cast logo -->
-            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+        <a href="{% url 'post_detail' post.slug %}" class="post-link">
+          <div class="card-body card-hover border-bottom">
+            <div class="row">
+              <!-- Display either podcast post image or standard Fresh Cast logo -->
               <div class="col-4 col-sm-2 mb-3 blog-img-div">
-                  {% if "placeholder" in featured_image.url %}
-                  <img
-                      class="img-fluid img-homepage"
-                      src="static/images/fresh-casts-b-and-g-logo.png"
-                      alt="No podcast show logo so Fresh Casts logo used instead."
-                      >
-                  {% else %}
-                  <img
-                      class="img-fluid img-homepage"
-                      src=" {{ post.featured_image.url }}"
-                      alt="Podcast show logo."
-                      >
-                  {% endif %}
+                {% if "placeholder" in featured_image.url %}
+                <img class="img-fluid img-homepage" src="static/images/fresh-casts-b-and-g-logo.png"
+                  alt="No podcast show logo so Fresh Casts logo used instead.">
+                {% else %}
+                <img class="img-fluid img-homepage" src=" {{ post.featured_image.url }}" alt="Podcast show logo.">
+                {% endif %}
               </div>
               <!-- Container for post details -->
               <div class="col-8 col-sm-10">
@@ -48,9 +41,9 @@
                   </p>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
-        </div>
+        </a>
         {% if forloop.counter|divisibleby:3 %}
       </div>
       <div class="row">{% endif %} {% endfor %}
@@ -63,16 +56,14 @@
     <ul class="pagination justify-content-center">
       {% if page_obj.has_previous %}
       <li>
-        <a href="?page={{ page_obj.previous_page_number }}" class="page-link"
-           >&laquo; PREV
+        <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV
         </a>
       </li>
       {% endif %} {% if page_obj.has_next %}
       <li>
         <a href="?page={{ page_obj.next_page_number }}" class="page-link">
           NEXT &raquo;
-        </a
-          >
+        </a>
       </li>
       {% endif %}
     </ul>
