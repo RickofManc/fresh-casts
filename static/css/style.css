@@ -159,13 +159,21 @@ a:hover {
     border: none;
 }
 
-a.post-link {
-    color: #312e2e;
+.card-hover {
+    transition: border-color 1s, box-shadow 0.5s;
+}
+
+.card-hover:hover {
+    border-color: none;
+    box-shadow: 0px 0px 10px 2px #a2f0df99;
 }
 
 .post-link:hover {
-    color: #79ffe2;
-    text-decoration: underline;
+    text-decoration: none;
+}
+
+.title-link:hover {
+    text-decoration: underline #00ffc6; 
 }
 
 .fa-heart:before {
