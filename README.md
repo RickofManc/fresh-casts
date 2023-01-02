@@ -432,147 +432,25 @@ Features that will be added to the backlog for future releases are as follows:
 
 <br>
 
-## Testing 
 
-<br>
+## Testing
 
-### Manual Testing 
+Following a largely manual process for development and deployment, I have chosen to primarily perform manual testing.
+Testing procedures will ensure the deployed site aligns to the site in development through covering the following aspects:
 
-<br>
+* User stories - validate that the user requirements have been delivered for the MVP release.
+* User Acceptance Testing (UAT) - ensuring the website is meeting real world expectations.
+* Page validation - check all features and links from across the site are working as designed and developed.
+* Responsiveness - ensuring each page is responsive through the three media queries covering mobiles, tablets-laptops and desktop monitors.
+* Accessibility - each page is tested for compliance with accessibility guidelines using the WAVE online assessment tool.
+* Performance - using Chrome's developer tool 'Lighthouse Testing' pages are tested for performance, best-practice, SEO and accessibility.
+* Browser - pages are tested for layout, features and general performance across Chrome, Firefox, Edge, Safari and Opera.
+* Device - manual testing will be performed on an iOS and Android mobile, Tablet, Laptop and Desktop to ensure all users have a positive experience no matter which device or browser they prefer to use. 
+* Code validation - ensuring the code base is validated using industry standard tools for HTML, CSS, JavaScript and Python code.
 
-#### **Code**
+As the size of results tables as summaries is quite large, I've opted to document this in a separate file.
 
-The code on each file has been tested using the appropriate validation service; W3C Markup for HTML, W3C Jigsaw for CSS and Pep8 Online for Python.
-
-As this project uses Django templates the html has been validated by manually clicking through the application pages, copying the templates to validate using the W3C Validator. HTML for the Django admin site pages was not edited so has not been validated here. The Signup, Login and Logout pages from Django allauth were customised and so have been validated. The same process was undertaken to test the Python files with Pep8 Online and CSS with W3C Jigsaw.
-
-Due to the nature of extending the base.html template the W3C Validator consistently found the following warnings or errors. As these are incurred as part of the design they have not been listed within the table. Only exceptions not anticipated have been listed.
-- Consider adding a lang attribute to the html start tag to declare the language of this document.
-- Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>.
-- Element head is missing a required instance of child element title. 
-- Bad value for attribute href on anchor element: Illegal character in path segment: { is not allowed.
-
-Use the arrow below to view the results in detail.
-
-
-<details>
-    <summary></summary>
-    <p align="center">
-    <img src="readme-images/fresh-casts-code-testing.png" alt="Code Validation Results"/>
-    </p>
-</details>
-
-<br>
-
-#### **Browser**
-
-To ensure site visitors can view and use Fresh Cast features on differing browsers, testing was performed on the test scenarios listed below.
-
-To achieve a 'Pass' the following criteria had to be met across all website pages;
-1. All buttons provide user feedback on hover and execute correctly when clicked
-2. All colours load and displayed correctly
-3. All elements retain integrity
-4. Fonts and images load
-5. Navigation is not impacted and nav-menu collapses as intended
-
-<p align="center">
-    <img src="readme-images/fresh-casts-browser-testing.png" alt="Browser Testing Results"/>
-    </p>
-
-<br>
-
-#### **Device**
-
-To ensure site visitors can view and use Fresh Cast on differing devices, testing was performed on the test scenarios listed below.
-This physical testing is in addition to the continual device testing as part of UX development using Chrome Developer tools.
-				
-To achieve a 'Pass' the following criteria had to be met across all website pages;				
-1. All buttons provide user feedback on hover and execute correctly when clicked				
-2. All colours load and displayed correctly				
-3. All elements retain integrity				
-4. Fonts and images load				
-5. Navigation is not impacted and nav-menu collapses as intended				
-
-<p align="center">
-    <img src="readme-images/fresh-casts-device-testing.png" alt="Device Testing Results"/>
-    </p>
-
-<br>
-
-#### **Accessibility**
-
-The website has been thoroughly tested throughout all pages using the [Wave (Web Accessibility Evaluation Tool)](https://wave.webaim.org/). In general all pages performed well with 0 Errors identified.
-
-A general theme was identified as Alerts where 'Adjacent links go to the same URL.' was noted. An example of this is within the 'Sign Up' page where a link is offered within the text to navigate to the 'Sign In' page if you already have an account. As the Nav-Menu and Footer offer the same link an Alert was raised. Consideration was given and where deemed necessary, workable links have been removed to avoid additional navigation and repetition for keyboard and screen reader users.
-
-
-<p align="center">
-    <img src="readme-images/fresh-casts-wave-testing.png" alt="WAVE Testing Results"/>
-    </p>
-
-<br>
-
-
-#### **Lighthouse** 
-
-
-Using Lighthouse testing within Chrome Developer Tools, the website has been tested for use on Desktop and Mobile devices. 
-The website scored well across all criteria, however further work was required to;
-- improve the contrast of the background to foreground for Accessibility,
-- ensure there was sufficient spacing between Footer links for mobile users,
-- transform all future images uploaded to webP format and 300x300px in size to improve page loading times.
-Site wide research to improve Best Practices is required to add security where front-end JavaScript libraries are being used, in this case, jQuery as part of the Bootstrap use which scored a 3 for Vulnerability Count."																	
-																	
-Testing occurred using Lighthouse within Chrome Dev Tools on 4 July 2022 with the following results:
-
-
-<p align="center">
-    <img src="readme-images/fresh-casts-lighthouse-testing.png" alt="Lighthouse Testing Results"/>
-    </p>
-
-<br>
-
-
-#### **Feature**
-
-Testing in Development and Production has been performed to ensure all the committed features for the MVP are working as designed. A table of results is available below.
-
-
-<p align="center">
-    <img src="readme-images/fresh-casts-feature-testing.png" alt="Feature Testing Results"/>
-    </p>
-
-<br>
-
-
-### Automatic Testing
-
-Django testing tools have been used to perform basic automated testing on Fresh Casts Python code, primarily for template rendering and some user functionality.
-
-Tests were run using the local SQLite3 database as opposed to the production PostgreSQL database.
-
-Test scripts were written for the following blog app files;
-
-- models.py
-- views.py
-- forms.py
-- admin.py
-
-Whilst further testing is required to achieve 100%, the results thus far are highlighted in the summary report below:
-
-<p align="center">
-    <img src="readme-images/fresh-casts-blog-app-automated-testing.png" alt="Django Testing Results"/>
-    </p>
-
-<br>
-
-### Bugs
-
-At the time of the second release all known bugs from the first release have been resolved.
-
-
-<br>
-
+[Navigate to TESTING.md](TESTING.md)
 
 ***
 
