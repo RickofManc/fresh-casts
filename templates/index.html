@@ -12,12 +12,12 @@
           <div class="card-body card-hover border-bottom">
             <div class="row">
               <!-- Display either podcast post image or standard Fresh Cast logo -->
-              <div class="col-4 col-sm-2 mb-3 blog-img-div">
+              <div class="col-4 col-sm-2 mb-3 blog-img-div text-center">
                 {% if "placeholder" in featured_image.url %}
-                <img class="img-fluid img-homepage" src="static/images/fresh-casts-b-and-g-logo.png"
+                <img class="img-fluid mx-auto img-min-size" src="static/images/fresh-casts-b-and-g-logo.png"
                   alt="No podcast show logo so Fresh Casts logo used instead.">
                 {% else %}
-                <img class="img-fluid img-homepage" src=" {{ post.featured_image.url }}" alt="Podcast show logo.">
+                <img class="img-fluid mx-auto img-min-size" src=" {{ post.featured_image.url }}" alt="Podcast show logo.">
                 {% endif %}
               </div>
               <!-- Container for post details -->
@@ -46,8 +46,7 @@
         </a>
         {% if forloop.counter|divisibleby:3 %}
       </div>
-      <div class="row">{% endif %} {% endfor %}
-      </div>
+      {% endif %} {% endfor %}
     </div>
   </div>
   <!-- Django boilerplate ListView code to support user navigation  -->
