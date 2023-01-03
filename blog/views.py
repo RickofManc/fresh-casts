@@ -146,7 +146,7 @@ class DeletePostView(DeleteView):
     model = Post
     template_name = 'delete_post.html'
     fields = 'title'
-    success_message = 'deleted successfully'
+    success_message = 'Post deleted successfully'
 
     def delete(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
