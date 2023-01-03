@@ -20,16 +20,16 @@
             <div class="card-body card-hover border-bottom">
               <div class="row">
                 <!-- Display either podcast post image or standard Fresh Cast logo -->
-                  <div class="col-4 col-sm-2 mb-3 blog-img-div">
+                  <div class="col-4 col-sm-2 mb-3 blog-img-div text-center">
                     {% if "placeholder" in featured_image.url %}
                     <img
-                        class="img-fluid"
+                        class="img-fluid mx-auto img-min-size"
                         src="static/images/fresh-casts-b-and-g-logo_thumbnail.png"
                         alt="No podcast show logo so Fresh Casts logo used instead."
                         >
                     {% else %}
                     <img
-                        class="img-fluid"
+                        class="img-fluid mx-auto img-min-size"
                         src=" {{ post.featured_image.url }}"
                         alt="Podcast show logo."
                         >
