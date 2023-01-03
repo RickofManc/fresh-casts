@@ -31,9 +31,30 @@ This test aims to check all features and links from across the site are working 
 
 To perform the test I used a Chrome browser, and validated each page from a mobile and desktop perspective.
 
+Testing identified one fail in that a new record was created when a user updated the post title. This was due to the title field being declared as the primary key within the data schema and as such when it is updated Django views this as a new record in the database. To modify this field by removing the primary key and allowing the default django ID to be used, would require the data schema to be updated and the SQL DB dumped. At this point in the project I decided to avoid having to lose users data whilst I research how to reload the data cleanly following an update to the data schema. As a suitable temporary solution, I have prevented updates to the title field. All other field updates are working as required.
+
 <br>
 
-
+| File path                                                               | File Type | Features working | Links active |
+| ----------------------------------------------------------------------- | --------- | ---------------- | ------------ |
+| templates/account/login.html                                            | HTML      | PASS             | PASS         |
+| templates/account/logout.html                                           | HTML      | PASS             | PASS         |
+| templates/404.html                                                      | HTML      | PASS             | PASS         |
+| templates/500.html                                                      | HTML      | PASS             | PASS         |
+| templates/about.html                                                    | HTML      | PASS             | PASS         |
+| templates/accessibility_statement.html                                  | HTML      | PASS             | PASS         |
+| templates/add_post.html                                                 | HTML      | PASS             | PASS         |
+| templates/categories.html                                               | HTML      | PASS             | PASS         |
+| templates/change-password.html                                          | HTML      | PASS             | PASS         |
+| templates/contact.html                                                  | HTML      | PASS             | PASS         |
+| templates/copyright_statement.html                                      | HTML      | PASS             | PASS         |
+| templates/delete_post.html                                              | HTML      | PASS             | PASS         |
+| templates/edit_profile.html                                             | HTML      | PASS             | PASS         |
+| [https://fresh-casts.herokuapp.com](https://fresh-casts.herokuapp.com/) | HTML      | PASS             | PASS         |
+| templates/post_detail.html                                              | HTML      | PASS             | PASS         |
+| templates/sign_up.html                                                  | HTML      | PASS             | PASS         |
+| templates/update_post.html                                              | HTML      | FAIL             | PASS         |
+| templates/user_agreement.html                                           | HTML      | PASS             | PASS         |
 
 <br>
 
