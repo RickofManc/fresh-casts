@@ -61,12 +61,7 @@ class UpdateForm(forms.ModelForm):
     """
 
     title = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': 'Add a title for the show here',
-            }
-        )
+        disabled = True
     )
     category = (
         forms.ChoiceField(widget=forms.Select(attrs={'class':
