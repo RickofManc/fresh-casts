@@ -412,15 +412,6 @@ ul.errorlist.nonfield {
         margin-top: 2rem;
         margin-bottom: 2rem;
     }
-    
-    .col-sm-10 {
-        padding-left: 0.3125rem;
-    }
-
-    .px-2 {
-        padding-left: 0!important;
-        padding-right: 0!important;
-    }
 
     .card-title {
         font-size: 1.2rem;
@@ -440,7 +431,7 @@ ul.errorlist.nonfield {
 
     .blog-img-div {
         padding-right: 0.3125rem;
-        }
+    }
 
     /* || POST DETAIL STYLES  */
     .img-post-detail {
