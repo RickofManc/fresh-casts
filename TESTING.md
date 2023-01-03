@@ -29,23 +29,46 @@ Further details of the Epics, Features and User Story tasks can be found either 
 
 This test aims to check all features and links from across the site are working as designed and developed.
 
-To perform the test I used a Chrome browser, and validated each page from a mobile and desktop perspective using the inbuilt developer tool as some features were unique to a particular screen size.
+To perform the test I used a Chrome browser, and validated each page from a mobile and desktop perspective.
 
 <br>
 
 
 
 <br>
+
 
 ## Responsiveness
 
 To test the websites layout and content remains well structured and accessible across differing screen sizes, I used Chrome's Developer Tools to virtualise how the website and all its pages look and feel. In consideration that I opted to use Bootstrap which provides standard media queries for screen sizes from XS through to XL, I selected the following screens to test on; iPhone 4, iPhone SE, Samsung Galaxy S8, iPad, iPad Pro, Laptop at 1366x768, Monitor at 1920x1080 and iMac 5K.
 
+Testing identified one fail when testing on an iPhone where the post text was located under the image and not to the right as per the category view. Furthermore some of the posts started slightly off the screen to the left. Resolution was to compare the homepage with the category view and remove unnecessary padding from the cards, whilst maintaining an min-width image size when required at +992px screen width.
+
 <br> 
 
-
+| File path                                                               | Mobile | Tablet | Desktop |
+| ----------------------------------------------------------------------- | ------ | ------ | ------- |
+| templates/account/login.html                                            | PASS   | PASS   | PASS    |
+| templates/account/logout.html                                           | PASS   | PASS   | PASS    |
+| templates/404.html                                                      | PASS   | PASS   | PASS    |
+| templates/500.html                                                      | PASS   | PASS   | PASS    |
+| templates/about.html                                                    | PASS   | PASS   | PASS    |
+| templates/accessibility_statement.html                                  | PASS   | PASS   | PASS    |
+| templates/add_post.html                                                 | PASS   | PASS   | PASS    |
+| templates/categories.html                                               | PASS   | PASS   | PASS    |
+| templates/change-password.html                                          | PASS   | PASS   | PASS    |
+| templates/contact.html                                                  | PASS   | PASS   | PASS    |
+| templates/copyright_statement.html                                      | PASS   | PASS   | PASS    |
+| templates/delete_post.html                                              | PASS   | PASS   | PASS    |
+| templates/edit_profile.html                                             | PASS   | PASS   | PASS    |
+| [https://fresh-casts.herokuapp.com](https://fresh-casts.herokuapp.com/) | FAIL   | PASS   | PASS    |
+| templates/post_detail.html                                              | PASS   | PASS   | PASS    |
+| templates/sign_up.html                                                  | PASS   | PASS   | PASS    |
+| templates/update_post.html                                              | PASS   | PASS   | PASS    |
+| templates/user_agreement.html                                           | PASS   | PASS   | PASS    |
 
 <br>
+
 
 ## Accessibility 
 
