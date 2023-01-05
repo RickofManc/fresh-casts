@@ -83,6 +83,14 @@ The chart below highlights the features roadmap assessed by importance versus vi
 
 <br>
 
+Furthermore a MoSCoW assessment had been performed but omitted from the original version of the README given the opportunities versus feasibility above.
+
+<p align="center">
+  <img src="readme-images/MoSCoW_assessment.png" alt="MoSCoW Assessment"/>
+</p>
+
+<br>
+
 ### Scope
 
 An agile approach of keeping the in scope features simple and aligned to the strategy for the MVP will be adopted. Below is a list of the leading features for the Fresh Casts MVP.
