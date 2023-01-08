@@ -271,13 +271,14 @@
   </script>
   <!-- Script to automatically remove user alerts after 3 seconds -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      setTimeout(function() {
+    document.addEventListener("DOMContentLoaded", closeAlerts);
+    function closeAlerts () {
+      window.setTimeout(function () {
         let messages = document.getElementById("msg");
         let alert = new bootstrap.Alert(messages);
         alert.close();
       }, 3000);
-    });
+    };
   </script>
   <!-- Set independent nav menu collapsing -->
   <script>
