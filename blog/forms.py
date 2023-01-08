@@ -60,9 +60,7 @@ class UpdateForm(forms.ModelForm):
     to enable users to edit their own blog posts
     """
 
-    title = forms.CharField(
-        disabled = True
-    )
+    title = forms.CharField(disabled=True)
     category = (
         forms.ChoiceField(widget=forms.Select(attrs={'class':
                                                      'form-control'})),
